@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07f9186f-7c72-4f3e-bc6d-8faa5c42383a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/image/logo.svg" />
-      <change beforePath="$PROJECT_DIR$/.idea/strawberry.iml" afterPath="$PROJECT_DIR$/.idea/strawberry.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/HeaderInfo.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
       <change beforePath="$PROJECT_DIR$/src/page/App.js" afterPath="$PROJECT_DIR$/src/page/App.js" />
       <change beforePath="$PROJECT_DIR$/src/style/App.scss" afterPath="$PROJECT_DIR$/src/style/App.scss" />
     </list>
@@ -26,13 +21,25 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/page/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="16" column="119" lean-forward="false" selection-start-line="16" selection-start-column="119" selection-end-line="16" selection-end-column="119" />
+                <state relative-caret-position="475">
+                  <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HeaderInfo.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/page/HeaderInfo.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="76">
+                  <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+                  <folding>
+                    <element signature="e#61#87#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -45,8 +52,8 @@
           <file leaf-file-name="App.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/style/App.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="133">
-                  <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+                <state relative-caret-position="152">
+                  <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -81,8 +88,9 @@
         <option value="$PROJECT_DIR$/node_modules/react-scripts/config/webpack.config.prod.js" />
         <option value="$PROJECT_DIR$/src/App.scss" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/page/App.js" />
         <option value="$PROJECT_DIR$/src/style/App.scss" />
+        <option value="$PROJECT_DIR$/src/page/HeaderInfo.js" />
+        <option value="$PROJECT_DIR$/src/page/App.js" />
       </list>
     </option>
   </component>
@@ -104,8 +112,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="342" />
-    <option name="y" value="308" />
+    <option name="x" value="448" />
+    <option name="y" value="240" />
     <option name="width" value="1735" />
     <option name="height" value="1073" />
   </component>
@@ -231,7 +239,7 @@
       <workItem from="1511332426033" duration="760000" />
       <workItem from="1511333199604" duration="441000" />
       <workItem from="1511333652509" duration="372000" />
-      <workItem from="1511334050583" duration="4583000" />
+      <workItem from="1511334050583" duration="5580000" />
     </task>
     <task id="LOCAL-00001" summary="install ant design">
       <created>1511330449063</created>
@@ -261,11 +269,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511331573614</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="layout and logo">
+      <created>1511338821761</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1511338821761</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8746000" />
+    <option name="totallyTimeSpent" value="9743000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -277,7 +292,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="342" y="308" width="1735" height="1073" extended-state="0" />
+    <frame x="448" y="240" width="1735" height="1073" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24985269" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -287,7 +303,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943678" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24255319" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24255319" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -337,7 +353,8 @@
     <MESSAGE value="install sass" />
     <MESSAGE value="install react-router" />
     <MESSAGE value="clear other files" />
-    <option name="LAST_COMMIT_MESSAGE" value="clear other files" />
+    <MESSAGE value="layout and logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="layout and logo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -757,21 +774,31 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/App.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="16" column="119" lean-forward="false" selection-start-line="16" selection-start-column="119" selection-end-line="16" selection-end-column="119" />
+        <state relative-caret-position="475">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/App.scss">
+    <entry file="file://$PROJECT_DIR$/src/page/HeaderInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="76">
+          <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <folding>
+            <element signature="e#61#87#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
