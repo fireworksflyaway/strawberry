@@ -14,20 +14,23 @@ export default class ContentInfo extends React.Component{
 
         render(){
                 return (
-                        <article style={{position: 'relative'}}>
-                                <Carousel autoplay className='homeCarousel'>
-                                        <div><img src={slider1} /> </div>
-                                        <div><img src={slider2} /> </div>
-                                        <div><img src={slider3} /> </div>
-                                </Carousel>
-                                <div className='carouselCaptionDiv'>
-                                        <Row>
-                                                <Col xl={20}  lg={20}  md={12}  offset={2}>
-                                                        <h1>Providing Professional Service</h1>
-                                                        <h4>For elders suffering Alzheimer</h4>
-                                                </Col>
-                                        </Row>
-                                </div>
+                        <article>
+                                <section className='carouselSection'>
+                                        <Carousel autoplay className='homeCarousel'>
+                                                <div><img src={slider1} /> </div>
+                                                <div><img src={slider2} /> </div>
+                                                <div><img src={slider3} /> </div>
+                                        </Carousel>
+                                        <div className='carouselCaptionDiv'>
+                                                <Row>
+                                                        <Col xl={20}  lg={20}  md={12}  offset={2}>
+                                                                <h1>Providing Professional Service</h1>
+                                                                <h4>For elders suffering Alzheimer</h4>
+                                                        </Col>
+                                                </Row>
+                                        </div>
+                                </section>
+
                         </article>
                 )
         }
