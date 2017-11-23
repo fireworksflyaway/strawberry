@@ -1,9 +1,24 @@
+$headerHeight: 80px;
+$logoHeight:60px;
+$headerGray:#ebedee;
 .appHeader{
-    background-color: white;
-    height: 100px;
+    background-color: rgba(255,255,255,0.91);
+    height: $headerHeight;
+    border-bottom: 1px solid $headerGray;
+}
+
+.headerInfoDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
 .logoImg{
-    height: 60px;
-    //margin: 20px 0;
+    height: $logoHeight;
+    //margin: 20px;
+}
+
+.appContent{
+    background: white;
 }

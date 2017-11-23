@@ -5,6 +5,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import logo from '../image/logo.svg';
+
+import { Menu, Icon, Button } from 'antd';
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
+
 export default class HeaderInfo extends React.Component{
         constructor(){
                 super();
@@ -12,8 +17,24 @@ export default class HeaderInfo extends React.Component{
 
         render(){
                 return(
-                        <div>
-                                <Link to='/'><img src={logo} alt="Brainnow"  className='logoImg'/></Link>
+                        <div className='headerInfoDiv'>
+                                <div style={{height:60}}>
+                                        <Link to='/'><img src={logo} alt="Brainnow"  className='logoImg'/></Link>
+                                </div>
+
+                                <Menu
+                                        mode="horizontal"
+                                        defaultSelectedKeys={['2']}
+                                        style={{ lineHeight: '79px', fontSize:'15px' }}
+                                >
+                                        <Menu.Item key="1">首页</Menu.Item>
+                                        <Menu.Item key="2">服务介绍</Menu.Item>
+                                        <Menu.Item key="3">联系我们</Menu.Item>
+                                        <Menu.Item key="4">注册新用户</Menu.Item>
+                                        <Menu.Item key="5">登录</Menu.Item>
+                                        <Button style={{marginLeft:'40px'}}>EN</Button>
+                                </Menu>
+
                         </div>
                 )
         }

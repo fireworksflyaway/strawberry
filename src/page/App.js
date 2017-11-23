@@ -16,7 +16,7 @@ class App extends Component {
                                                 <Header className='appHeader'>
                                                         <HeaderInfo/>
                                                 </Header>
-                                                <Content>
+                                                <Content className='appContent'>
                                                         Content
                                                 </Content>
                                                 <Footer>Footer</Footer>
