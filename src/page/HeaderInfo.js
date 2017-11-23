@@ -7,6 +7,10 @@ import {Link} from 'react-router-dom';
 import logo from '../image/logo.svg';
 
 import { Menu, Icon, Button } from 'antd';
+import '../style/HeaderInfo.scss';
+
+
+
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
@@ -23,9 +27,9 @@ export default class HeaderInfo extends React.Component{
                                 </div>
 
                                 <Menu
+                                        className='headerMenu'
                                         mode="horizontal"
-                                        defaultSelectedKeys={['2']}
-                                        style={{ lineHeight: '79px', fontSize:'15px' }}
+                                        defaultSelectedKeys={['1']}
                                 >
                                         <Menu.Item key="1">首页</Menu.Item>
                                         <Menu.Item key="2">服务介绍</Menu.Item>

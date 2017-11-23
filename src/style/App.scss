@@ -7,18 +7,7 @@ $headerGray:#ebedee;
     border-bottom: 1px solid $headerGray;
 }
 
-.headerInfoDiv{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-}
-
-.logoImg{
-    height: $logoHeight;
-    //margin: 20px;
-}
-
 .appContent{
     background: white;
 }
+

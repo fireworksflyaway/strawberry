@@ -1,0 +1,19 @@
+$headerHeight: 80px;
+$logoHeight:60px;
+$headerGray:#ebedee;
+
+.headerInfoDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logoImg{
+    height: $logoHeight;
+}
+
+.headerMenu{
+    line-height: $headerHeight - 1px !important;
+    font-size: 15px;
+}
