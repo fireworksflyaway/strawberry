@@ -24,8 +24,8 @@ export default class ContentInfo extends React.Component{
                                         <div className='carouselCaptionDiv'>
                                                 <Row>
                                                         <Col xl={20}  lg={20}  md={12}  offset={2}>
-                                                                <h1>Providing Professional Service</h1>
-                                                                <h4>For elders suffering Alzheimer</h4>
+                                                                <h1>专业的服务</h1>
+                                                                <h4>为广大阿尔茨海默症病友提供帮助</h4>
                                                         </Col>
                                                 </Row>
                                         </div>
