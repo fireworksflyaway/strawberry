@@ -4,7 +4,7 @@ import {BrowserRouter, Link} from 'react-router-dom';
 import {Layout} from 'antd';
 import '../style/App.scss';
 import HeaderInfo from "./HeaderInfo";
-
+import ContentInfo from './ContentInfo';
 const {Header, Content,  Footer} = Layout;
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
                                                         <HeaderInfo/>
                                                 </Header>
                                                 <Content className='appContent' >
-                                                        Content
+                                                        <ContentInfo/>
                                                 </Content>
                                                 <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} All right reserved.</Footer>
                                         </Layout>
