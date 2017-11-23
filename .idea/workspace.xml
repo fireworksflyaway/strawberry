@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07f9186f-7c72-4f3e-bc6d-8faa5c42383a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/style/HeaderInfo.scss" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/page/App.js" afterPath="$PROJECT_DIR$/src/page/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/HeaderInfo.js" afterPath="$PROJECT_DIR$/src/page/HeaderInfo.js" />
       <change beforePath="$PROJECT_DIR$/src/style/App.scss" afterPath="$PROJECT_DIR$/src/style/App.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,8 +23,8 @@
           <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/page/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="18" column="80" lean-forward="false" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
+                <state relative-caret-position="399">
+                  <caret line="21" column="76" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -53,8 +51,8 @@
           <file leaf-file-name="App.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/style/App.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="152">
-                  <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+                <state relative-caret-position="266">
+                  <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -254,7 +252,7 @@
       <workItem from="1511333199604" duration="441000" />
       <workItem from="1511333652509" duration="372000" />
       <workItem from="1511334050583" duration="8053000" />
-      <workItem from="1511398638573" duration="5547000" />
+      <workItem from="1511398638573" duration="7054000" />
     </task>
     <task id="LOCAL-00001" summary="install ant design">
       <created>1511330449063</created>
@@ -305,11 +303,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511405691649</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="HeaderInfo basic style modified">
+      <created>1511408153151</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1511408153151</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17763000" />
+    <option name="totallyTimeSpent" value="19270000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -384,7 +389,8 @@
     <MESSAGE value="layout and logo" />
     <MESSAGE value="HeaderInfo page setup" />
     <MESSAGE value="HeaderInfo basic style" />
-    <option name="LAST_COMMIT_MESSAGE" value="HeaderInfo basic style" />
+    <MESSAGE value="HeaderInfo basic style modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="HeaderInfo basic style modified" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -809,8 +815,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="80" lean-forward="false" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
+        <state relative-caret-position="399">
+          <caret line="21" column="76" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -819,8 +825,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style/App.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="266">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
           <folding />
         </state>
       </provider>

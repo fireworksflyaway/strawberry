@@ -19,7 +19,7 @@ class App extends Component {
                                                 <Content className='appContent' >
                                                         Content
                                                 </Content>
-                                                <Footer>Footer</Footer>
+                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} All right reserved.</Footer>
                                         </Layout>
                                 </BrowserRouter>
                         </div>
