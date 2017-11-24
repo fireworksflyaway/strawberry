@@ -31,11 +31,12 @@ export default class HeaderInfo extends React.Component{
                                         mode="horizontal"
                                         defaultSelectedKeys={['1']}
                                 >
-                                        <Menu.Item key="1">首页</Menu.Item>
-                                        <Menu.Item key="2">服务介绍</Menu.Item>
-                                        <Menu.Item key="3">联系我们</Menu.Item>
-                                        <Menu.Item key="4">注册新用户</Menu.Item>
-                                        <Menu.Item key="5">登录</Menu.Item>
+                                        <Menu.Item key="1"><Link to='/'>首页</Link></Menu.Item>
+                                        <Menu.Item key="2"><Link to='/'>关于我们</Link></Menu.Item>
+                                        <Menu.Item key="3"><Link to='/'>服务介绍</Link></Menu.Item>
+                                        <Menu.Item key="4"><Link to='/'>联系我们</Link></Menu.Item>
+                                        <Menu.Item key="5"><Link to='/signup'>注册新用户</Link></Menu.Item>
+                                        <Menu.Item key="6"><Link to='/signin'>登录</Link></Menu.Item>
                                         <Button style={{marginLeft:'40px'}}>EN</Button>
                                 </Menu>
 

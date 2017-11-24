@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-import {BrowserRouter, Link} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Layout} from 'antd';
 import '../style/App.scss';
 import HeaderInfo from "./HeaderInfo";
-import ContentInfo from './ContentInfo';
+import HomeContent from './HomeContent';
+import SignUpContent from './SignUpContent';
 const {Header, Content,  Footer} = Layout;
 
 class App extends Component {
@@ -17,7 +18,10 @@ class App extends Component {
                                                         <HeaderInfo/>
                                                 </Header>
                                                 <Content className='appContent' >
-                                                        <ContentInfo/>
+                                                        <Switch>
+                                                                <Route path='/signup' component={SignUpContent}/>
+                                                                <Route component={HomeContent} />
+                                                        </Switch>
                                                 </Content>
                                                 <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} All right reserved.</Footer>
                                         </Layout>

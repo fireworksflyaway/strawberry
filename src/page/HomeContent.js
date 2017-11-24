@@ -3,11 +3,11 @@
  */
 import React from 'react';
 import {Carousel, Row, Col} from 'antd';
-import '../style/ContentInfo.scss';
+import '../style/HomeContent.scss';
 import slider1 from '../image/slider1.jpg';
 import slider2 from '../image/slider2.jpg';
 import slider3 from '../image/slider3.jpg';
-export default class ContentInfo extends React.Component{
+export default class HomeContent extends React.Component{
         constructor(){
                 super();
         }
@@ -30,7 +30,13 @@ export default class ContentInfo extends React.Component{
                                                 </Row>
                                         </div>
                                 </section>
+                                <section className='aboutSection'>
+                                        博脑公司致力于阿尔茨海默症智能分析和诊断。博脑公司致力于阿尔茨海默症智能分析和诊断。
+                                </section>
+                                <section className='serviceSection'>
+                                        <h1>我们的服务</h1>
 
+                                </section>
                         </article>
                 )
         }
