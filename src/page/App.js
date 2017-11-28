@@ -6,6 +6,7 @@ import '../style/App.scss';
 import HeaderInfo from "./HeaderInfo";
 import HomeContent from './HomeContent';
 import SignUpContent from './SignUpContent';
+import SignInContent from './SignInContent';
 const {Header, Content,  Footer} = Layout;
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
                                                 <Content className='appContent' >
                                                         <Switch>
                                                                 <Route path='/signup' component={SignUpContent}/>
+                                                                <Route path='/signin' component={SignInContent}/>
                                                                 <Route component={HomeContent} />
                                                         </Switch>
                                                 </Content>
