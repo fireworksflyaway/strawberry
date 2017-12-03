@@ -11,11 +11,36 @@ class BasicSignInForm extends React.Component{
                 super();
         }
 
+        getData(token){
+                fetch('http://localhost:8090/auth/ppt',{
+                        method:'get',
+                        headers: {
+                                'Authorization': 'Bearer ' + token
+                        }
+                })
+                        .then(res=>res.text())
+                        .then((res)=>{
+                                console.log(res);
+                        })
+                        .catch((err)=>console.error(err));
+        }
+
         handleSubmit=(e)=>{
                 e.preventDefault();
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
                                 console.log('Received values of form: ', values);
+                                fetch('http://localhost:8090/login',{
+                                        method:'post',
+                                        body:JSON.stringify(values),
+                                        headers:{'Content-Type': 'application/json'}
+                                })
+                                .then((res)=>res.json())
+                                .then((res)=>{
+                                        console.log(res);
+                                        this.getData(res.token);
+                                })
+                                .catch((err)=>console.error(err));
                         }
                 });
         }

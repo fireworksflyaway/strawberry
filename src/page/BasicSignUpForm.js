@@ -2,11 +2,21 @@
  * Created by Mason Jackson in Office on 2017/11/25.
  */
 import React from 'react';
-import {Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete} from 'antd';
-
+import { Form, Input,  Icon,   Checkbox, Button} from 'antd';
+import {withRouter} from "react-router-dom";
 const FormItem=Form.Item;
-const Option=Select.Option;
-const AutoCompleteOption= AutoComplete.Option;
+
+function handleResponse(res) {
+        console.log(res);
+        return res.json()
+                .then(json=>{
+                        if(res.ok){
+                                return json;
+                        } else {
+                                return Promise.reject(json);
+                        }
+                })
+}
 
 class BasicSignUpForm extends React.Component{
         constructor(){
@@ -27,6 +37,20 @@ class BasicSignUpForm extends React.Component{
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
                                 console.log('Received values of form: ', values);
+                                fetch('http://localhost:8090/signup',{
+                                        method:'post',
+                                        body:JSON.stringify(values),
+                                        headers:{'Content-Type': 'application/json'}
+                                })
+                                        .then(handleResponse)
+                                        .then((res)=>{
+                                                console.log('hh');
+                                                sessionStorage.setItem('StrawberryToken', res.token);
+                                                this.props.history.push('/');
+                                        })
+                                        .catch((err)=>{
+                                                console.error(err);
+                                        });
                         }
                 });
         }
@@ -108,4 +132,4 @@ class BasicSignUpForm extends React.Component{
         }
 }
 
-export default Form.create()(BasicSignUpForm);
+export default withRouter(Form.create()(BasicSignUpForm));

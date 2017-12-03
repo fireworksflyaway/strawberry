@@ -17,9 +17,9 @@ export default class HomeContent extends React.Component{
                         <article>
                                 <section className='carouselSection'>
                                         <Carousel autoplay className='homeCarousel'>
-                                                <div><img src={slider1} /> </div>
-                                                <div><img src={slider2} /> </div>
-                                                <div><img src={slider3} /> </div>
+                                                <div><img src={slider1} alt="slider1"/> </div>
+                                                <div><img src={slider2} alt="slider2" /> </div>
+                                                <div><img src={slider3} alt="slider3" /> </div>
                                         </Carousel>
                                         <div className='carouselCaptionDiv'>
                                                 <Row>

@@ -6,13 +6,10 @@ import {Link} from 'react-router-dom';
 
 import logo from '../image/logo.svg';
 
-import { Menu, Icon, Button } from 'antd';
+import { Menu,  Button } from 'antd';
 import '../style/HeaderInfo.scss';
 
 
-
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 export default class HeaderInfo extends React.Component{
         constructor(){
