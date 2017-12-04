@@ -4,6 +4,7 @@
 import React from 'react';
 import {Form, Input, Button, Icon} from 'antd';
 import {withRouter} from "react-router-dom";
+import {sha256} from 'js-sha256';
 import handleResponse from '../function/withResponseForm';
 const FormItem=Form.Item;
 
@@ -31,6 +32,7 @@ class BasicSignInForm extends React.Component{
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
                                 values.lan='zh';
+                                values.password=sha256(values.password);
                                 fetch('http://localhost:8090/login',{
                                         method:'post',
                                         body:JSON.stringify(values),

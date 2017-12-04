@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import { Form, Input,  Icon,   Checkbox, Button} from 'antd';
+import {sha256} from 'js-sha256';
 import {withRouter} from "react-router-dom";
 import handleResponse from '../function/withResponseForm';
 const FormItem=Form.Item;
@@ -28,7 +29,7 @@ class BasicSignUpForm extends React.Component{
                 e.preventDefault();
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
-                                console.log('Received values of form: ', values);
+                                values.password=sha256(values.password);
                                 values.lan='zh';
                                 fetch('http://localhost:8090/signup',{
                                         method:'post',
