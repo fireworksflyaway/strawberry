@@ -11,9 +11,10 @@ class DAL{
                                 db.close();
                                 if(err){
                                         console.error(err);
-                                        result._err=true;
+                                        callback({_err:err})
                                 }
-                                callback(result);
+                                else
+                                        callback(result);
                         })
                 })
         }
@@ -24,9 +25,24 @@ class DAL{
                                 db.close();
                                 if(err){
                                         console.error(err);
-                                        result._err=true;
+                                        callback({_err:err})
                                 }
-                                callback(result);
+                                else
+                                        callback(result);
+                        })
+                })
+        }
+
+        getError(lan, code, callback){
+                MongoClient.connect(DB_CONN_STR, function (err, db) {
+                        db.collection('error').find({code}).toArray(function (err, result) {
+                                db.close();
+                                if(err){
+                                        console.error(err);
+                                        callback({code:'0', message:'Unknown Error'});
+                                }
+                                else
+                                        callback(result[0][lan]);
                         })
                 })
         }

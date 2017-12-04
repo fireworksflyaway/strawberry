@@ -7,7 +7,6 @@ import {withRouter} from "react-router-dom";
 const FormItem=Form.Item;
 
 function handleResponse(res) {
-        console.log(res);
         return res.json()
                 .then(json=>{
                         if(res.ok){
@@ -37,6 +36,7 @@ class BasicSignUpForm extends React.Component{
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
                                 console.log('Received values of form: ', values);
+                                values.lan='zh';
                                 fetch('http://localhost:8090/signup',{
                                         method:'post',
                                         body:JSON.stringify(values),
@@ -44,12 +44,12 @@ class BasicSignUpForm extends React.Component{
                                 })
                                         .then(handleResponse)
                                         .then((res)=>{
-                                                console.log('hh');
                                                 sessionStorage.setItem('StrawberryToken', res.token);
                                                 this.props.history.push('/');
                                         })
                                         .catch((err)=>{
                                                 console.error(err);
+                                                alert(err.error);
                                         });
                         }
                 });

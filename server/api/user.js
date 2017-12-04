@@ -20,12 +20,22 @@ class UserAPI{
         }
 
         signUp(req, res){
-                console.log(config.accessKey);
-                const {username, password, email, phone} = req.body;
+                const {username, password, email, phone, lan} = req.body;
                 const userData={username, password, email, phone};
-                db.insert('user', userData, function () {
-                        if(res._err){
-                                res.status(500).send({error:'Database failed'});
+                db.insert('user', userData, function (result) {
+                        if(result._err){
+                                let code='10000';
+                                if(result._err.code==11000)
+                                {
+                                        if(result._err.message.includes('username'))
+                                                code='10001';
+                                        else
+                                                code='10002';
+                                }
+                                db.getError(lan, code, function (error) {
+                                        res.status(500).send({error});
+                                })
+
                         }
                         else{
                                 const token=jsonwebtoken.sign({username: username}, config.accessKey, accessOption);
