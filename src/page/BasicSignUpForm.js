@@ -4,18 +4,10 @@
 import React from 'react';
 import { Form, Input,  Icon,   Checkbox, Button} from 'antd';
 import {withRouter} from "react-router-dom";
+import handleResponse from '../function/withResponseForm';
 const FormItem=Form.Item;
 
-function handleResponse(res) {
-        return res.json()
-                .then(json=>{
-                        if(res.ok){
-                                return json;
-                        } else {
-                                return Promise.reject(json);
-                        }
-                })
-}
+
 
 class BasicSignUpForm extends React.Component{
         constructor(){
@@ -30,6 +22,7 @@ class BasicSignUpForm extends React.Component{
                         callback();
                 }
         }
+
 
         handleSubmit = (e) => {
                 e.preventDefault();
@@ -132,4 +125,4 @@ class BasicSignUpForm extends React.Component{
         }
 }
 
-export default withRouter(Form.create()(BasicSignUpForm));
+export default withRouter(Form.create()(BasicSignUpForm)) ;

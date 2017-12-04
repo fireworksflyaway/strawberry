@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
         res.send('Hello World');
 })
 
-// app.use('/auth', jwt({secret:config.access_key}));
+app.use('/auth', jwt({secret:config.accessKey}));
 
 
 app.get('/auth/ppt', function (req, res) {

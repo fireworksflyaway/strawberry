@@ -10,13 +10,25 @@ const accessOption={};
 
 class UserAPI{
         signIn(req, res){
-                const {username, password}= req.body;
-                if(username==='mason'&&password==='456'){
-                        const token=jsonwebtoken.sign({username: username}, config.accessKey, accessOption);
-                        res.send(JSON.stringify({token}));
-                }
-                else
-                        res.status(500).send(JSON.stringify({error:'Invalid Password'}));
+                const {username, password, lan}= req.body;
+                db.select('user', {username, password}, function (result) {
+                        let code='0';
+                        if(result._err){
+                                db.getError(lan, code, function (error) {
+                                        res.status(500).send({error});
+                                })
+                        } else {
+                                if(result.length==0){
+                                        code='10003';
+                                        db.getError(lan, code, function (error) {
+                                                res.status(500).send({error});
+                                        })
+                                } else {
+                                        const token=jsonwebtoken.sign({username: username}, config.accessKey, accessOption);
+                                        res.send({token});
+                                }
+                        }
+                })
         }
 
         signUp(req, res){

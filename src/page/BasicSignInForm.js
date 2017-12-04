@@ -3,7 +3,8 @@
  */
 import React from 'react';
 import {Form, Input, Button, Icon} from 'antd';
-
+import {withRouter} from "react-router-dom";
+import handleResponse from '../function/withResponseForm';
 const FormItem=Form.Item;
 
 class BasicSignInForm extends React.Component{
@@ -11,36 +12,39 @@ class BasicSignInForm extends React.Component{
                 super();
         }
 
-        getData(token){
-                fetch('http://localhost:8090/auth/ppt',{
-                        method:'get',
-                        headers: {
-                                'Authorization': 'Bearer ' + token
-                        }
-                })
-                        .then(res=>res.text())
-                        .then((res)=>{
-                                console.log(res);
-                        })
-                        .catch((err)=>console.error(err));
-        }
+        // getData(token){
+        //         fetch('http://localhost:8090/auth/ppt',{
+        //                 method:'get',
+        //                 headers: {
+        //                         'Authorization': 'Bearer ' + token
+        //                 }
+        //         })
+        //                 .then(res=>res.text())
+        //                 .then((res)=>{
+        //                         console.log(res);
+        //                 })
+        //                 .catch((err)=>console.error(err));
+        // }
 
         handleSubmit=(e)=>{
                 e.preventDefault();
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
-                                console.log('Received values of form: ', values);
+                                values.lan='zh';
                                 fetch('http://localhost:8090/login',{
                                         method:'post',
                                         body:JSON.stringify(values),
                                         headers:{'Content-Type': 'application/json'}
                                 })
-                                .then((res)=>res.json())
+                                .then(handleResponse)
                                 .then((res)=>{
-                                        console.log(res);
-                                        this.getData(res.token);
+                                        sessionStorage.setItem('StrawberryToken', res.token);
+                                        this.props.history.push('/');
                                 })
-                                .catch((err)=>console.error(err));
+                                .catch((err)=>{
+                                        console.error(err);
+                                        alert(err.error);
+                                });
                         }
                 });
         }
@@ -80,4 +84,4 @@ class BasicSignInForm extends React.Component{
         }
 }
 
-export default Form.create()(BasicSignInForm);
+export default withRouter(Form.create()(BasicSignInForm));
