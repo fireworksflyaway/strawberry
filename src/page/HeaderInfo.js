@@ -20,7 +20,7 @@ export default class HeaderInfo extends React.Component{
         render(){
                 let menuComponent;
                 if(this.props.isLogin)
-                        menuComponent=<LoginHeader username={this.props.username} />;
+                        menuComponent=<LoginHeader username={this.props.username} handleLogout={this.props.handleLogout}/>;
                 else
                         menuComponent=<LogoutHeader />;
                 return(

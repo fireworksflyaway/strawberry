@@ -46,13 +46,21 @@ class App extends Component {
                 })
         }
 
+        handleLogout(){
+                sessionStorage.removeItem('StrawberryToken');
+                this.setState({
+                        isLogin:false,
+                        username:'unknown'
+                })
+        }
+
         render(){
                 return(
                         <div>
                                 <BrowserRouter>
                                         <Layout>
                                                 <Header className='appHeader'>
-                                                        <HeaderInfo isLogin={this.state.isLogin} username={this.state.username}/>
+                                                        <HeaderInfo isLogin={this.state.isLogin} username={this.state.username} handleLogout={this.handleLogout.bind(this)}/>
                                                 </Header>
                                                 <Content className='appContent' >
                                                         <Switch>

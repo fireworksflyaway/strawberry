@@ -18,7 +18,7 @@ export default class LoginHeader extends React.Component{
                                 <Menu.Item key="4"><Link to='/'>查看报告</Link></Menu.Item>
                                 <Menu.SubMenu title={<strong><Icon type="user" />{this.props.username}</strong>}>
                                         <Menu.Item key="user:1"><Link to='/'>编辑个人信息</Link></Menu.Item>
-                                        <Menu.Item key="user:2"><Link to='/'>注销</Link></Menu.Item>
+                                        <Menu.Item key="user:2"><Link to='/' onClick={this.props.handleLogout}>注销</Link></Menu.Item>
                                 </Menu.SubMenu>
                                 <Button style={{marginLeft:'40px'}}>EN</Button>
                         </Menu>
