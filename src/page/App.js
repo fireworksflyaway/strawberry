@@ -19,6 +19,26 @@ class App extends Component {
                 }
         }
 
+        componentWillMount(){
+                const token=sessionStorage.getItem('StrawberryToken');
+                if(token){
+                        fetch('http://localhost:8090/auth/username', {
+                                method:'get',
+                                headers: {
+                                        'Authorization': 'Bearer ' + token
+                                }
+                        })
+                                .then(res=>res.json())
+                                .then((res)=>{
+                                        this.setState({
+                                                isLogin:true,
+                                                username:res.username
+                                        })
+                                })
+                                .catch((err)=>console.error(err));
+                }
+        }
+
         handleLogin(user){
                 this.setState({
                         isLogin:true,

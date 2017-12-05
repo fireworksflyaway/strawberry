@@ -2,7 +2,7 @@
  * Created by Mason Jackson in Office on 2017/12/5.
  */
 import React from 'react';
-import { Menu,  Button } from 'antd';
+import { Menu,  Button , Icon} from 'antd';
 import {Link} from 'react-router-dom';
 export default class LoginHeader extends React.Component{
         render(){
@@ -16,8 +16,10 @@ export default class LoginHeader extends React.Component{
                                 <Menu.Item key="2"><Link to='/'>上传数据</Link></Menu.Item>
                                 <Menu.Item key="3"><Link to='/'>查看任务进度</Link></Menu.Item>
                                 <Menu.Item key="4"><Link to='/'>查看报告</Link></Menu.Item>
-                                <Menu.Item key="5"><Link to='/'>{this.props.username}</Link></Menu.Item>
-                                <Menu.Item key="6"><Link to='/'>注销</Link></Menu.Item>
+                                <Menu.SubMenu title={<strong><Icon type="user" />{this.props.username}</strong>}>
+                                        <Menu.Item key="user:1"><Link to='/'>编辑个人信息</Link></Menu.Item>
+                                        <Menu.Item key="user:2"><Link to='/'>注销</Link></Menu.Item>
+                                </Menu.SubMenu>
                                 <Button style={{marginLeft:'40px'}}>EN</Button>
                         </Menu>
                 )

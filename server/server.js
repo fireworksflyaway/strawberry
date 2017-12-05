@@ -34,9 +34,9 @@ app.get('/', function (req, res) {
 app.use('/auth', jwt({secret:config.accessKey}));
 
 
-app.get('/auth/ppt', function (req, res) {
-        console.log(req.user);
-        res.send('success');
+app.get('/auth/username', function (req, res) {
+        //console.log(req.user);
+        res.send({username: req.user.username});
 })
 
 app.post('/login', userAPI.signIn);
