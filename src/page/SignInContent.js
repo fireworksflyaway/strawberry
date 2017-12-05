@@ -10,8 +10,8 @@ import BasicSignInForm from './BasicSignInForm';
 
 const TabPane = Tabs.TabPane;
 class SignInContent extends React.Component {
-        constructor(){
-                super();
+        constructor(props){
+                super(props);
         }
 
         render(){
@@ -20,7 +20,7 @@ class SignInContent extends React.Component {
                         <article>
                                 <Card title="登录" className='signInCard'>
                                         <Tabs defaultActiveKey="1">
-                                                <TabPane tab="体检用户" key="1"><BasicSignInForm /> </TabPane>
+                                                <TabPane tab="体检用户" key="1"><BasicSignInForm handleLogin={this.props.handleLogin}/> </TabPane>
                                                 <TabPane tab="诊断用户" key="2">敬请期待</TabPane>
                                                 <TabPane tab="科研用户" key="3">敬请期待</TabPane>
                                         </Tabs>

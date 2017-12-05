@@ -7,21 +7,37 @@ import HeaderInfo from "./HeaderInfo";
 import HomeContent from './HomeContent';
 import SignUpContent from './SignUpContent';
 import SignInContent from './SignInContent';
+import withLogin from '../function/withLogin';
 const {Header, Content,  Footer} = Layout;
 
 class App extends Component {
+        constructor(props){
+                super(props);
+                this.state={
+                        isLogin:false,
+                        username:'unknown'
+                }
+        }
+
+        handleLogin(user){
+                this.setState({
+                        isLogin:true,
+                        username:user
+                })
+        }
+
         render(){
                 return(
                         <div>
                                 <BrowserRouter>
                                         <Layout>
                                                 <Header className='appHeader'>
-                                                        <HeaderInfo/>
+                                                        <HeaderInfo isLogin={this.state.isLogin} username={this.state.username}/>
                                                 </Header>
                                                 <Content className='appContent' >
                                                         <Switch>
-                                                                <Route path='/signup' component={SignUpContent}/>
-                                                                <Route path='/signin' component={SignInContent}/>
+                                                                <Route path='/signup' component={withLogin(SignUpContent, this.handleLogin.bind(this))}/>
+                                                                <Route path='/signin' component={withLogin(SignInContent, this.handleLogin.bind(this))}/>
                                                                 <Route component={HomeContent} />
                                                         </Switch>
                                                 </Content>

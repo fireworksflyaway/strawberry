@@ -5,7 +5,7 @@ import React from 'react';
 import {Form, Input, Button, Icon} from 'antd';
 import {withRouter} from "react-router-dom";
 import {sha256} from 'js-sha256';
-import handleResponse from '../function/withResponseForm';
+import handleResponse from '../function/handleResponse';
 const FormItem=Form.Item;
 
 class BasicSignInForm extends React.Component{
@@ -41,6 +41,7 @@ class BasicSignInForm extends React.Component{
                                 .then(handleResponse)
                                 .then((res)=>{
                                         sessionStorage.setItem('StrawberryToken', res.token);
+                                        this.props.handleLogin(values.username);
                                         this.props.history.push('/');
                                 })
                                 .catch((err)=>{

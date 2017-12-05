@@ -6,37 +6,29 @@ import {Link} from 'react-router-dom';
 
 import logo from '../image/logo.svg';
 
-import { Menu,  Button } from 'antd';
-import '../style/HeaderInfo.scss';
 
+import '../style/HeaderInfo.scss';
+import LogoutHeader from "./LogoutHeader";
+import LoginHeader from './LoginHeader';
 
 
 export default class HeaderInfo extends React.Component{
-        constructor(){
-                super();
+        constructor(props){
+                super(props);
         }
 
         render(){
+                let menuComponent;
+                if(this.props.isLogin)
+                        menuComponent=<LoginHeader username={this.props.username} />;
+                else
+                        menuComponent=<LogoutHeader />;
                 return(
                         <div className='headerInfoDiv'>
                                 <div style={{height:60}}>
                                         <Link to='/'><img src={logo} alt="Brainnow"  className='logoImg'/></Link>
                                 </div>
-
-                                <Menu
-                                        className='headerMenu'
-                                        mode="horizontal"
-                                        defaultSelectedKeys={['1']}
-                                >
-                                        <Menu.Item key="1"><Link to='/'>首页</Link></Menu.Item>
-                                        <Menu.Item key="2"><Link to='/'>关于我们</Link></Menu.Item>
-                                        <Menu.Item key="3"><Link to='/'>服务介绍</Link></Menu.Item>
-                                        <Menu.Item key="4"><Link to='/'>联系我们</Link></Menu.Item>
-                                        <Menu.Item key="5"><Link to='/signup'>注册新用户</Link></Menu.Item>
-                                        <Menu.Item key="6"><Link to='/signin'>登录</Link></Menu.Item>
-                                        <Button style={{marginLeft:'40px'}}>EN</Button>
-                                </Menu>
-
+                                {menuComponent}
                         </div>
                 )
         }

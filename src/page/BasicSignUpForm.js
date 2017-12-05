@@ -5,7 +5,7 @@ import React from 'react';
 import { Form, Input,  Icon,   Checkbox, Button} from 'antd';
 import {sha256} from 'js-sha256';
 import {withRouter} from "react-router-dom";
-import handleResponse from '../function/withResponseForm';
+import handleResponse from '../function/handleResponse';
 const FormItem=Form.Item;
 
 
