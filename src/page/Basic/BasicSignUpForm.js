@@ -5,7 +5,10 @@ import React from 'react';
 import { Form, Input,  Icon,   Checkbox, Button} from 'antd';
 import {sha256} from 'js-sha256';
 import {withRouter} from "react-router-dom";
-import handleResponse from '../function/handleResponse';
+import handleResponse from '../../function/handleResponse';
+import provideConfig from '../../function/provideConfig';
+
+const config=provideConfig();
 const FormItem=Form.Item;
 
 
@@ -31,7 +34,7 @@ class BasicSignUpForm extends React.Component{
                         if (!err) {
                                 values.password=sha256(values.password);
                                 values.lan='zh';
-                                fetch('http://localhost:8090/signup',{
+                                fetch(`${config.server}/signup`,{
                                         method:'post',
                                         body:JSON.stringify(values),
                                         headers:{'Content-Type': 'application/json'}
@@ -65,7 +68,7 @@ class BasicSignUpForm extends React.Component{
                                                         min:4, message: '用户名长度不得少于4位',
                                                 }],
                                         })(
-                                                <Input  prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="用户名" />
+                                                <Input  prefix={<Icon type="user"  />} placeholder="用户名" />
                                         )}
                                 </FormItem>
                                 <FormItem>
@@ -76,7 +79,7 @@ class BasicSignUpForm extends React.Component{
                                                         min:6, message: '密码长度不得少于6位',
                                                 }],
                                         })(
-                                                <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="密码" />
+                                                <Input prefix={<Icon type="lock"  />} type="password" placeholder="密码" />
                                         )}
                                 </FormItem>
                                 <FormItem>
@@ -87,7 +90,7 @@ class BasicSignUpForm extends React.Component{
                                                         validator: this.checkPassword,
                                                 }],
                                         })(
-                                                <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="确认密码" />
+                                                <Input prefix={<Icon type="lock"  />} type="password" placeholder="确认密码" />
                                         )}
                                 </FormItem>
                                 <FormItem hasFeedback>
@@ -98,7 +101,7 @@ class BasicSignUpForm extends React.Component{
                                                         required: true, message: '请输入电子邮箱地址',
                                                 },]
                                         })(
-                                                <Input  prefix={<Icon type="mail" style={{ fontSize: 13 }} />}  type='email' placeholder="电子邮箱" />
+                                                <Input  prefix={<Icon type="mail"  />}  type='email' placeholder="电子邮箱" />
                                         )}
                                 </FormItem>
                                 <FormItem hasFeedback>
@@ -107,7 +110,7 @@ class BasicSignUpForm extends React.Component{
                                                         required: true, message: '请输入电话',
                                                 },]
                                         })(
-                                                <Input  prefix={<Icon type="phone" style={{ fontSize: 13 }} />}  type='tel' placeholder="电话" />
+                                                <Input  prefix={<Icon type="phone"  />}  type='tel' placeholder="电话" />
                                         )}
                                 </FormItem>
                                 <FormItem style={{ marginBottom: 8 }}>

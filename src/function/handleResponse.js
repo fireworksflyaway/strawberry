@@ -3,7 +3,7 @@
  */
 
 export default function handleResponse(res) {
-                        return res.json()
+        return res.json()
                                 .then(json=>{
                                         if(res.ok){
                                                 return json;

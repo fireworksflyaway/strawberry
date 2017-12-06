@@ -5,7 +5,10 @@ import React from 'react';
 import {Form, Input, Button, Icon} from 'antd';
 import {withRouter} from "react-router-dom";
 import {sha256} from 'js-sha256';
-import handleResponse from '../function/handleResponse';
+import handleResponse from '../../function/handleResponse';
+import provideConfig from '../../function/provideConfig';
+
+const config=provideConfig();
 const FormItem=Form.Item;
 
 class BasicSignInForm extends React.Component{
@@ -13,19 +16,6 @@ class BasicSignInForm extends React.Component{
                 super();
         }
 
-        // getData(token){
-        //         fetch('http://localhost:8090/auth/ppt',{
-        //                 method:'get',
-        //                 headers: {
-        //                         'Authorization': 'Bearer ' + token
-        //                 }
-        //         })
-        //                 .then(res=>res.text())
-        //                 .then((res)=>{
-        //                         console.log(res);
-        //                 })
-        //                 .catch((err)=>console.error(err));
-        // }
 
         handleSubmit=(e)=>{
                 e.preventDefault();
@@ -33,7 +23,7 @@ class BasicSignInForm extends React.Component{
                         if (!err) {
                                 values.lan='zh';
                                 values.password=sha256(values.password);
-                                fetch('http://localhost:8090/login',{
+                                fetch(`${config.server}/login`,{
                                         method:'post',
                                         body:JSON.stringify(values),
                                         headers:{'Content-Type': 'application/json'}
@@ -66,7 +56,7 @@ class BasicSignInForm extends React.Component{
                                                         required: true, message: '请输入用户名',
                                                 }],
                                         })(
-                                                <Input  prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="用户名" />
+                                                <Input  prefix={<Icon type="user"  />} placeholder="用户名" />
                                         )}
                                 </FormItem>
                                 <FormItem>
@@ -75,12 +65,12 @@ class BasicSignInForm extends React.Component{
                                                         required: true, message: '请输入密码!'
                                                 }],
                                         })(
-                                                <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="密码" />
+                                                <Input prefix={<Icon type="lock"  />} type="password" placeholder="密码" />
                                         )}
                                 </FormItem>
                                 <FormItem>
                                         <Button type="primary" htmlType="submit">登录</Button>&emsp;
-                                        <Button htmlType="reset" onClick={this.handleReset}>重置</Button>
+                                        <Button htmlType="reset" onClick={this.handleReset.bind(this)}>重置</Button>
                                 </FormItem>
                         </Form>
                 )

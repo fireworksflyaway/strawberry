@@ -9,7 +9,7 @@ import logo from '../image/logo.svg';
 
 import '../style/HeaderInfo.scss';
 import LogoutHeader from "./LogoutHeader";
-import LoginHeader from './LoginHeader';
+import LoginHeader from './Basic/BasicLoginHeader';
 
 
 export default class HeaderInfo extends React.Component{

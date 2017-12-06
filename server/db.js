@@ -33,6 +33,20 @@ class DAL{
                 })
         }
 
+        update(collection, queryOption, updateOption,  callback){
+                MongoClient.connect(DB_CONN_STR, function (err, db) {
+                        db.collection(collection).update(queryOption, updateOption,function (err, result) {
+                                db.close();
+                                if(err){
+                                        console.error(err);
+                                        callback({_err:err});
+                                }
+                                else
+                                        callback(result);
+                        })
+                })
+        }
+
         getError(lan, code, callback){
                 MongoClient.connect(DB_CONN_STR, function (err, db) {
                         db.collection('error').find({code}).toArray(function (err, result) {

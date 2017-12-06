@@ -8,7 +8,7 @@ const jsonwebtoken=require('jsonwebtoken');
 const fs=require('fs');
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
-const userAPIClass=require('./api/user');
+const userAPIClass=require('./BasicApi/basicUser');
 const userAPI=new userAPIClass();
 
 
@@ -39,7 +39,15 @@ app.get('/auth/username', function (req, res) {
         res.send({username: req.user.username});
 })
 
+app.get('/auth/getbasicprofile', userAPI.getProfile);
+
+app.post('/auth/updatebasicprofile', userAPI.updateProfile);
+
+app.post('/auth/updatebasicpassword', userAPI.updatePassword);
+
 app.post('/login', userAPI.signIn);
+
+
 
 app.post('/signup', userAPI.signUp);
 

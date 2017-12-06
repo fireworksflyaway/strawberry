@@ -6,7 +6,7 @@ import {Card, Tabs} from 'antd';
 
 import '../style/SignInContent.scss';
 
-import BasicSignInForm from './BasicSignInForm';
+import BasicSignInForm from './Basic/BasicSignInForm';
 
 const TabPane = Tabs.TabPane;
 class SignInContent extends React.Component {
