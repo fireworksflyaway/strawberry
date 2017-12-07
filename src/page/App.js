@@ -7,9 +7,13 @@ import HeaderInfo from "./HeaderInfo";
 import HomeContent from './HomeContent';
 import SignUpContent from './SignUpContent';
 import SignInContent from './SignInContent';
-import Profile from './Basic/BasicProfile';
+import BasicProfile from './Basic/BasicProfile';
+import BasicUpload from './Basic/BasicUpload';
+
 import withLogin from '../function/withLogin';
 import provideConfig from '../function/provideConfig';
+
+
 
 const config=provideConfig();
 const {Header, Content,  Footer} = Layout;
@@ -70,7 +74,8 @@ class App extends Component {
                                                 </Header>
                                                 <Content className='appContent' >
                                                         <Switch>
-                                                                <Route path='/basicprofile' component={Profile}/>
+                                                                <Route path='/basicprofile' component={BasicProfile}/>
+                                                                <Route path='/basicupload' component={BasicUpload} />
                                                                 <Route path='/signup' component={withLogin(SignUpContent, this.handleLogin.bind(this))}/>
                                                                 <Route path='/signin' component={withLogin(SignInContent, this.handleLogin.bind(this))}/>
                                                                 <Route component={HomeContent} />
