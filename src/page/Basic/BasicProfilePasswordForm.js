@@ -45,6 +45,8 @@ class BasicProfilePasswordForm extends React.Component{
                                         })
                                         .catch((err)=>{
                                                 console.error(err);
+                                                if(err.code=='10004')
+                                                        message.error('密码错误');
                                         })
                         }
 

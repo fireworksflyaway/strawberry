@@ -33,9 +33,9 @@ class DAL{
                 })
         }
 
-        update(collection, queryOption, updateOption,  callback){
+        updateOne(collection, queryOption, updateOption,  callback){
                 MongoClient.connect(DB_CONN_STR, function (err, db) {
-                        db.collection(collection).update(queryOption, updateOption,function (err, result) {
+                        db.collection(collection).updateOne(queryOption, updateOption,function (err, result) {
                                 db.close();
                                 if(err){
                                         console.error(err);

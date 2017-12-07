@@ -82,7 +82,7 @@ class UserAPI{
         updateProfile(req, res){
                 const username=req.user.username;
                 const {email, phone}=req.body;
-                db.update('basicUser', {username}, {$set:{email, phone}}, function (result) {
+                db.updateOne('basicUser', {username}, {$set:{email, phone}}, function (result) {
                         if(result._err){
                                 res.status(500).send({code: 0});
                         }
@@ -101,11 +101,11 @@ class UserAPI{
                         }
                         else{
                                 if(result.length===0){
-                                        res.status(500).send({code: 10004});
+                                        res.status(500).send({code: '10004'});   //密码错误
                                 }
                                 else{
                                         //update
-                                        db.update('basicUser', {username}, {$set:{password: newPassword}}, function (result) {
+                                        db.updateOne('basicUser', {username}, {$set:{password: newPassword}}, function (result) {
                                                 if(result._err){
                                                         res.status(500).send({code: 0});
                                                 }
