@@ -9,6 +9,7 @@ import SignUpContent from './SignUpContent';
 import SignInContent from './SignInContent';
 import BasicProfile from './Basic/BasicProfile';
 import BasicUpload from './Basic/BasicUpload';
+import BasicEvent from './Basic/BasicEvent';
 
 import withLogin from '../function/withLogin';
 import provideConfig from '../function/provideConfig';
@@ -76,12 +77,13 @@ class App extends Component {
                                                         <Switch>
                                                                 <Route path='/basicprofile' component={BasicProfile}/>
                                                                 <Route path='/basicupload' component={BasicUpload} />
+                                                                <Route path='/basicevent' component={BasicEvent} />
                                                                 <Route path='/signup' component={withLogin(SignUpContent, this.handleLogin.bind(this))}/>
                                                                 <Route path='/signin' component={withLogin(SignInContent, this.handleLogin.bind(this))}/>
                                                                 <Route component={HomeContent} />
                                                         </Switch>
                                                 </Content>
-                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} All right reserved.</Footer>
+                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} All rights reserved.</Footer>
                                         </Layout>
                                 </BrowserRouter>
                         </div>
