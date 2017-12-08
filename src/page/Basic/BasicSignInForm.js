@@ -69,8 +69,8 @@ class BasicSignInForm extends React.Component{
                                         )}
                                 </FormItem>
                                 <FormItem>
-                                        <Button type="primary" htmlType="submit">登录</Button>&emsp;
-                                        <Button htmlType="reset" onClick={this.handleReset.bind(this)}>重置</Button>
+                                        <Button type="primary" htmlType="submit" icon="login">登录</Button>&emsp;
+                                        <Button htmlType="reset" onClick={this.handleReset.bind(this)} icon="reload">重置</Button>
                                 </FormItem>
                         </Form>
                 )

@@ -10,9 +10,12 @@ import SignInContent from './SignInContent';
 import BasicProfile from './Basic/BasicProfile';
 import BasicUpload from './Basic/BasicUpload';
 import BasicEvent from './Basic/BasicEvent';
+import BasicReport from "./Basic/BasicReport";
+
 
 import withLogin from '../function/withLogin';
 import provideConfig from '../function/provideConfig';
+
 
 
 
@@ -75,6 +78,7 @@ class App extends Component {
                                                 </Header>
                                                 <Content className='appContent' >
                                                         <Switch>
+                                                                <Route path='/basicreport' component={BasicReport}/>
                                                                 <Route path='/basicprofile' component={BasicProfile}/>
                                                                 <Route path='/basicupload' component={BasicUpload} />
                                                                 <Route path='/basicevent' component={BasicEvent} />

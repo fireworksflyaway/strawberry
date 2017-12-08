@@ -28,6 +28,7 @@ class BasicSignUpForm extends React.Component{
         }
 
 
+
         handleSubmit = (e) => {
                 e.preventDefault();
                 this.props.form.validateFieldsAndScroll((err, values) => {
@@ -121,8 +122,8 @@ class BasicSignUpForm extends React.Component{
                                         )}
                                 </FormItem>
                                 <FormItem>
-                                        <Button type="primary" htmlType="submit">注册</Button>&emsp;
-                                        <Button htmlType="reset" onClick={this.handleReset}>重置</Button>
+                                        <Button type="primary" htmlType="submit" icon="user">注册</Button>&emsp;
+                                        <Button htmlType="reset" onClick={this.handleReset} icon="reload">重置</Button>
                                 </FormItem>
                         </Form>
                 )
