@@ -2,12 +2,12 @@
  * Created by Mason Jackson in Office on 2017/12/7.
  */
 import React from 'react';
-import {Form, Upload, Button, Icon, Input} from 'antd';
-import provideConfig from "../../function/provideConfig";
+import {Form, Upload, Button, Icon,} from 'antd';
+//import provideConfig from "../../function/provideConfig";
 
-const config=provideConfig();
+//const config=provideConfig();
 const FormItem=Form.Item;
-const {TextArea}=Input;
+
 class BasicUploadBatchForm extends React.Component{
         render(){
                 const formItemLayout = {

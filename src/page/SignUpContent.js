@@ -10,10 +10,6 @@ import BasicSignUpForm from './Basic/BasicSignUpForm';
 
 const TabPane = Tabs.TabPane;
 class SignUpContent extends React.Component {
-        constructor(){
-                super();
-        }
-
         render(){
                 return(
                         <article>

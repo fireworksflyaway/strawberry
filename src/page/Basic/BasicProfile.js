@@ -9,10 +9,6 @@ import '../../style/Profile.scss'
 
 const TabPane = Tabs.TabPane;
 export default class BasicProfile extends React.Component{
-        constructor(props){
-                super(props);
-        }
-
         render(){
                 return (
                         <article>

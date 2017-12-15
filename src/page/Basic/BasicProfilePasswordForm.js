@@ -9,10 +9,6 @@ import {sha256} from 'js-sha256';
 const config=provideConfig();
 const FormItem=Form.Item;
 class BasicProfilePasswordForm extends React.Component{
-        constructor(props){
-                super(props);
-        }
-
         checkPassword = (rule, value, callback) => {
                 const form = this.props.form;
                 if (value && value !== form.getFieldValue('newPassword')) {
@@ -45,7 +41,7 @@ class BasicProfilePasswordForm extends React.Component{
                                         })
                                         .catch((err)=>{
                                                 console.error(err);
-                                                if(err.code=='10004')
+                                                if(err.code==='10004')
                                                         message.error('密码错误');
                                         })
                         }

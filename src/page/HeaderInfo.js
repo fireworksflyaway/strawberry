@@ -13,10 +13,6 @@ import LoginHeader from './Basic/BasicLoginHeader';
 
 
 export default class HeaderInfo extends React.Component{
-        constructor(props){
-                super(props);
-        }
-
         render(){
                 let menuComponent;
                 if(this.props.isLogin)

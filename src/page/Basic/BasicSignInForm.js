@@ -12,9 +12,6 @@ const config=provideConfig();
 const FormItem=Form.Item;
 
 class BasicSignInForm extends React.Component{
-        constructor(){
-                super();
-        }
 
 
         handleSubmit=(e)=>{

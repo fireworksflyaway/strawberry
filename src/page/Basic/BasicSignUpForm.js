@@ -14,9 +14,6 @@ const FormItem=Form.Item;
 
 
 class BasicSignUpForm extends React.Component{
-        constructor(){
-                super();
-        }
 
         checkPassword = (rule, value, callback) => {
                 const form = this.props.form;

@@ -6,13 +6,30 @@ const bodyParser=require('body-parser');
 const jwt=require('express-jwt');
 const jsonwebtoken=require('jsonwebtoken');
 const fs=require('fs');
+const upload=require('jquery-file-upload-middleware');
+
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
 const userAPIClass=require('./BasicApi/basicUser');
+const basicUploadAPIClass=require('./BasicApi/basicUpload');
 const userAPI=new userAPIClass();
-
+const basicUploadAPI=new basicUploadAPIClass();
 
 let app=express();
+
+upload.configure({
+        // uploadDir: __dirname+'/uploads',
+        // uploadUrl: '/uploads',
+        imageVersions: {
+                thumbnail: {
+                        width: 80,
+                        height: 80
+                }
+        }
+})
+
+
+
 
 app.use(bodyParser.json({limit: '1mb'}));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -47,9 +64,32 @@ app.post('/auth/updatebasicpassword', userAPI.updatePassword);
 
 app.post('/login', userAPI.signIn);
 
-
-
 app.post('/signup', userAPI.signUp);
+
+app.post('/auth/basicuploadt1', function (req, res) {
+        basicUploadAPI.uploadT1(req, res, upload);
+})
+
+app.post('/auth/basicuploadform', basicUploadAPI.uploadForm);
+
+app.post('/auth/basicuploadt2', function (req, res) {
+        basicUploadAPI.uploadT2(req, res, upload);
+})
+
+app.post('/auth/basicuploadbatch', function (req, res) {
+        const BatchFolder=`${__dirname}/Data/${req.user.username}/Batch`
+        //clear Batch folder
+        emptyDir(BatchFolder);
+        upload.fileHandler({
+                uploadDir: function () {
+                        return BatchFolder;
+                },
+                uploadUrl: function () {
+                        return `/Data/${req.user.username}/Batch`;
+                }
+        })(req, res);
+})
+
 
 const server=app.listen(8090, function () {
         let host = server.address().address;

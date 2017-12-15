@@ -10,10 +10,6 @@ import BasicSignInForm from './Basic/BasicSignInForm';
 
 const TabPane = Tabs.TabPane;
 class SignInContent extends React.Component {
-        constructor(props){
-                super(props);
-        }
-
         render(){
 
                 return(

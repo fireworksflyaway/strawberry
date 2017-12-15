@@ -2,10 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07f9186f-7c72-4f3e-bc6d-8faa5c42383a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Basic/BasicEvent.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/server/BasicApi/basicUpload.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/function/withLoginInfo.js" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/strawberry.iml" afterPath="$PROJECT_DIR$/.idea/strawberry.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/server/db.js" afterPath="$PROJECT_DIR$/server/db.js" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
+      <change beforePath="$PROJECT_DIR$/src/function/withLogin.js" afterPath="$PROJECT_DIR$/src/function/withLoginFunc.js" />
       <change beforePath="$PROJECT_DIR$/src/page/App.js" afterPath="$PROJECT_DIR$/src/page/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/Basic/BasicLoginHeader.js" afterPath="$PROJECT_DIR$/src/page/Basic/BasicLoginHeader.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/Basic/BasicProfile.js" afterPath="$PROJECT_DIR$/src/page/Basic/BasicProfile.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/Basic/BasicProfilePasswordForm.js" afterPath="$PROJECT_DIR$/src/page/Basic/BasicProfilePasswordForm.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/Basic/BasicSignInForm.js" afterPath="$PROJECT_DIR$/src/page/Basic/BasicSignInForm.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/Basic/BasicSignUpForm.js" afterPath="$PROJECT_DIR$/src/page/Basic/BasicSignUpForm.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/Basic/BasicUploadBatchForm.js" afterPath="$PROJECT_DIR$/src/page/Basic/BasicUploadBatchForm.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/Basic/BasicUploadSingleForm.js" afterPath="$PROJECT_DIR$/src/page/Basic/BasicUploadSingleForm.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/HeaderInfo.js" afterPath="$PROJECT_DIR$/src/page/HeaderInfo.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/HomeContent.js" afterPath="$PROJECT_DIR$/src/page/HomeContent.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/SignInContent.js" afterPath="$PROJECT_DIR$/src/page/SignInContent.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/SignUpContent.js" afterPath="$PROJECT_DIR$/src/page/SignUpContent.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,48 +35,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6902101">
+    <splitter split-orientation="horizontal" split-proportion="0.38101918">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="BasicProfilePasswordForm.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicProfilePasswordForm.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="154">
-                  <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="BasicUploadSingleForm.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="BasicUploadSingleForm.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicUploadSingleForm.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="88">
-                  <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#60#86#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="BasicProfileInfoForm.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicProfileInfoForm.js">
-              <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="22">
-                  <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="25" />
+                  <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
                   <folding>
                     <element signature="e#60#86#0" expanded="true" />
+                    <marker date="1513218758261" expanded="true" signature="5083:7774" ph="..." />
+                    <marker date="1513218758261" expanded="true" signature="5209:6012" ph="..." />
+                    <marker date="1513218758261" expanded="true" signature="5643:5925" ph="..." />
+                    <marker date="1513218758261" expanded="true" signature="5708:5867" ph="..." />
+                    <marker date="1513218758261" expanded="true" signature="6105:6815" ph="..." />
+                    <marker date="1513218758261" expanded="true" signature="6446:6728" ph="..." />
+                    <marker date="1513218758261" expanded="true" signature="6511:6670" ph="..." />
+                    <marker date="1513218758261" expanded="true" signature="6892:7521" ph="..." />
+                    <marker date="1513218758261" expanded="true" signature="7363:7385" ph="..." />
+                    <marker date="1513218758261" expanded="true" signature="7385:7510" ph="..." />
+                    <marker date="1513218758261" expanded="true" signature="7588:7742" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BasicEvent.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicEvent.js">
+          <file leaf-file-name="BasicUploadBatchForm.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicUploadBatchForm.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="416">
-                  <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+                <state relative-caret-position="858">
+                  <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
                   <folding>
                     <element signature="e#60#86#0" expanded="true" />
                   </folding>
@@ -71,21 +77,24 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="basicUser.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/BasicApi/basicUser.js">
+          <file leaf-file-name="basicUpload.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/server/BasicApi/basicUpload.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2134">
-                  <caret line="97" column="58" lean-forward="false" selection-start-line="97" selection-start-column="58" selection-end-line="97" selection-end-column="58" />
-                  <folding />
+                <state relative-caret-position="426">
+                  <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+                  <folding>
+                    <element signature="n#!!block;n#emptyDir#0;n#BasicUploadAPI#0" expanded="false" />
+                    <element signature="n#!!block;n#uploadT2#0;n#BasicUploadAPI#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="db.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="db.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/db.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="946">
-                  <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="59" />
+                <state relative-caret-position="1276">
+                  <caret line="58" column="56" lean-forward="false" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
                   <folding />
                 </state>
               </provider>
@@ -94,9 +103,11 @@
           <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/server.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="198">
-                  <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="1584">
+                  <caret line="72" column="61" lean-forward="false" selection-start-line="72" selection-start-column="61" selection-end-line="72" selection-end-column="61" />
+                  <folding>
+                    <element signature="e#2289#2706#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -117,7 +128,11 @@
     <findStrings>
       <find>style={{ fontSize: 13 }}</find>
       <find>localhost</find>
+      <find>T1</find>
     </findStrings>
+    <replaceStrings>
+      <replace>Batch</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -130,18 +145,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/node_modules/react-scripts/config/webpack.config.dev.js" />
-        <option value="$PROJECT_DIR$/node_modules/react-scripts/config/webpack.config.prod.js" />
-        <option value="$PROJECT_DIR$/src/App.scss" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/style/App.scss" />
         <option value="$PROJECT_DIR$/src/style/HeaderInfo.scss" />
         <option value="$PROJECT_DIR$/src/page/ContentInfo.js" />
         <option value="$PROJECT_DIR$/src/style/ContentInfo.scss" />
         <option value="$PROJECT_DIR$/src/style/SignInContent.scss" />
         <option value="$PROJECT_DIR$/src/style/SignUpContent.scss" />
-        <option value="$PROJECT_DIR$/src/page/SignUpContent.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/server/api/signUp.js" />
         <option value="$PROJECT_DIR$/server/config.json" />
@@ -149,7 +158,6 @@
         <option value="$PROJECT_DIR$/src/page/withResponseForm.js" />
         <option value="$PROJECT_DIR$/src/page/LogoutHeader.js" />
         <option value="$PROJECT_DIR$/src/function/withLogin.js" />
-        <option value="$PROJECT_DIR$/src/page/SignInContent.js" />
         <option value="$PROJECT_DIR$/src/page/LoginHeader.js" />
         <option value="$PROJECT_DIR$/src/style/Profile.scss" />
         <option value="$PROJECT_DIR$/src/page/ProfilePasswordForm.js" />
@@ -157,30 +165,37 @@
         <option value="$PROJECT_DIR$/src/page/BasicSignInForm.js" />
         <option value="$PROJECT_DIR$/src/page/Profile.js" />
         <option value="$PROJECT_DIR$/src/page/ProfileBasicForm.js" />
-        <option value="$PROJECT_DIR$/src/page/HomeContent.js" />
-        <option value="$PROJECT_DIR$/src/page/HeaderInfo.js" />
         <option value="$PROJECT_DIR$/src/page/Basic/LoginHeader.js" />
         <option value="$PROJECT_DIR$/src/page/Basic/Profile.js" />
         <option value="$PROJECT_DIR$/src/page/Basic/ProfileBasicForm.js" />
         <option value="$PROJECT_DIR$/server/api/user.js" />
         <option value="$PROJECT_DIR$/src/config.json" />
         <option value="$PROJECT_DIR$/src/function/provideConfig.js" />
-        <option value="$PROJECT_DIR$/src/page/Basic/BasicSignUpForm.js" />
         <option value="$PROJECT_DIR$/src/function/provideLan.js" />
-        <option value="$PROJECT_DIR$/src/page/Basic/BasicSignInForm.js" />
         <option value="$PROJECT_DIR$/src/function/handleResponse.js" />
         <option value="$PROJECT_DIR$/src/page/Basic/BasicProfileInfoForm.js" />
-        <option value="$PROJECT_DIR$/src/page/Basic/BasicProfile.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
-        <option value="$PROJECT_DIR$/src/page/Basic/BasicProfilePasswordForm.js" />
-        <option value="$PROJECT_DIR$/server/db.js" />
         <option value="$PROJECT_DIR$/server/BasicApi/basicUser.js" />
-        <option value="$PROJECT_DIR$/src/page/Basic/BasicUpload.js" />
-        <option value="$PROJECT_DIR$/src/page/Basic/BasicUploadSingleForm.js" />
-        <option value="$PROJECT_DIR$/src/page/Basic/BasicUploadBatchForm.js" />
-        <option value="$PROJECT_DIR$/src/page/Basic/BasicLoginHeader.js" />
-        <option value="$PROJECT_DIR$/src/page/App.js" />
         <option value="$PROJECT_DIR$/src/page/Basic/BasicEvent.js" />
+        <option value="$PROJECT_DIR$/src/page/Basic/BasicLoginHeader.js" />
+        <option value="$PROJECT_DIR$/src/page/Basic/BasicReport.js" />
+        <option value="$PROJECT_DIR$/src/page/Tool/MyUpload.js" />
+        <option value="$PROJECT_DIR$/src/function/withLoginInfo.js" />
+        <option value="$PROJECT_DIR$/src/page/Basic/BasicUpload.js" />
+        <option value="$PROJECT_DIR$/src/page/HomeContent.js" />
+        <option value="$PROJECT_DIR$/src/page/Basic/BasicProfile.js" />
+        <option value="$PROJECT_DIR$/src/page/SignUpContent.js" />
+        <option value="$PROJECT_DIR$/src/page/SignInContent.js" />
+        <option value="$PROJECT_DIR$/src/page/Basic/BasicSignInForm.js" />
+        <option value="$PROJECT_DIR$/src/page/HeaderInfo.js" />
+        <option value="$PROJECT_DIR$/src/page/App.js" />
+        <option value="$PROJECT_DIR$/src/page/Basic/BasicSignUpForm.js" />
+        <option value="$PROJECT_DIR$/src/page/Basic/BasicProfilePasswordForm.js" />
+        <option value="$PROJECT_DIR$/src/page/Basic/BasicUploadBatchForm.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/page/Basic/BasicUploadSingleForm.js" />
+        <option value="$PROJECT_DIR$/server/db.js" />
+        <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/server/BasicApi/basicUpload.js" />
       </list>
     </option>
   </component>
@@ -205,10 +220,10 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="227" />
-    <option name="y" value="152" />
-    <option name="width" value="2247" />
-    <option name="height" value="1167" />
+    <option name="x" value="65" />
+    <option name="y" value="28" />
+    <option name="width" value="2478" />
+    <option name="height" value="1339" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -244,7 +259,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -289,13 +303,6 @@
               <item name="strawberry" type="b2602c69:ProjectViewProjectNode" />
               <item name="strawberry" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="Basic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strawberry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strawberry" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="style" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -303,10 +310,11 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/node-v6.9.5-win-x64/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="node" />
@@ -390,7 +398,12 @@
       <workItem from="1512553791619" duration="602000" />
       <workItem from="1512610964985" duration="6091000" />
       <workItem from="1512630542885" duration="3702000" />
-      <workItem from="1512697121125" duration="4770000" />
+      <workItem from="1512697121125" duration="11384000" />
+      <workItem from="1512955453954" duration="14423000" />
+      <workItem from="1513041077522" duration="3024000" />
+      <workItem from="1513215219744" duration="17000" />
+      <workItem from="1513215256095" duration="7981000" />
+      <workItem from="1513301540064" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="install ant design">
       <created>1511330449063</created>
@@ -574,11 +587,25 @@
       <option name="project" value="LOCAL" />
       <updated>1512632882538</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="import basic event page">
+      <created>1512702939141</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1512702939141</updated>
+    </task>
+    <task id="LOCAL-00028" summary="import basic report page">
+      <created>1512717280268</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1512717280268</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173700000" />
+    <option name="totallyTimeSpent" value="205776000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -590,18 +617,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="227" y="152" width="2247" height="1167" extended-state="0" />
+    <frame x="65" y="28" width="2478" height="1339" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12757201" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.115384616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947463" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2085354" sideWeight="0.50342935" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.327787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13443072" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18446602" sideWeight="0.49657065" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17955112" sideWeight="0.49657065" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -610,7 +637,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.3297587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -668,8 +695,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="install sass" />
-    <MESSAGE value="install react-router" />
     <MESSAGE value="clear other files" />
     <MESSAGE value="layout and logo" />
     <MESSAGE value="HeaderInfo page setup" />
@@ -693,43 +718,17 @@
     <MESSAGE value="import basic info and password form" />
     <MESSAGE value="modify mongodb updateOne" />
     <MESSAGE value="import upload pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="import upload pages" />
+    <MESSAGE value="import basic event page" />
+    <MESSAGE value="import basic report page" />
+    <option name="LAST_COMMIT_MESSAGE" value="import basic report page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config-overrides.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/App.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/App.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -741,13 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -860,20 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/function/withLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/HeaderInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/function/provideLan.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -888,27 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/HomeContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="21" column="84" lean-forward="false" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/SignInContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/SignUpContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="23" column="64" lean-forward="false" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/function/handleResponse.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -920,25 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicSignUpForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="33" />
-          <folding>
-            <marker date="1512539396249" expanded="true" signature="2313:6516" ph="..." />
-            <marker date="1512539396249" expanded="true" signature="2368:3020" ph="..." />
-            <marker date="1512539396249" expanded="true" signature="3063:3727" ph="..." />
-            <marker date="1512539396249" expanded="true" signature="3770:4444" ph="..." />
-            <marker date="1512539396249" expanded="true" signature="4499:5174" ph="..." />
-            <marker date="1512539396249" expanded="true" signature="5229:5750" ph="..." />
-            <marker date="1512539396249" expanded="true" signature="5821:6194" ph="..." />
-            <marker date="1512539396249" expanded="true" signature="6237:6484" ph="..." />
-            <marker date="1512539396249" expanded="false" signature="6331:6337" ph=" " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -949,10 +887,137 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicEvent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1298">
+          <caret line="61" column="34" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="64" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicLoginHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Tool/MyUpload.js" />
+    <entry file="file://$PROJECT_DIR$/src/function/withLoginFunc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/function/withLoginInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicReport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicUpload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="15" column="97" lean-forward="false" selection-start-line="15" selection-start-column="97" selection-end-line="15" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/HomeContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/SignUpContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/SignInContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/HeaderInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicProfilePasswordForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="43" column="61" lean-forward="false" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicSignUpForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicUploadBatchForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+          <folding>
+            <element signature="e#60#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicSignInForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="e#61#87#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicProfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="29" />
+        <state relative-caret-position="110">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicProfileInfoForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="46" column="54" lean-forward="false" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
           <folding>
             <element signature="e#60#86#0" expanded="false" />
           </folding>
@@ -961,105 +1026,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/BasicApi/basicUser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2134">
-          <caret line="97" column="58" lean-forward="false" selection-start-line="97" selection-start-column="58" selection-end-line="97" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="132">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicSignInForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-632">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicUploadBatchForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        <state relative-caret-position="1584">
+          <caret line="72" column="61" lean-forward="false" selection-start-line="72" selection-start-column="61" selection-end-line="72" selection-end-column="61" />
+          <folding>
+            <element signature="e#2289#2706#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="59" />
+        <state relative-caret-position="1276">
+          <caret line="58" column="56" lean-forward="false" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/BasicApi/basicUpload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!block;n#emptyDir#0;n#BasicUploadAPI#0" expanded="false" />
+            <element signature="n#!!block;n#uploadT2#0;n#BasicUploadAPI#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicUploadSingleForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
-          <folding>
-            <element signature="e#60#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicProfilePasswordForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicUpload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="65" lean-forward="true" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
-          <folding>
-            <element signature="e#60#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicLoginHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="16" column="72" lean-forward="false" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="85" column="136" lean-forward="false" selection-start-line="85" selection-start-column="136" selection-end-line="85" selection-end-column="136" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicProfileInfoForm.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="25" />
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="e#60#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Basic/BasicEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="e#60#86#0" expanded="true" />
+            <marker date="1513218758261" expanded="true" signature="5083:7774" ph="..." />
+            <marker date="1513218758261" expanded="true" signature="5209:6012" ph="..." />
+            <marker date="1513218758261" expanded="true" signature="5643:5925" ph="..." />
+            <marker date="1513218758261" expanded="true" signature="5708:5867" ph="..." />
+            <marker date="1513218758261" expanded="true" signature="6105:6815" ph="..." />
+            <marker date="1513218758261" expanded="true" signature="6446:6728" ph="..." />
+            <marker date="1513218758261" expanded="true" signature="6511:6670" ph="..." />
+            <marker date="1513218758261" expanded="true" signature="6892:7521" ph="..." />
+            <marker date="1513218758261" expanded="true" signature="7363:7385" ph="..." />
+            <marker date="1513218758261" expanded="true" signature="7385:7510" ph="..." />
+            <marker date="1513218758261" expanded="true" signature="7588:7742" ph="..." />
           </folding>
         </state>
       </provider>
