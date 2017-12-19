@@ -3,6 +3,9 @@
  */
 const fs=require('fs');
 const DAL=require('../db');
+const moment=require('moment');
+const ObjectID = require('mongodb').ObjectID;
+const redis=require('redis');
 const db=new DAL();
 class BasicUploadAPI{
         emptyDir(fileUrl) {
@@ -63,13 +66,27 @@ class BasicUploadAPI{
                                 number: count+1,
                                 username,
                                 status: 0,
-                                isFlair
+                                isFlair,
+                                comment
                         }
                         db.insert('basicEvent',data,function (result) {
                                 if(result._err){
                                         console.error(result._err);
                                         res.status(500);
                                 }
+                                //const objectId=new ObjectID(result.insertedId);
+                                //console.log(moment(objectId.getTimestamp()).format('YYMMDD-HHmmss'));
+                                const objectId=result.insertedId.toString();
+
+                                fs.mkdirSync(`${__dirname}/Data/${username}/${result.insertedId}`);
+                                fs.renameSync(`${__dirname}/Data/${username}/T1/${t1}`, `${__dirname}/Data/${username}/${objectId}/dataF1.zip`);
+                                if(isFlair)
+                                        fs.renameSync(`${__dirname}/Data/${username}/T2/${t2}`, `${__dirname}/Data/${username}/${objectId}/dataF2.zip`);
+                                let redisClient=redis.createClient(6379,'192.168.0.148');
+                                const redisData=JSON.stringify({data:[objectId]});
+                                console.log(redisData);
+                                redisClient.LPUSH('BasicQueue', redisData);
+                                redisClient.quit();
                                 res.send({suc:true});
                         })
 

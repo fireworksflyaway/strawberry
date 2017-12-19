@@ -13,5 +13,6 @@
     <orderEntry type="library" name="@types/express-jwt" level="application" />
     <orderEntry type="library" name="@types/jsonwebtoken" level="application" />
     <orderEntry type="library" name="@types/jquery.fileupload" level="application" />
+    <orderEntry type="library" name="@types/redis" level="application" />
   </component>
 </module>
