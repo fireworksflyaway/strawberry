@@ -7,6 +7,8 @@ const moment=require('moment');
 const ObjectID = require('mongodb').ObjectID;
 const redis=require('redis');
 const db=new DAL();
+const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
+
 class BasicUploadAPI{
         emptyDir(fileUrl) {
                 if(!fs.existsSync(fileUrl))
@@ -24,7 +26,7 @@ class BasicUploadAPI{
         }
 
         uploadT1(req, res, upload){
-                const T1Folder=`${__dirname}/Data/${req.user.username}/T1`;
+                const T1Folder=`${config.dataPath}/${req.user.username}/T1`;
                 //clear T1 folder
                 this.emptyDir(T1Folder);
                 upload.fileHandler({
@@ -38,7 +40,7 @@ class BasicUploadAPI{
         }
 
         uploadT2(req, res, upload){
-                const T2Folder=`${__dirname}/Data/${req.user.username}/T2`;
+                const T2Folder=`${config.dataPath}/${req.user.username}/T2`;
                 //clear T2 folder
                 this.emptyDir(T2Folder);
                 upload.fileHandler({
@@ -78,11 +80,11 @@ class BasicUploadAPI{
                                 //console.log(moment(objectId.getTimestamp()).format('YYMMDD-HHmmss'));
                                 const objectId=result.insertedId.toString();
 
-                                fs.mkdirSync(`${__dirname}/Data/${username}/${result.insertedId}`);
-                                fs.renameSync(`${__dirname}/Data/${username}/T1/${t1}`, `${__dirname}/Data/${username}/${objectId}/dataF1.zip`);
+                                fs.mkdirSync(`${config.dataPath}/${username}/${result.insertedId}`);
+                                fs.renameSync(`${config.dataPath}/${username}/T1/${t1}`, `${config.dataPath}/${username}/${objectId}/dataF1.zip`);
                                 if(isFlair)
-                                        fs.renameSync(`${__dirname}/Data/${username}/T2/${t2}`, `${__dirname}/Data/${username}/${objectId}/dataF2.zip`);
-                                let redisClient=redis.createClient(6379,'192.168.0.148');
+                                        fs.renameSync(`${config.dataPath}/${username}/T2/${t2}`, `${config.dataPath}/${username}/${objectId}/dataF2.zip`);
+                                let redisClient=redis.createClient(6379,config.redisHost);
                                 const redisData=JSON.stringify({data:[objectId]});
                                 console.log(redisData);
                                 redisClient.LPUSH('BasicQueue', redisData);

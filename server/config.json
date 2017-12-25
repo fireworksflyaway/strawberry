@@ -1,4 +1,6 @@
 {
     "accessKey":"fjkdaofjelkja;fdla@fdl",
+    "dataPath":"/home/mason/bgData",
+    "redisHost":"192.168.0.148",
     "referer":"http://127.0.0.1:3000"
 }

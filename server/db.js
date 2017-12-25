@@ -2,7 +2,7 @@
  * Created by Mason Jackson in Office on 2017/12/3.
  */
 const MongoClient=require('mongodb').MongoClient;
-const DB_CONN_STR='mongodb://localhost:27017/strawberry';
+const DB_CONN_STR='mongodb://192.168.0.148:27017/strawberry';
 
 class DAL{
         insert(collection, data, callback){

@@ -5,7 +5,9 @@ import React from 'react';
 import {Form,  Button, Icon, Input, message, Upload} from 'antd';
 import provideConfig from '../../function/provideConfig';
 import handleResponse from '../../function/handleResponse';
+import {withRouter} from "react-router-dom";
 const FormItem=Form.Item;
+
 const {TextArea}=Input;
 
 const config=provideConfig();
@@ -42,7 +44,7 @@ class BasicUploadSingleForm extends React.Component{
                                         .then(handleResponse)
                                         .then((res)=>{
                                                 message.success('任务提交成功');
-
+                                            this.props.history.push('/basicevent');
                                         })
                                         .catch((err)=>{
                                                 console.error(err);
@@ -162,4 +164,4 @@ class BasicUploadSingleForm extends React.Component{
         }
 }
 
-export default Form.create()(BasicUploadSingleForm);
+export default withRouter(Form.create()(BasicUploadSingleForm));

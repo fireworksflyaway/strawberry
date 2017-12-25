@@ -12,8 +12,11 @@ const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
 const userAPIClass=require('./BasicApi/basicUser');
 const basicUploadAPIClass=require('./BasicApi/basicUpload');
+const basicEventAPIClass=require('./BasicApi/basicEvent');
 const userAPI=new userAPIClass();
 const basicUploadAPI=new basicUploadAPIClass();
+const basicEventAPI=new basicEventAPIClass();
+
 
 let app=express();
 
@@ -89,6 +92,8 @@ app.post('/auth/basicuploadbatch', function (req, res) {
                 }
         })(req, res);
 })
+
+app.get('/auth/getbasicevent', basicEventAPI.getEvent);
 
 
 const server=app.listen(8090, function () {
