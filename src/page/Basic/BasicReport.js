@@ -3,64 +3,128 @@
  */
 import React from 'react';
 import {Card, Table} from 'antd';
+import moment from 'moment';
+import handleResponse from "../../function/handleResponse";
+import provideConfig from "../../function/provideConfig";
+import 'antd/es/divider/style/index.css'
 
-const columns=[{
+const config=provideConfig();
+
+const typeDict=[
+        {"zh":"单文件任务"},
+        {"zh":"批处理任务组"},
+        {"zh":"批处理任务"}
+];
+
+const genderDict=[
+        {"zh": "男"},
+        {"zh": "女"},
+]
+
+const columns=[
+    {
         title: "任务编号",
-        dataIndex: "number",
-        defaultSortOrder: "descend",
-        sorter: true
+        dataIndex: "eventNum",
+        key:"eventNum",
+        sorter: (a,b)=>a.eventNum >= b.eventNum?1:-1,
+        //sortOrder: sortedInfo.columnKey==='number'&&sortedInfo.order,
 },{
         title: "任务类型",
-        dataIndex: "type",
+        dataIndex: "eventType",
+        render:(value, record)=>typeDict[value].zh,
+        onFilter: (value, record)=> record.eventType.toString()===value,
         filters:[{
-                text: "基础版",
-                value: "original"
+                text: "单文件任务",
+                value: "0"
         },{
-                text: "批处理",
-                value: "batch"
+                text: "批处理任务",
+                value: "2"
         }]
 },{
         title: "病人ID",
-        dataIndex: "patientID"
+        dataIndex: "pid"
 },{
         title: "病人姓名",
-        dataIndex: "patientName"
+        dataIndex: "pname"
 },{
         title: "性别",
         dataIndex: "gender",
+        render:(value, record)=>genderDict[value].zh,
+        onFilter: (value, record)=> record.gender.toString()===value,
         filters:[{
                 text: "男",
-                value: "male"
+                value: "0"
         },{
                 text: "女",
-                value: "female"
+                value: "1"
         }]
 },{
         title: "年龄",
         dataIndex: "age",
-        sorter:true
+        sorter:(a,b)=>a.age-b.age,
 },{
         title: "扫描时间",
         dataIndex: "scanTime",
-        sorter:true
+        sorter:(a,b)=>a.scanTime>b.scanTime?1:-1,
+        render:(value, record)=>moment(value).format("YYYY-MM-DD")
+},{
+        title: "医院",
+        dataIndex: "hospital",
 },{
         title: "PDF文件名",
-        dataIndex: "pdfName"
+        dataIndex: "pdfId"
 },{
         title: "报告生成时间",
         dataIndex: "creationTime",
-        sorter:true
+        sorter:(a,b)=>a.creationTime>b.creationTime?1:-1,
 },{
         title: "报告下载",
-        dataIndex: "download"
+        key:"download",
+        render:(text, record)=>(
+            <span>
+                <a href={`./FrontData/Basic/${record.pdfId}_En.pdf`}>英文版</a>
+                <span className="ant-divider" />
+                <a href={`./FrontData/Basic/${record.pdfId}_Zh.pdf`}>中文版</a>
+            </span>
+        )
 }]
 
 export default class BasicReport extends React.Component{
+        constructor(props){
+                super(props);
+                this.state={
+                        data:[]
+                }
+        }
+
+        componentWillMount(){
+            const token=sessionStorage.getItem('StrawberryToken');
+            fetch(`${config.server}/auth/getbasicreport`, {
+                method: 'get',
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                }
+            })
+                .then(handleResponse)
+                .then((res)=>{
+                    console.log(res.result);
+                    // res.eventList.forEach(function (event) {
+                    //     event.status=statusDict[event.status].zh;
+                    //     event.type=typeDict[event.type].zh;
+                    // })
+                res.result.reverse();
+                    this.setState({
+                        data:res.result
+                    });
+                })
+                .catch((err)=>console.error(err));
+        }
+
         render(){
                 return(
                         <article style={{minHeight:'600px'}}>
-                                <Card title="查看报告" style={{width: '1400px', margin:'150px auto'}}>
-                                        <Table columns={columns} />
+                                <Card title="查看报告" style={{width: '1600px', margin:'150px auto'}}>
+                                        <Table columns={columns} dataSource={this.state.data}  pagination={{pageSize:20}}/>
                                 </Card>
                         </article>
                 )

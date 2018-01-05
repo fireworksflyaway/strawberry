@@ -17,7 +17,7 @@ class BasicEventAPI{
             result.forEach(function (rr) {
                 eventList.push({
                     number: rr.number,
-                    type: 0,
+                    type: rr.type,
                     status: rr.status,
                     creationTime: moment((new ObjectID(rr._id)).getTimestamp()).format('YYYY/MM/DD HH:mm:ss'),
                     startTime: rr.startTime?moment(rr.startTime).format('YYYY/MM/DD HH:mm:ss'):'',
@@ -25,6 +25,18 @@ class BasicEventAPI{
                 });
             })
             res.send({suc:true, eventList});
+        })
+    }
+
+    getReport(req, res){
+        const {username}=req.user;
+        db.select("basicReport", {username}, function (result) {
+            console.log(result);
+            result.forEach(rr=>{
+                rr.creationTime=moment((new ObjectID(rr._id)).getTimestamp()).format('YYYY/MM/DD HH:mm:ss');
+            })
+
+            res.send({suc:true, result});
         })
     }
 }

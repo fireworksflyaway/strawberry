@@ -9,20 +9,21 @@ import logo from '../image/logo.svg';
 
 import '../style/HeaderInfo.scss';
 import LogoutHeader from "./LogoutHeader";
-import LoginHeader from './Basic/BasicLoginHeader';
+import BasicLoginHeader from './Basic/BasicLoginHeader';
 
 
 export default class HeaderInfo extends React.Component{
+
         render(){
                 let menuComponent;
                 if(this.props.isLogin)
-                        menuComponent=<LoginHeader username={this.props.username} handleLogout={this.props.handleLogout}/>;
+                        menuComponent=<BasicLoginHeader username={this.props.username} handleLogout={this.props.handleLogout}/>;
                 else
                         menuComponent=<LogoutHeader />;
                 return(
                         <div className='headerInfoDiv'>
                                 <div style={{height:60}}>
-                                        <Link to='/'><img src={logo} alt="Brainnow"  className='logoImg'/></Link>
+                                        <Link to='/' ><img src={logo} alt="Brainnow"  className='logoImg'/></Link>
                                 </div>
                                 {menuComponent}
                         </div>

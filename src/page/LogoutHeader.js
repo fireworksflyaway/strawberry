@@ -5,12 +5,34 @@ import React from 'react';
 import { Menu,  Button } from 'antd';
 import {Link} from 'react-router-dom';
 export default class LogoutHeader extends React.Component{
+        constructor(props){
+                super(props);
+                this.state={
+                        headerKeys:['1']
+                }
+        }
+
+
+
+        componentWillMount(){
+                const path=window.location.href.split('//')[1].split('/')[1];
+                let selectedKey;
+                switch (path)
+                {
+                        case 'signup': selectedKey='5'; break;
+                        case 'signin': selectedKey='6';break;
+                        default: selectedKey='1';
+                }
+                if(selectedKey)
+                        this.setState({headerKeys: [selectedKey]});
+        }
+
         render(){
                 return (
                         <Menu
                                 className='headerMenu'
                                 mode="horizontal"
-                                defaultSelectedKeys={['1']}
+                                defaultSelectedKeys={this.state.headerKeys}
                         >
                                 <Menu.Item key="1"><Link to='/'>首页</Link></Menu.Item>
                                 <Menu.Item key="2"><Link to='/'>关于我们</Link></Menu.Item>

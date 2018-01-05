@@ -2,14 +2,74 @@
  * Created by Mason Jackson in Office on 2017/12/7.
  */
 import React from 'react';
-import {Form, Upload, Button, Icon,} from 'antd';
-//import provideConfig from "../../function/provideConfig";
-
-//const config=provideConfig();
+import {Form, Upload, Button} from 'antd';
+import {withRouter} from "react-router-dom";
+import provideConfig from "../../function/provideConfig";
+import {message} from "antd/lib/index";
+import handleResponse from "../../function/handleResponse";
+const config=provideConfig();
 const FormItem=Form.Item;
 
 class BasicUploadBatchForm extends React.Component{
+
+        handleSubmit=(e)=>{
+                e.preventDefault();
+                this.props.form.validateFieldsAndScroll((err, values) => {
+                    if (!err) {
+                        if(values.batchFile[0].status!=="done")
+                        {
+                            message.error("请重新上传批处理文件");
+                            return;
+                        }
+
+                        const data={
+                            filename: values.batchFile[0].name,
+                        }
+                        const token=sessionStorage.getItem('StrawberryToken');
+                        fetch(`${config.server}/auth/basicuploadbatchform`,{
+                            method: 'post',
+                            body:JSON.stringify(data),
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': 'Bearer ' + token,
+                            }
+                        })
+                            .then(handleResponse)
+                            .then((res)=>{
+                                message.success('任务提交成功');
+                                this.props.history.push('/basicevent');
+                            })
+                            .catch((err)=>{
+                                console.error(err);
+                                message.error('上传失败');
+                            })
+                    }
+                })
+        }
+
+        normFile = (e) => {
+                //console.log('Upload event:', e);
+                if (Array.isArray(e)) {
+                    return e;
+                }
+                return e && e.fileList;
+        }
+
+        handleChange=(info)=>{
+                if(info.fileList.length>1)
+                    info.fileList=info.fileList.slice(-1);
+                if (info.file.status !== 'uploading') {
+                    console.log(info.file, info.fileList);
+                }
+                if (info.file.status === 'done') {
+                    message.success(`${info.file.name} 上传成功`);
+                } else if (info.file.status === 'error') {
+                    message.error(`${info.file.name} 上传失败`);
+                }
+        }
+
         render(){
+                const {getFieldDecorator} = this.props.form;
                 const formItemLayout = {
                         labelCol: { span: 8 },
                         wrapperCol: { span: 14 },
@@ -26,22 +86,36 @@ class BasicUploadBatchForm extends React.Component{
                                 },
                         },
                 };
+
+                const batchProps={
+                        onChange: this.handleChange,
+                        action: `${config.server}/auth/basicuploadbatch`,
+                        accept: '.zip',
+                        headers: {
+                                'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
+                        },
+                }
+
                 return (
-                        <Form>
+                        <Form onSubmit={this.handleSubmit}>
                                 <br />
                                 <FormItem {...formItemLayout} label="上传批处理文件（.zip格式)">
-                                        <Upload>
-                                                <Button>
-                                                        <Icon type="upload" />点击上传文件
-                                                </Button>
-                                        </Upload>
+                                        {getFieldDecorator('batchFile', {
+                                                valuePropName: 'fileList',
+                                                getValueFromEvent: this.normFile,
+                                                rules: [{required: true, message:'请先上传文件'}]
+                                                })(
+                                                <Upload {...batchProps}>
+                                                    <Button icon="upload">点击上传文件</Button>
+                                                </Upload>
+                                        )}
                                 </FormItem>
                                 <FormItem {...tailFormItemLayout}>
-                                        <Button type="primary" icon="rocket" >提交任务</Button>
+                                        <Button type="primary" icon="rocket" htmlType="submit" >提交任务</Button>
                                 </FormItem>
                         </Form>
                 )
         }
 }
 
-export default Form.create()(BasicUploadBatchForm);
+export default withRouter(Form.create()(BasicUploadBatchForm));

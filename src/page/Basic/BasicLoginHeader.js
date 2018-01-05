@@ -5,19 +5,42 @@ import React from 'react';
 import { Menu,  Button , Icon} from 'antd';
 import {Link} from 'react-router-dom';
 export default class BasicLoginHeader extends React.Component{
+        constructor(props){
+                super(props);
+                this.state={
+                        headerKeys:['1']
+                }
+        }
+
+
+        componentWillMount(){
+                const path=window.location.href.split('//')[1].split('/')[1];
+                let selectedKey;
+                switch (path)
+                {
+                        case 'basicupload': selectedKey='2'; break;
+                        case 'basicevent': selectedKey='3';break;
+                        case 'basicreport': selectedKey='4';break;
+                        case 'basicprofile': selectedKey='user:1';break;
+                        default: selectedKey='1';
+                }
+                if(selectedKey)
+                        this.setState({headerKeys: [selectedKey]});
+        }
+
         render(){
                 return (
                         <Menu
                                 className='headerMenu'
                                 mode="horizontal"
-                                defaultSelectedKeys={['1']}
+                                defaultSelectedKeys={this.state.headerKeys}
                         >
                                 <Menu.Item key="1"><Link to='/'>首页</Link></Menu.Item>
                                 <Menu.Item key="2"><Link to='/basicupload'>上传数据</Link></Menu.Item>
                                 <Menu.Item key="3"><Link to='/basicevent'>查看任务进度</Link></Menu.Item>
                                 <Menu.Item key="4"><Link to='/basicreport'>查看报告</Link></Menu.Item>
                                 <Menu.SubMenu title={<strong><Icon type="user" />{this.props.username}</strong>}>
-                                        <Menu.Item key="user:1"><Link to='/basicprofile'><Icon type="edit"/>编辑个人信息</Link></Menu.Item>
+                                        <Menu.Item key="user:1"><Link to='/basicprofile'><Icon type="edit" />编辑个人信息</Link></Menu.Item>
                                         <Menu.Item key="user:2"><Link to='/' onClick={this.props.handleLogout}><Icon type="logout"/>注销</Link></Menu.Item>
                                 </Menu.SubMenu>
                                 <Button style={{marginLeft:'40px'}}>EN</Button>

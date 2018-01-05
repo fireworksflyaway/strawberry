@@ -80,21 +80,14 @@ app.post('/auth/basicuploadt2', function (req, res) {
 })
 
 app.post('/auth/basicuploadbatch', function (req, res) {
-        const BatchFolder=`${__dirname}/Data/${req.user.username}/Batch`
-        //clear Batch folder
-        emptyDir(BatchFolder);
-        upload.fileHandler({
-                uploadDir: function () {
-                        return BatchFolder;
-                },
-                uploadUrl: function () {
-                        return `/Data/${req.user.username}/Batch`;
-                }
-        })(req, res);
+        basicUploadAPI.uploadBatch(req, res, upload);
 })
+
+app.post('/auth/basicuploadbatchform', basicUploadAPI.uploadBatchForm);
 
 app.get('/auth/getbasicevent', basicEventAPI.getEvent);
 
+app.get('/auth/getbasicreport', basicEventAPI.getReport);
 
 const server=app.listen(8090, function () {
         let host = server.address().address;

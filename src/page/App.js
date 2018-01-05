@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Layout} from 'antd';
 import '../style/App.scss';
+
 import HeaderInfo from "./HeaderInfo";
 import HomeContent from './HomeContent';
 import SignUpContent from './SignUpContent';
@@ -55,6 +56,7 @@ class App extends Component {
         }
 
         handleLogin(user){
+                sessionStorage.setItem('StrawberryHeaderKey', '1');
                 this.setState({
                         isLogin:true,
                         username:user
@@ -63,6 +65,7 @@ class App extends Component {
 
         handleLogout(){
                 sessionStorage.removeItem('StrawberryToken');
+                sessionStorage.setItem('StrawberryHeaderKey', '1');
                 this.setState({
                         isLogin:false,
                         username:'unknown'
