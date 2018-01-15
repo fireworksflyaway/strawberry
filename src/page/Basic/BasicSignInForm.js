@@ -29,7 +29,8 @@ class BasicSignInForm extends React.Component{
                                 .then((res)=>{
                                         sessionStorage.setItem('StrawberryToken', res.token);
                                         this.props.handleLogin(values.username);
-                                        this.props.history.push('/');
+                                        //this.props.history.push('/');
+                                        window.location.href='/';
                                 })
                                 .catch((err)=>{
                                         console.error(err);

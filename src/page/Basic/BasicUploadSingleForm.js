@@ -12,19 +12,29 @@ const {TextArea}=Input;
 
 const config=provideConfig();
 class BasicUploadSingleForm extends React.Component{
+        constructor(props){
+                super(props);
+                this.state={
+                        isUpdating: false
+                }
+        }
+
 
         handleSubmit=(e)=>{
                 e.preventDefault();
+                this.setState({isUpdating: true});
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
                                 if(values.fileT1[0].status!=="done")
                                 {
                                         message.error("请重新上传T1文件");
+                                        this.setState({isUpdating: false});
                                         return;
                                 }
                                 if(values.fileT2!==undefined&&values.fileT2[0].status!=="done")
                                 {
                                         message.error("请重新上传T2文件");
+                                        this.setState({isUpdating: false});
                                         return;
                                 }
                                 const data={
@@ -33,6 +43,7 @@ class BasicUploadSingleForm extends React.Component{
                                         comment: values.comment
                                 }
                                 const token=sessionStorage.getItem('StrawberryToken');
+
                                 fetch(`${config.server}/auth/basicuploadform`,{
                                         method: 'post',
                                         body:JSON.stringify(data),
@@ -44,11 +55,13 @@ class BasicUploadSingleForm extends React.Component{
                                         .then(handleResponse)
                                         .then((res)=>{
                                                 message.success('任务提交成功');
-                                            this.props.history.push('/basicevent');
+                                            //this.props.history.push('/basicevent');
+                                                window.location.href='/basicevent';
                                         })
                                         .catch((err)=>{
                                                 console.error(err);
                                                 message.error('上传失败');
+                                                this.setState({isUpdating: false});
                                         })
                         }
                 })
@@ -117,6 +130,9 @@ class BasicUploadSingleForm extends React.Component{
                         },
                 };
 
+
+
+
                 return (
                         <Form onSubmit={this.handleSubmit}>
                                 <br />
@@ -157,7 +173,7 @@ class BasicUploadSingleForm extends React.Component{
                                         }
                                 </FormItem>
                                 <FormItem {...tailFormItemLayout}>
-                                        <Button type="primary" icon="rocket" htmlType="submit" >提交任务</Button>
+                                        <Button type="primary" icon="rocket" htmlType="submit" loading={this.state.isUpdating}>提交任务</Button>
                                 </FormItem>
                         </Form>
                 )

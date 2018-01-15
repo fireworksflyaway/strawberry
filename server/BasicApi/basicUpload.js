@@ -101,12 +101,32 @@ class BasicUploadAPI{
                                 fs.renameSync(`${config.dataPath}/${username}/T1/${t1}`, `${targetPath}/dataF1.zip`);
                                 if(isFlair)
                                         fs.renameSync(`${config.dataPath}/${username}/T2/${t2}`, `${targetPath}/dataF2.zip`);
-                                let redisClient=redis.createClient(6379,config.redisHost);
-                                const redisData=JSON.stringify({data:[objectId]});
-                                console.log(redisData);
-                                redisClient.LPUSH('BasicQueue', redisData);
-                                redisClient.quit();
-                                res.send({suc:true});
+
+                                process.exec(`chmod -R 777 ${targetPath}`, function (err) {
+                                        if(err)
+                                        {
+                                                console.log(err);
+                                                res.status(500);
+                                        }
+                                        else
+                                        {
+                                                let redisClient=redis.createClient(6379,config.redisHost);
+                                                redisClient.auth(config.redisPwd);
+                                                redisClient.on("error", function(error) {
+                                                        console.log(error);
+                                                        res.status(500);
+                                                });
+
+                                                //console.log(config.redisPwd);
+                                                const redisData=JSON.stringify({data:[objectId]});
+                                                console.log(redisData);
+                                                redisClient.LPUSH('BasicQueue', redisData);
+                                                redisClient.quit();
+                                                res.send({suc:true});
+                                        }
+                                })
+
+
                         })
 
                 })
@@ -150,7 +170,8 @@ class BasicUploadAPI{
                                 //username;
                                 const connectionString = config.mongoConn;
                                 const redisHost = config.redisHost;
-                                const cmd=`mono ${config.cmdPath}/BatchProc.exe ${root} ${objectId} ${number} ${username} ${connectionString} ${redisHost}`;
+                                //pwd
+                                const cmd=`mono ${config.cmdPath}/BatchProc.exe ${root} ${objectId} ${number} ${username} ${connectionString} ${redisHost} ${config.redisPwd}`;
                                 //console.log(cmd);
                                 process.exec(cmd, function (err, stdout, stderr) {
                                         if(err)

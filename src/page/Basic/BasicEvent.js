@@ -36,6 +36,12 @@ export default class BasicEvent extends React.Component{
                 }
         }
         componentWillMount(){
+                const token=sessionStorage.getItem('StrawberryToken');
+                if(!token)
+                {
+                        window.location.href="/";
+                        return;
+                }
                 if(this.timer)
                         clearInterval(this.timer);
                 this.getData();

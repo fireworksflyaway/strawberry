@@ -7,6 +7,15 @@ import BasicUploadSingleForm from './BasicUploadSingleForm';
 import BasicUploadBatchForm from './BasicUploadBatchForm';
 const TabPane = Tabs.TabPane;
 export default class BasicUpload extends React.Component{
+        componentWillMount(){
+                const token=sessionStorage.getItem('StrawberryToken');
+                if(!token)
+                {
+                        window.location.href="/";
+                        return;
+                }
+
+        }
         render(){
                 return(
                         <article style={{minHeight:'600px'}}>

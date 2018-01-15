@@ -37,7 +37,8 @@ class BasicUploadBatchForm extends React.Component{
                             .then(handleResponse)
                             .then((res)=>{
                                 message.success('任务提交成功');
-                                this.props.history.push('/basicevent');
+                                //this.props.history.push('/basicevent');
+                                    window.location.href='/basicevent';
                             })
                             .catch((err)=>{
                                 console.error(err);

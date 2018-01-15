@@ -9,6 +9,15 @@ import '../../style/Profile.scss'
 
 const TabPane = Tabs.TabPane;
 export default class BasicProfile extends React.Component{
+        componentWillMount(){
+                const token=sessionStorage.getItem('StrawberryToken');
+                if(!token)
+                {
+                        window.location.href="/";
+                        return;
+                }
+
+        }
         render(){
                 return (
                         <article>

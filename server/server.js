@@ -48,10 +48,10 @@ app.all('*', function(req, res, next) {
 });
 
 app.get('/', function (req, res) {
-        res.send('Hello World');
+        res.send('Hello Brainnow');
 })
 
-app.use('/auth', jwt({secret:config.accessKey}));
+app.use('/auth', jwt({secret:config.accessKey}));   //6 hours
 
 
 app.get('/auth/username', function (req, res) {

@@ -1,8 +1,10 @@
 /**
  * Created by Mason Jackson in Office on 2017/12/3.
  */
+const fs=require('fs');
 const MongoClient=require('mongodb').MongoClient;
-const DB_CONN_STR='mongodb://192.168.0.148:27017/strawberry';
+const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
+const DB_CONN_STR=config.mongoConn;
 
 class DAL{
         insert(collection, data, callback){

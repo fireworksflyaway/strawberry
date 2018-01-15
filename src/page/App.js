@@ -15,6 +15,7 @@ import BasicReport from "./Basic/BasicReport";
 
 
 import withLoginFunc from '../function/withLoginFunc';
+import withLogoutFunc from '../function/withLogoutFunc';
 // import withLoginInfo from '../function/withLoginInfo';
 import provideConfig from '../function/provideConfig';
 
@@ -56,7 +57,6 @@ class App extends Component {
         }
 
         handleLogin(user){
-                sessionStorage.setItem('StrawberryHeaderKey', '1');
                 this.setState({
                         isLogin:true,
                         username:user
@@ -65,7 +65,6 @@ class App extends Component {
 
         handleLogout(){
                 sessionStorage.removeItem('StrawberryToken');
-                sessionStorage.setItem('StrawberryHeaderKey', '1');
                 this.setState({
                         isLogin:false,
                         username:'unknown'
@@ -91,7 +90,7 @@ class App extends Component {
                                                                 <Route component={HomeContent} />
                                                         </Switch>
                                                 </Content>
-                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} All rights reserved.</Footer>
+                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} Version 0.0.1 All rights reserved.</Footer>
                                         </Layout>
                                 </BrowserRouter>
                         </div>

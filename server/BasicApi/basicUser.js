@@ -6,7 +6,7 @@ const fs=require('fs');
 const DAL=require('../db');
 const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
-const accessOption={};
+const accessOption={expiresIn: '6h'};
 
 class UserAPI{
         signIn(req, res){

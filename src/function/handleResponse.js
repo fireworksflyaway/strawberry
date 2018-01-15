@@ -3,7 +3,10 @@
  */
 
 export default function handleResponse(res) {
-        return res.json()
+        if(res.status===401)
+                return Promise.reject('Auth Failed');
+        else
+                return res.json()
                                 .then(json=>{
                                         if(res.ok){
                                                 return json;

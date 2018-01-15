@@ -82,9 +82,9 @@ const columns=[
         key:"download",
         render:(text, record)=>(
             <span>
-                <a href={`./FrontData/Basic/${record.pdfId}_En.pdf`}>英文版</a>
+                <a href='#' onClick={(e)=>{window.open(`${config.fileServer}/${record.pdfId}_En.pdf`);}}>英文版</a>
                 <span className="ant-divider" />
-                <a href={`./FrontData/Basic/${record.pdfId}_Zh.pdf`}>中文版</a>
+                <a href='#' onClick={(e)=>{window.open(`${config.fileServer}/${record.pdfId}_Zh.pdf`);}}>中文版</a>
             </span>
         )
 }]
@@ -99,6 +99,11 @@ export default class BasicReport extends React.Component{
 
         componentWillMount(){
             const token=sessionStorage.getItem('StrawberryToken');
+            if(!token)
+            {
+                    window.location.href="/";
+                    return;
+            }
             fetch(`${config.server}/auth/getbasicreport`, {
                 method: 'get',
                 headers: {
@@ -107,7 +112,7 @@ export default class BasicReport extends React.Component{
             })
                 .then(handleResponse)
                 .then((res)=>{
-                    console.log(res.result);
+                    //console.log(res.result);
                     // res.eventList.forEach(function (event) {
                     //     event.status=statusDict[event.status].zh;
                     //     event.type=typeDict[event.type].zh;

@@ -24,12 +24,19 @@ class BasicSignUpForm extends React.Component{
                 }
         }
 
+        checkAgreement=(rule,value,callback)=>{
+                if(value)
+                        callback();
+                else
+                        callback('请先阅读使用协议');
+        }
 
 
         handleSubmit = (e) => {
                 e.preventDefault();
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
+                                //console.log(values);
                                 values.password=sha256(values.password);
                                 values.lan='zh';
                                 fetch(`${config.server}/signup`,{
@@ -40,7 +47,8 @@ class BasicSignUpForm extends React.Component{
                                         .then(handleResponse)
                                         .then((res)=>{
                                                 sessionStorage.setItem('StrawberryToken', res.token);
-                                                this.props.history.push('/');
+                                                //this.props.history.push('/');
+                                                window.location.href='/';
                                         })
                                         .catch((err)=>{
                                                 console.error(err);
@@ -114,6 +122,11 @@ class BasicSignUpForm extends React.Component{
                                 <FormItem style={{ marginBottom: 8 }}>
                                         {getFieldDecorator('agreement', {
                                                 valuePropName: 'checked',
+                                                initialValue:false,
+                                                rules:[
+                                                        {validator: this.checkAgreement}
+                                                ]
+
                                         })(
                                                 <Checkbox>我已阅读 <a href="">使用协议</a></Checkbox>
                                         )}
