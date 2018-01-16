@@ -2,12 +2,16 @@
  * Created by Mason Jackson in Office on 2017/12/5.
  */
 import React from 'react';
-import {Form, Input, Button, message} from 'antd';
+import {Form, Input, Button, message, Modal} from 'antd';
 import handleResponse from '../../function/handleResponse';
 import provideConfig from '../../function/provideConfig';
 
+import provideErrorInfo from '../../function/provideErrorInfo';
+const errorInfo=provideErrorInfo();
 const config=provideConfig();
 const FormItem=Form.Item;
+
+const lan='zh';
 class BasicProfileInfoForm extends React.Component{
         constructor(props){
                 super(props);
@@ -34,7 +38,12 @@ class BasicProfileInfoForm extends React.Component{
                                         phone: res.phone
                                 })
                         })
-                        .catch((err)=>console.error(err));
+                        .catch((err)=>{
+                                console.error(err);
+                                Modal.error({
+                                    content:errorInfo[err][lan]
+                                })
+                        });
         }
 
         handleSubmit=(e)=>{
@@ -56,7 +65,9 @@ class BasicProfileInfoForm extends React.Component{
 
                                         })
                                         .catch((err)=>{
-                                                console.error(err);
+                                                Modal.error({
+                                                        content:errorInfo[err][lan]
+                                                })
                                         })
                         }
 

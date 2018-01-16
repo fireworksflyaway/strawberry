@@ -2,12 +2,16 @@
  * Created by Mason Jackson in Office on 2017/12/5.
  */
 import React from 'react';
-import {Form, Input, Button, message} from 'antd';
+import {Form, Input, Button, message, Modal} from 'antd';
 import handleResponse from '../../function/handleResponse';
 import provideConfig from '../../function/provideConfig';
 import {sha256} from 'js-sha256';
+import provideErrorInfo from '../../function/provideErrorInfo';
+const errorInfo=provideErrorInfo();
 const config=provideConfig();
 const FormItem=Form.Item;
+
+const lan='zh';
 class BasicProfilePasswordForm extends React.Component{
         checkPassword = (rule, value, callback) => {
                 const form = this.props.form;
@@ -41,8 +45,9 @@ class BasicProfilePasswordForm extends React.Component{
                                         })
                                         .catch((err)=>{
                                                 console.error(err);
-                                                if(err.code==='10004')
-                                                        message.error('密码错误');
+                                                Modal.error({
+                                                        content:errorInfo[err][lan]
+                                                })
                                         })
                         }
 

@@ -2,11 +2,13 @@
  * Created by Mason Jackson in Office on 2017/12/7.
  */
 import React from 'react';
-import {Card, Table, Badge } from 'antd';
+import {Card, Table, Badge, Modal } from 'antd';
 import handleResponse from "../../function/handleResponse";
 import provideConfig from "../../function/provideConfig";
+import provideErrorInfo from '../../function/provideErrorInfo';
+const errorInfo=provideErrorInfo();
 const config=provideConfig();
-
+const lan='zh';
 const statusDict=[
     {"en": 'Waiting',"zh": '等待中'},
     {"en": 'Running', "zh":'运行中'},
@@ -68,8 +70,8 @@ export default class BasicEvent extends React.Component{
                                 'Authorization': 'Bearer ' + token,
                         }
                 })
-                    .then(handleResponse)
-                    .then((res)=> {
+                        .then(handleResponse)
+                        .then((res)=> {
                                 const eventList=[];
                                 const mapper={};
                                 //console.log(res.eventList);
@@ -104,9 +106,17 @@ export default class BasicEvent extends React.Component{
                                 this.setState({
                                         data: eventList
                                 });
-                        }
-                    )
-                    .catch((err)=>console.error(err));
+                        })
+                        .catch((err)=>{
+                                console.error(err);
+                                Modal.error({
+                                        content:errorInfo[err][lan],
+                                        onOk:()=>{
+                                                if(err==='10000')
+                                                        window.location.href='/signin';
+                                        }
+                                });
+                        });
         }
 
         handleChange = (pagination, filters, sorter) => {

@@ -13,30 +13,38 @@ class BasicEventAPI{
         const {username}=req.user;
         db.select("basicEvent", {username}, function (result) {
             //console.log(result);
-            let eventList=[];
-            result.forEach(function (rr) {
-                eventList.push({
-                    number: rr.number,
-                    type: rr.type,
-                    status: rr.status,
-                    creationTime: moment((new ObjectID(rr._id)).getTimestamp()).format('YYYY/MM/DD HH:mm:ss'),
-                    startTime: rr.startTime?moment(rr.startTime).format('YYYY/MM/DD HH:mm:ss'):'',
-                    endTime: rr.endTime?moment(rr.endTime).format('YYYY/MM/DD HH:mm:ss'):'',
-                });
-            })
-            res.send({suc:true, eventList});
+                if(result._err){
+                    res.status(500).send('0');
+                    return;
+                }
+                let eventList=[];
+                result.forEach(function (rr) {
+                    eventList.push({
+                        number: rr.number,
+                        type: rr.type,
+                        status: rr.status,
+                        creationTime: moment((new ObjectID(rr._id)).getTimestamp()).format('YYYY/MM/DD HH:mm:ss'),
+                        startTime: rr.startTime?moment(rr.startTime).format('YYYY/MM/DD HH:mm:ss'):'',
+                        endTime: rr.endTime?moment(rr.endTime).format('YYYY/MM/DD HH:mm:ss'):'',
+                    });
+                })
+                res.send({suc:true, eventList});
         })
     }
 
     getReport(req, res){
         const {username}=req.user;
         db.select("basicReport", {username}, function (result) {
-            console.log(result);
-            result.forEach(rr=>{
-                rr.creationTime=moment((new ObjectID(rr._id)).getTimestamp()).format('YYYY/MM/DD HH:mm:ss');
-            })
+            //console.log(result);
+                if(result._err){
+                        res.status(500).send('0');
+                        return;
+                }
+                result.forEach(rr=>{
+                    rr.creationTime=moment((new ObjectID(rr._id)).getTimestamp()).format('YYYY/MM/DD HH:mm:ss');
+                })
 
-            res.send({suc:true, result});
+                res.send({suc:true, result});
         })
     }
 }

@@ -11,14 +11,23 @@ const config=provideConfig();
 const FormItem=Form.Item;
 
 class BasicUploadBatchForm extends React.Component{
+        constructor(props){
+                super(props);
+                this.state={
+                        isUpdating: false
+                }
+        }
+
 
         handleSubmit=(e)=>{
                 e.preventDefault();
+                this.setState({isUpdating: true});
                 this.props.form.validateFieldsAndScroll((err, values) => {
                     if (!err) {
                         if(values.batchFile[0].status!=="done")
                         {
                             message.error("请重新上传批处理文件");
+                            this.setState({isUpdating: false});
                             return;
                         }
 
@@ -42,6 +51,7 @@ class BasicUploadBatchForm extends React.Component{
                             })
                             .catch((err)=>{
                                 console.error(err);
+                                this.setState({isUpdating: false});
                                 message.error('上传失败');
                             })
                     }
@@ -112,7 +122,7 @@ class BasicUploadBatchForm extends React.Component{
                                         )}
                                 </FormItem>
                                 <FormItem {...tailFormItemLayout}>
-                                        <Button type="primary" icon="rocket" htmlType="submit" >提交任务</Button>
+                                        <Button type="primary" icon="rocket" htmlType="submit"  loading={this.state.isUpdating}>提交任务</Button>
                                 </FormItem>
                         </Form>
                 )

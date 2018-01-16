@@ -12,17 +12,13 @@ class UserAPI{
         signIn(req, res){
                 const {username, password, lan}= req.body;
                 db.select('basicUser', {username, password}, function (result) {
-                        let code='0';
+                        let code='0'; //未知错误
                         if(result._err){
-                                db.getError(lan, code, function (error) {
-                                        res.status(500).send({error});
-                                })
+                                res.status(500).send(code);
                         } else {
                                 if(result.length==0){
-                                        code='10003';
-                                        db.getError(lan, code, function (error) {
-                                                res.status(500).send({error});
-                                        })
+                                        code='10001'  //用户名不存在或密码错误;
+                                        res.status(500).send(code);
                                 } else {
                                         const token=jsonwebtoken.sign({username: username}, config.accessKey, accessOption);
                                         res.send({token});
@@ -36,17 +32,12 @@ class UserAPI{
                 const userData={username, password, email, phone};
                 db.insert('basicUser', userData, function (result) {
                         if(result._err){
-                                let code='10000';
-                                if(result._err.code=='11000')
-                                {
-                                        if(result._err.message.includes('username'))
-                                                code='10001';
-                                        else
-                                                code='10002';
-                                }
-                                db.getError(lan, code, function (error) {
-                                        res.status(500).send({error});
-                                })
+                                let code='0'; //未知错误
+                                if(result._err.message.includes('username'))
+                                        code='10002';  //用户名已被注册
+                                else
+                                        code='10003';  //邮箱已经被注册
+                                res.status(500).send(code);
                         }
                         else{
                                 const token=jsonwebtoken.sign({username}, config.accessKey, accessOption);
@@ -58,18 +49,13 @@ class UserAPI{
         getProfile(req, res){
                 const username=req.user.username;
                 db.select('basicUser',{username},function (result) {
-                        let code='10000';
+                        let code='0';
                         if(result._err){
-                                db.getError(req.body.lan, code, function (error) {
-                                        res.status(500).send({error});
-                                })
+                                res.status(500).send(code);
                         }
                         else {
                                 if(result.length==0){
-                                        code='11000';
-                                        db.getError(req.body.lan, code, function (error) {
-                                                res.status(500).send({error});
-                                        })
+                                        res.status(500).send(code);
                                 }
                                 else {
                                         const {email, phone}=result[0];
@@ -84,7 +70,7 @@ class UserAPI{
                 const {email, phone}=req.body;
                 db.updateOne('basicUser', {username}, {$set:{email, phone}}, function (result) {
                         if(result._err){
-                                res.status(500).send({code: 0});
+                                res.status(500).send('0');
                         }
                         else{
                                 res.send({suc:true});
@@ -97,17 +83,17 @@ class UserAPI{
                 const {currentPassword, newPassword}= req.body;
                 db.select('basicUser', {username, password:currentPassword}, function (result) {
                         if(result._err){
-                                res.status(500).send({code: 0});
+                                res.status(500).send('0');
                         }
                         else{
                                 if(result.length===0){
-                                        res.status(500).send({code: '10004'});   //密码错误
+                                        res.status(500).send('10004');   //密码错误
                                 }
                                 else{
                                         //update
                                         db.updateOne('basicUser', {username}, {$set:{password: newPassword}}, function (result) {
                                                 if(result._err){
-                                                        res.status(500).send({code: 0});
+                                                        res.status(500).send('0');
                                                 }
                                                 else{
                                                         res.send({suc:true});

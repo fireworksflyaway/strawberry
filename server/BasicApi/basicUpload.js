@@ -30,6 +30,8 @@ class BasicUploadAPI{
         uploadT1(req, res, upload){
                 const T1Folder=`${config.dataPath}/${req.user.username}/T1`;
                 //clear T1 folder
+
+
                 this.emptyDir(T1Folder);
                 upload.fileHandler({
                         uploadDir: function () {
@@ -90,7 +92,7 @@ class BasicUploadAPI{
                         db.insert('basicEvent',data,function (result) {
                                 if(result._err){
                                         console.error(result._err);
-                                        res.status(500);
+                                        res.status(500).send('0');
                                 }
                                 //const objectId=new ObjectID(result.insertedId);
                                 //console.log(moment(objectId.getTimestamp()).format('YYMMDD-HHmmss'));
@@ -106,7 +108,7 @@ class BasicUploadAPI{
                                         if(err)
                                         {
                                                 console.log(err);
-                                                res.status(500);
+                                                res.status(500).send('20001'); //文件授权失败
                                         }
                                         else
                                         {
@@ -114,7 +116,7 @@ class BasicUploadAPI{
                                                 redisClient.auth(config.redisPwd);
                                                 redisClient.on("error", function(error) {
                                                         console.log(error);
-                                                        res.status(500);
+                                                        res.status(500).send('30001');  //Redis连接失败
                                                 });
 
                                                 //console.log(config.redisPwd);

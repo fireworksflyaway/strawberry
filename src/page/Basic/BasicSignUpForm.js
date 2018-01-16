@@ -2,15 +2,16 @@
  * Created by Mason Jackson in Office on 2017/11/25.
  */
 import React from 'react';
-import { Form, Input,  Icon,   Checkbox, Button} from 'antd';
+import { Form, Input,  Icon,   Checkbox, Button, Modal} from 'antd';
 import {sha256} from 'js-sha256';
 import {withRouter} from "react-router-dom";
 import handleResponse from '../../function/handleResponse';
 import provideConfig from '../../function/provideConfig';
-
+import provideErrorInfo from '../../function/provideErrorInfo';
 const config=provideConfig();
+const errorInfo=provideErrorInfo();
 const FormItem=Form.Item;
-
+const lan='zh';
 
 
 class BasicSignUpForm extends React.Component{
@@ -52,7 +53,9 @@ class BasicSignUpForm extends React.Component{
                                         })
                                         .catch((err)=>{
                                                 console.error(err);
-                                                alert(err.error);
+                                                Modal.error({
+                                                        content:errorInfo[err][lan]
+                                                })
                                         });
                         }
                 });

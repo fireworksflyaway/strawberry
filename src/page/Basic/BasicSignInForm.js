@@ -2,14 +2,17 @@
  * Created by Mason Jackson in Office on 2017/11/25.
  */
 import React from 'react';
-import {Form, Input, Button, Icon} from 'antd';
+import {Form, Input, Button, Icon, Modal} from 'antd';
 import {withRouter} from "react-router-dom";
 import {sha256} from 'js-sha256';
 import handleResponse from '../../function/handleResponse';
 import provideConfig from '../../function/provideConfig';
+import provideErrorInfo from '../../function/provideErrorInfo';
 
 const config=provideConfig();
+const errorInfo=provideErrorInfo();
 const FormItem=Form.Item;
+const lan='zh';
 
 class BasicSignInForm extends React.Component{
 
@@ -34,7 +37,9 @@ class BasicSignInForm extends React.Component{
                                 })
                                 .catch((err)=>{
                                         console.error(err);
-                                        alert(err.error);
+                                        Modal.error({
+                                                content:errorInfo[err][lan]
+                                        })
                                 });
                         }
                 });
