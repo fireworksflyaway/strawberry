@@ -4,13 +4,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import logo from '../image/logo.svg';
+import logo from '../../image/logo.svg';
 
 
-import '../style/HeaderInfo.scss';
+import '../../style/HeaderInfo.scss';
 import LogoutHeader from "./LogoutHeader";
-import BasicLoginHeader from './Basic/BasicLoginHeader';
-
+import BasicLoginHeader from '../Basic/BasicLoginHeader';
+import AdminLoginHeader from '../Admin/AdminLoginHeader';
 
 export default class HeaderInfo extends React.Component{
         constructor(props){
@@ -25,17 +25,21 @@ export default class HeaderInfo extends React.Component{
         }
 
         componentWillMount(){
-                console.log(window.location.pathname);
+                //console.log(window.location.pathname);
                 const path=window.location.pathname;
                 this.setState({selectKey:path});
         }
 
         render(){
                 let menuComponent;
-                if(this.props.isLogin)
-                        menuComponent=<BasicLoginHeader username={this.props.username} handleLogout={this.props.handleLogout} selectKey={this.state.selectKey} />;
-                else
-                        menuComponent=<LogoutHeader selectKey={this.state.selectKey} />;
+                switch (this.props.loginType)
+                {
+                        case 'basic': menuComponent=<BasicLoginHeader username={this.props.username} handleLogout={this.props.handleLogout} selectKey={this.state.selectKey} />;break;
+                        case 'admin': menuComponent=<AdminLoginHeader username={this.props.username} handleLogout={this.props.handleLogout} selectKey={this.state.selectKey} />;break;
+                        default: menuComponent=<LogoutHeader selectKey={this.state.selectKey} />; break;
+                }
+
+
 
                 return(
                         <div className='headerInfoDiv'>

@@ -14,16 +14,13 @@ const errorInfo=provideErrorInfo();
 const FormItem=Form.Item;
 const lan='zh';
 
-class BasicSignInForm extends React.Component{
-
-
+class SignInForm extends React.Component{
         handleSubmit=(e)=>{
             e.preventDefault();
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
-                                values.lan='zh';
                                 values.password=sha256(values.password);
-                                fetch(`${config.server}/login`,{
+                                fetch(`${config.server}/${this.props.type}login`,{
                                         method:'post',
                                         body:JSON.stringify(values),
                                         headers:{'Content-Type': 'application/json'}
@@ -31,7 +28,8 @@ class BasicSignInForm extends React.Component{
                                 .then(handleResponse)
                                 .then((res)=>{
                                         sessionStorage.setItem('StrawberryToken', res.token);
-                                        this.props.handleLogin(values.username);
+                                        sessionStorage.setItem('StrawberryLoginType', this.props.type);
+                                        //this.props.handleLogin(values.username, 'basic');
                                         //this.props.history.push('/');
                                         window.location.href='/';
                                 })
@@ -80,4 +78,4 @@ class BasicSignInForm extends React.Component{
         }
 }
 
-export default withRouter(Form.create()(BasicSignInForm));
+export default withRouter(Form.create()(SignInForm));

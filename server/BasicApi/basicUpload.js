@@ -150,7 +150,7 @@ class BasicUploadAPI{
                         const data={
                                 number:`B${count+1}`,
                                 username,
-                                status: 0,
+                                status: 5,  //None
                                 type: 1
                         }
                         db.insert('basicEvent',data,function (result) {

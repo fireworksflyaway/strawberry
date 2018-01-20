@@ -22,6 +22,9 @@ export default  function provideConfig() {
                 '10004':{
                         'zh':'当前密码错误'
                 },
+                '10005':{
+                        'zh':'用户尚未获得管理员授权'
+                },
 
                 //file
                 '20001':{
@@ -31,6 +34,11 @@ export default  function provideConfig() {
                 //Redis
                 '30001':{
                         'zh':'Redis连接失败'
+                },
+
+                //Email
+                '40001':{
+                        'zh':'电子邮件发送失败'
                 },
         }
 }

@@ -24,7 +24,7 @@ class BasicProfileInfoForm extends React.Component{
 
         componentWillMount(){
                 const token=sessionStorage.getItem('StrawberryToken');
-                fetch(`${config.server}/auth/getbasicprofile`, {
+                fetch(`${config.server}/basicAuth/getbasicprofile`, {
                         method: 'get',
                         headers: {
                                 'Authorization': 'Bearer ' + token,
@@ -51,7 +51,7 @@ class BasicProfileInfoForm extends React.Component{
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if(!err){
                                 const token=sessionStorage.getItem('StrawberryToken');
-                                fetch(`${config.server}/auth/updatebasicprofile`,{
+                                fetch(`${config.server}/basicAuth/updatebasicprofile`,{
                                         method: 'post',
                                         body:JSON.stringify(values),
                                         headers: {

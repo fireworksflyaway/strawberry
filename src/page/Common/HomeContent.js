@@ -3,10 +3,10 @@
  */
 import React from 'react';
 import {Carousel, Row, Col} from 'antd';
-import '../style/HomeContent.scss';
-import slider1 from '../image/slider1.jpg';
-import slider2 from '../image/slider2.jpg';
-import slider3 from '../image/slider3.jpg';
+import '../../style/HomeContent.scss';
+import slider1 from '../../image/slider1.jpg';
+import slider2 from '../../image/slider2.jpg';
+import slider3 from '../../image/slider3.jpg';
 export default class HomeContent extends React.Component{
         render(){
                 return (

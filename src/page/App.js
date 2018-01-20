@@ -4,21 +4,23 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Layout} from 'antd';
 import '../style/App.scss';
 
-import HeaderInfo from "./HeaderInfo";
-import HomeContent from './HomeContent';
-import SignUpContent from './SignUpContent';
-import SignInContent from './SignInContent';
+import HeaderInfo from "./Common/HeaderInfo";
+import HomeContent from './Common/HomeContent';
+import SignUpContent from './Common/SignUpContent';
+import SignInContent from './Common/SignInContent';
 import BasicProfile from './Basic/BasicProfile';
 import BasicUpload from './Basic/BasicUpload';
 import BasicEvent from './Basic/BasicEvent';
 import BasicReport from "./Basic/BasicReport";
-
+import AdminUserList from './Admin/AdminUserList';
+import AdminSignIn from './Admin/AdminSignIn';
+import AdminProfile from './Admin/AdminProfile';
 
 import withLoginFunc from '../function/withLoginFunc';
-import withLogoutFunc from '../function/withLogoutFunc';
+//import withLogoutFunc from '../function/withLogoutFunc';
 // import withLoginInfo from '../function/withLoginInfo';
 import provideConfig from '../function/provideConfig';
-
+import handleResponse from '../function/handleResponse';
 
 
 
@@ -31,35 +33,60 @@ class App extends Component {
         constructor(props){
                 super(props);
                 this.state={
-                        isLogin:false,
                         username:'unknown',
-                        lan: 'zh'
+                        lan: 'zh',
+                        loginType:'logout'
                 }
         }
 
         componentWillMount(){
                 const token=sessionStorage.getItem('StrawberryToken');
-                if(token){
-                        fetch(`${config.server}/auth/username`, {
-                                method:'get',
-                                headers: {
-                                        'Authorization': 'Bearer ' + token
-                                }
-                        })
-                                .then(res=>res.json())
-                                .then((res)=>{
-                                        this.setState({
-                                                isLogin:true,
-                                                username:res.username
-                                        })
-                                })
-                                .catch((err)=>console.error(err));
+                const loginType=sessionStorage.getItem('StrawberryLoginType');
+                if(loginType===undefined||loginType==='logout'||token===undefined)
+                {
+                        sessionStorage.removeItem('StrawberryToken');
+                        this.setState({loginType:'logout'});
+                        return;
                 }
+                let type='';
+                switch (loginType){
+                        case 'basic':
+                        case 'admin': type=loginType;break;
+                        default: {
+                                sessionStorage.removeItem('StrawberryLoginType');
+                                sessionStorage.removeItem('StrawberryToken');
+                                this.setState({loginType:'logout'});
+                                return;
+                        }
+                }
+
+
+                fetch(`${config.server}/${type}Auth/username`, {
+                        method:'get',
+                        headers: {
+                                'Authorization': 'Bearer ' + token
+                        }
+                })
+                        .then(handleResponse)
+                        .then((res)=>{
+                                this.setState({
+                                        loginType:type,
+                                        username:res.username
+                                })
+                        })
+                        .catch((err)=>{
+                                console.error(err);
+                                sessionStorage.removeItem('StrawberryLoginType');
+                                sessionStorage.removeItem('StrawberryToken');
+                                this.setState({loginType:'logout'});
+                        });
+
         }
 
-        handleLogin(user){
+        handleLogin(user, type){
+                console.log(type);
                 this.setState({
-                        isLogin:true,
+                        loginType:type,
                         username:user
                 })
         }
@@ -67,21 +94,25 @@ class App extends Component {
         handleLogout(){
                 sessionStorage.removeItem('StrawberryToken');
                 this.setState({
-                        isLogin:false,
+                        loginType:'logout',
                         username:'unknown'
                 })
         }
 
         render(){
+                //console.log(this.state.loginType);
                 return(
                         <div>
                                 <BrowserRouter>
                                         <Layout>
                                                 <Header className='appHeader'>
-                                                        <HeaderInfo isLogin={this.state.isLogin} username={this.state.username} handleLogout={this.handleLogout.bind(this)}/>
+                                                        <HeaderInfo loginType={this.state.loginType} username={this.state.username} handleLogout={this.handleLogout.bind(this)}/>
                                                 </Header>
                                                 <Content className='appContent' >
                                                         <Switch>
+                                                                <Route path='/adminsignin' component={AdminSignIn}/>
+                                                                <Route path='/adminprofile' component={AdminProfile}/>
+                                                                <Route path='/adminuserlist' component={AdminUserList}/>
                                                                 <Route path='/basicreport' component={BasicReport}/>
                                                                 <Route path='/basicprofile' component={BasicProfile}/>
                                                                 <Route path='/basicupload' component={BasicUpload} />
@@ -91,7 +122,7 @@ class App extends Component {
                                                                 <Route component={HomeContent} />
                                                         </Switch>
                                                 </Content>
-                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} Version 0.0.3 All rights reserved.</Footer>
+                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} Version 0.0.4 All rights reserved.</Footer>
                                         </Layout>
                                 </BrowserRouter>
                         </div>

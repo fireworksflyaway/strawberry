@@ -83,9 +83,9 @@ const columns=[
         key:"download",
         render:(text, record)=>(
             <span>
-                <a href='#' onClick={(e)=>{window.open(`${config.fileServer}/${record.pdfId}_En.pdf`);}}>英文版</a>
+                <a onClick={(e)=>{window.open(`${config.fileServer}/${record.pdfId}_En.pdf`);}}>英文版</a>
                 <span className="ant-divider" />
-                <a href='#' onClick={(e)=>{window.open(`${config.fileServer}/${record.pdfId}_Zh.pdf`);}}>中文版</a>
+                <a onClick={(e)=>{window.open(`${config.fileServer}/${record.pdfId}_Zh.pdf`);}}>中文版</a>
             </span>
         )
 }]
@@ -105,7 +105,7 @@ export default class BasicReport extends React.Component{
                     window.location.href="/";
                     return;
             }
-            fetch(`${config.server}/auth/getbasicreport`, {
+            fetch(`${config.server}/basicAuth/getbasicreport`, {
                 method: 'get',
                 headers: {
                     'Authorization': 'Bearer ' + token,

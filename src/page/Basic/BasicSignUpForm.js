@@ -37,9 +37,7 @@ class BasicSignUpForm extends React.Component{
                 e.preventDefault();
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
-                                //console.log(values);
                                 values.password=sha256(values.password);
-                                values.lan='zh';
                                 fetch(`${config.server}/signup`,{
                                         method:'post',
                                         body:JSON.stringify(values),
@@ -47,9 +45,18 @@ class BasicSignUpForm extends React.Component{
                                 })
                                         .then(handleResponse)
                                         .then((res)=>{
-                                                sessionStorage.setItem('StrawberryToken', res.token);
+                                                // sessionStorage.setItem('StrawberryToken', res.token);
+                                                // sessionStorage.setItem('StrawberryLoginType', 'basic');
                                                 //this.props.history.push('/');
-                                                window.location.href='/';
+
+                                                Modal.success({
+                                                        title: '注册成功',
+                                                        content: '注册申请已提交,请等待管理员审核,审核通过后我们会邮件通知您,届时您将可以使用我们提供的服务,谢谢',
+                                                        onOk: ()=>{
+                                                                window.location.href='/';
+                                                        }
+                                                })
+
                                         })
                                         .catch((err)=>{
                                                 console.error(err);
@@ -120,6 +127,13 @@ class BasicSignUpForm extends React.Component{
                                                 },]
                                         })(
                                                 <Input  prefix={<Icon type="phone"  />}  type='tel' placeholder="电话" />
+                                        )}
+                                </FormItem>
+                                <FormItem hasFeedback>
+                                        {getFieldDecorator('department', {
+
+                                        })(
+                                            <Input  prefix={<Icon type="home"  />}  type='text' placeholder="医院/机构" />
                                         )}
                                 </FormItem>
                                 <FormItem style={{ marginBottom: 8 }}>

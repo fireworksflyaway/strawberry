@@ -13,10 +13,11 @@ const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 const userAPIClass=require('./BasicApi/basicUser');
 const basicUploadAPIClass=require('./BasicApi/basicUpload');
 const basicEventAPIClass=require('./BasicApi/basicEvent');
+const adminAPIClass=require('./AdminApi/admin');
 const userAPI=new userAPIClass();
 const basicUploadAPI=new basicUploadAPIClass();
 const basicEventAPI=new basicEventAPIClass();
-
+const adminAPI=new adminAPIClass();
 
 let app=express();
 
@@ -51,43 +52,65 @@ app.get('/', function (req, res) {
         res.send('Hello Brainnow');
 })
 
-app.use('/auth', jwt({secret:config.accessKey}));   //6 hours
+app.use('/basicAuth', jwt({secret:config.accessKey}));   //6 hours
 
 
-app.get('/auth/username', function (req, res) {
+app.get('/basicAuth/username', function (req, res) {
         //console.log(req.user);
         res.send({username: req.user.username});
 })
 
-app.get('/auth/getbasicprofile', userAPI.getProfile);
+app.get('/basicAuth/getbasicprofile', userAPI.getProfile);
 
-app.post('/auth/updatebasicprofile', userAPI.updateProfile);
+app.post('/basicAuth/updatebasicprofile', userAPI.updateProfile);
 
-app.post('/auth/updatebasicpassword', userAPI.updatePassword);
+app.post('/basicAuth/updatebasicpassword', userAPI.updatePassword);
 
-app.post('/login', userAPI.signIn);
+app.post('/basiclogin', userAPI.signIn);
 
 app.post('/signup', userAPI.signUp);
 
-app.post('/auth/basicuploadt1', function (req, res) {
+app.post('/basicAuth/basicuploadt1', function (req, res) {
         basicUploadAPI.uploadT1(req, res, upload);
 })
 
-app.post('/auth/basicuploadform', basicUploadAPI.uploadForm);
+app.post('/basicAuth/basicuploadform', basicUploadAPI.uploadForm);
 
-app.post('/auth/basicuploadt2', function (req, res) {
+app.post('/basicAuth/basicuploadt2', function (req, res) {
         basicUploadAPI.uploadT2(req, res, upload);
 })
 
-app.post('/auth/basicuploadbatch', function (req, res) {
+app.post('/basicAuth/basicuploadbatch', function (req, res) {
         basicUploadAPI.uploadBatch(req, res, upload);
 })
 
-app.post('/auth/basicuploadbatchform', basicUploadAPI.uploadBatchForm);
+app.post('/basicAuth/basicuploadbatchform', basicUploadAPI.uploadBatchForm);
 
-app.get('/auth/getbasicevent', basicEventAPI.getEvent);
+app.get('/basicAuth/getbasicevent', basicEventAPI.getEvent);
 
-app.get('/auth/getbasicreport', basicEventAPI.getReport);
+app.get('/basicAuth/getbasicreport', basicEventAPI.getReport);
+
+
+
+
+//admin
+app.use('/adminAuth', jwt({secret:config.adminAccessKey}));   //6 hours
+app.post('/adminlogin', adminAPI.signIn);
+
+app.get('/adminAuth/username', function (req, res) {
+        //console.log(req.user);
+        res.send({username: req.user.username});
+})
+
+app.post('/adminAuth/updateadminpassword', adminAPI.updatePassword)
+
+app.get('/adminAuth/getadminprofile', adminAPI.getProfile);
+
+app.post('/adminAuth/updateadminprofile', adminAPI.updateProfile);
+
+app.get('/adminAuth/getuserlist', adminAPI.getUserList);
+
+app.post('/adminAuth/certificate', adminAPI.certificate);
 
 const server=app.listen(8090, function () {
         let host = server.address().address;

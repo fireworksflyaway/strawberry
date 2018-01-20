@@ -64,7 +64,7 @@ export default class BasicEvent extends React.Component{
         getData=()=>{
                 console.log('timer');
                 const token=sessionStorage.getItem('StrawberryToken');
-                fetch(`${config.server}/auth/getbasicevent`, {
+                fetch(`${config.server}/basicAuth/getbasicevent`, {
                         method: 'get',
                         headers: {
                                 'Authorization': 'Bearer ' + token,

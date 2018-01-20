@@ -35,7 +35,7 @@ class BasicUploadBatchForm extends React.Component{
                             filename: values.batchFile[0].name,
                         }
                         const token=sessionStorage.getItem('StrawberryToken');
-                        fetch(`${config.server}/auth/basicuploadbatchform`,{
+                        fetch(`${config.server}/basicAuth/basicuploadbatchform`,{
                             method: 'post',
                             body:JSON.stringify(data),
                             headers: {
@@ -100,7 +100,7 @@ class BasicUploadBatchForm extends React.Component{
 
                 const batchProps={
                         onChange: this.handleChange,
-                        action: `${config.server}/auth/basicuploadbatch`,
+                        action: `${config.server}/basicAuth/basicuploadbatch`,
                         accept: '.zip',
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')

@@ -44,7 +44,7 @@ class BasicUploadSingleForm extends React.Component{
                                 }
                                 const token=sessionStorage.getItem('StrawberryToken');
 
-                                fetch(`${config.server}/auth/basicuploadform`,{
+                                fetch(`${config.server}/basicAuth/basicuploadform`,{
                                         method: 'post',
                                         body:JSON.stringify(data),
                                         headers: {
@@ -113,7 +113,7 @@ class BasicUploadSingleForm extends React.Component{
 
                 const T1Props = {
                         onChange: this.handleChange,
-                        action: `${config.server}/auth/basicuploadt1`,
+                        action: `${config.server}/basicAuth/basicuploadt1`,
                         accept: '.zip',
                         headers: {
                                 //authorization: 'authorization-text',
@@ -123,7 +123,7 @@ class BasicUploadSingleForm extends React.Component{
 
                 const T2Props = {
                         onChange: this.handleChange,
-                        action: `${config.server}/auth/basicuploadt2`,
+                        action: `${config.server}/basicAuth/basicuploadt2`,
                         accept: '.zip',
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
