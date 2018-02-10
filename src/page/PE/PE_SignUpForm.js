@@ -14,11 +14,18 @@ const FormItem=Form.Item;
 const lan='zh';
 
 
-class BasicSignUpForm extends React.Component{
+class PE_SignUpForm extends React.Component{
+
+        constructor(props){
+                super(props);
+                this.state={
+                        IsSubmiting: false
+                }
+        }
 
         checkPassword = (rule, value, callback) => {
                 const form = this.props.form;
-                if (value && value !== form.getFieldValue('password')) {
+                if (value && value !== form.getFieldValue('Password')) {
                         callback('两次输入的密码不一致!');
                 } else {
                         callback();
@@ -35,10 +42,11 @@ class BasicSignUpForm extends React.Component{
 
         handleSubmit = (e) => {
                 e.preventDefault();
+                this.setState({IsSubmiting: true});
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
-                                values.password=sha256(values.password);
-                                fetch(`${config.server}/signup`,{
+                                values.Password=sha256(values.Password);
+                                fetch(`${config.server}/pe_signup`,{
                                         method:'post',
                                         body:JSON.stringify(values),
                                         headers:{'Content-Type': 'application/json'}
@@ -56,15 +64,20 @@ class BasicSignUpForm extends React.Component{
                                                                 window.location.href='/';
                                                         }
                                                 })
-
                                         })
                                         .catch((err)=>{
                                                 console.error(err);
                                                 Modal.error({
-                                                        content:errorInfo[err][lan]
+                                                        content:errorInfo[err][lan],
+                                                        onOk:()=>{
+                                                                this.setState({IsSubmiting: false});
+                                                        }
                                                 })
+
                                         });
                         }
+                        else
+                                this.setState({IsSubmiting: false});
                 });
         }
 
@@ -77,7 +90,7 @@ class BasicSignUpForm extends React.Component{
                 return (
                         <Form onSubmit={this.handleSubmit}>
                                 <FormItem hasFeedback>
-                                        {getFieldDecorator('username', {
+                                        {getFieldDecorator('Username', {
                                                 rules: [{
                                                         required: true, message: '请输入用户名',
                                                 },{
@@ -88,7 +101,7 @@ class BasicSignUpForm extends React.Component{
                                         )}
                                 </FormItem>
                                 <FormItem>
-                                        {getFieldDecorator('password', {
+                                        {getFieldDecorator('Password', {
                                                 rules: [{
                                                         required: true, message: '请输入密码!'
                                                 },{
@@ -99,7 +112,7 @@ class BasicSignUpForm extends React.Component{
                                         )}
                                 </FormItem>
                                 <FormItem>
-                                        {getFieldDecorator('passwordCheck', {
+                                        {getFieldDecorator('PasswordCheck', {
                                                 rules: [{
                                                         required: true, message: '请再次输入密码!'
                                                 },{
@@ -110,7 +123,7 @@ class BasicSignUpForm extends React.Component{
                                         )}
                                 </FormItem>
                                 <FormItem hasFeedback>
-                                        {getFieldDecorator('email', {
+                                        {getFieldDecorator('Email', {
                                                 rules: [{
                                                         type: 'email', message: '输入不符合电子邮箱格式',
                                                 },{
@@ -121,7 +134,7 @@ class BasicSignUpForm extends React.Component{
                                         )}
                                 </FormItem>
                                 <FormItem hasFeedback>
-                                        {getFieldDecorator('phone', {
+                                        {getFieldDecorator('Phone', {
                                                 rules: [{
                                                         required: true, message: '请输入电话',
                                                 },]
@@ -130,14 +143,14 @@ class BasicSignUpForm extends React.Component{
                                         )}
                                 </FormItem>
                                 <FormItem hasFeedback>
-                                        {getFieldDecorator('department', {
+                                        {getFieldDecorator('Department', {
 
                                         })(
                                             <Input  prefix={<Icon type="home"  />}  type='text' placeholder="医院/机构" />
                                         )}
                                 </FormItem>
                                 <FormItem style={{ marginBottom: 8 }}>
-                                        {getFieldDecorator('agreement', {
+                                        {getFieldDecorator('Agreement', {
                                                 valuePropName: 'checked',
                                                 initialValue:false,
                                                 rules:[
@@ -149,7 +162,7 @@ class BasicSignUpForm extends React.Component{
                                         )}
                                 </FormItem>
                                 <FormItem>
-                                        <Button type="primary" htmlType="submit" icon="user">注册</Button>&emsp;
+                                        <Button type="primary" htmlType="submit" icon="user" loading={this.state.IsSubmiting}>注册</Button>&emsp;
                                         <Button htmlType="reset" onClick={this.handleReset} icon="reload">重置</Button>
                                 </FormItem>
                         </Form>
@@ -157,4 +170,4 @@ class BasicSignUpForm extends React.Component{
         }
 }
 
-export default withRouter(Form.create()(BasicSignUpForm)) ;
+export default withRouter(Form.create()(PE_SignUpForm)) ;

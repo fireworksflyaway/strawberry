@@ -13,9 +13,9 @@ const accessOption={expiresIn: '6h'};
 
 class AdminAPI{
         signIn(req, res){
-                let {username, password}= req.body;
-                password=sha256(password);
-                db.select('admin', {username, password}, function (result) {
+                let {Username, Password}= req.body;
+                Password=sha256(Password);
+                db.select('Admin', {Username, Password}, function (result) {
                         let code='0'; //未知错误
                         if(result._err){
                                 res.status(500).send(code);
@@ -24,7 +24,7 @@ class AdminAPI{
                                         code='10001'  //用户名不存在或密码错误;
                                         res.status(500).send(code);
                                 } else {
-                                        const token=jsonwebtoken.sign({username: username}, config.adminAccessKey, accessOption);
+                                        const token=jsonwebtoken.sign({username: Username}, config.adminAccessKey, accessOption);
                                         res.send({token});
                                 }
                         }
@@ -32,8 +32,8 @@ class AdminAPI{
         }
 
         getUserList(req, res){
-                db.select('basicUser',{}, function (result) {
-                        db.aggregate('basicReport',{$group:{_id:"$username", event:{$sum:1}}}, function (err, list) {
+                db.select('PE_User',{}, function (result) {
+                        db.aggregate('PE_Report',{$group:{_id:"$Username", event:{$sum:1}}}, function (err, list) {
                                 if(err){
                                         res.status(500).send('0');
                                 } else {
@@ -42,10 +42,10 @@ class AdminAPI{
                                                 eventCount[x._id]=x.event;
                                         })
                                         result.forEach(res=>{
-                                                res.event=eventCount[res.username];
-                                                if(res.event===undefined)
-                                                        res.event=0;
-                                                delete res.password;
+                                                res.Event=eventCount[res.Username];
+                                                if(res.Event===undefined)
+                                                        res.Event=0;
+                                                delete res.Password;
                                         })
                                         res.send(result);
                                 }
@@ -56,7 +56,7 @@ class AdminAPI{
 
         getProfile(req,res){
                 let {username}= req.user;
-                db.select('admin',{username},function (result) {
+                db.select('Admin',{Username:username},function (result) {
                         let code='0';
                         if(result._err){
                                 res.status(500).send(code);
@@ -66,8 +66,8 @@ class AdminAPI{
                                         res.status(500).send(code);
                                 }
                                 else {
-                                        const {email}=result[0];
-                                        res.send({username, email});
+                                        const {Email}=result[0];
+                                        res.send({username, email: Email});
                                 }
                         }
                 })
@@ -76,7 +76,7 @@ class AdminAPI{
         updateProfile(req, res){
                 const username=req.user.username;
                 const {email}=req.body;
-                db.updateOne('admin', {username}, {$set:{email}}, function (result) {
+                db.updateOne('Admin', {Username: username}, {$set:{Email: email}}, function (result) {
                         if(result._err){
                                 res.status(500).send('0');
                         }
@@ -90,7 +90,7 @@ class AdminAPI{
                 const {username}=req.user;
                 let {currentPassword, newPassword}= req.body;
                 currentPassword=sha256(currentPassword);
-                db.select('admin', {username, password:currentPassword}, function (result) {
+                db.select('Admin', {Username: username, Password:currentPassword}, function (result) {
                         if(result._err){
                                 res.status(500).send('0');
                         }
@@ -101,7 +101,7 @@ class AdminAPI{
                                 else {
                                         //update
                                         newPassword = sha256(newPassword);
-                                        db.updateOne('admin', {username}, {$set: {password: newPassword}}, function (result) {
+                                        db.updateOne('Admin', {Username:username}, {$set: {Password: newPassword}}, function (result) {
                                                 if (result._err) {
                                                         res.status(500).send('0');
                                                 }
@@ -116,14 +116,14 @@ class AdminAPI{
         }
 
         certificate(req, res){
-                const {username, email}=req.body;
-                db.updateOne('basicUser', {username}, {$set:{certification:true}}, function (result) {
+                const {Username, Email}=req.body;
+                db.updateOne('PE_User', {Username}, {$set:{Certification:true}}, function (result) {
                         if(result._err){
                                 res.status(500).send('0');
                         }
                         else{
                                 const mailOptions = {
-                                        to: email, // 收件地址
+                                        to: Email, // 收件地址
                                         subject: '博脑会员注册', // 标题
                                         html: `<b>您的会员注册请求已通过,现在可访问<a href=\"www.brainnow.cn\">我们的主页</a>登录并使用我们的服务</b><br />`
                                 };

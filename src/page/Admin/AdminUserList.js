@@ -21,7 +21,7 @@ export default class AdminUserList extends React.Component{
 
         componentWillMount(){
                 const token=sessionStorage.getItem('StrawberryToken');
-                fetch(`${config.server}/adminAuth/getuserlist`,{
+                fetch(`${config.server}/AdminAuth/getUserList`,{
                         method: 'get',
                         headers: {
                                 'Authorization': 'Bearer ' + token,
@@ -30,7 +30,7 @@ export default class AdminUserList extends React.Component{
                     .then(handleResponse)
                     .then((res)=>{
                             this.setState({
-                                    data: res
+                                    data: res,
                             })
                     })
                     .catch((err)=>{
@@ -54,10 +54,11 @@ export default class AdminUserList extends React.Component{
         }
 
         handleCertificate=(username, email)=>{
+                this.setState({isCertificating: true});
                 const token=sessionStorage.getItem('StrawberryToken');
-                fetch(`${config.server}/adminAuth/certificate`,{
+                fetch(`${config.server}/AdminAuth/certificate`,{
                         method: 'post',
-                        body:JSON.stringify({username, email}),
+                        body:JSON.stringify({Username:username, Email:email}),
                         headers: {
                                 'Content-Type': 'application/json',
                                 'Authorization': 'Bearer ' + token,
@@ -73,9 +74,9 @@ export default class AdminUserList extends React.Component{
                                             let newData=this.state.data;
                                             for(let i=0; i<newData.length;i++)
                                             {
-                                                    if(newData[i].username===username)
+                                                    if(newData[i].Username===username)
                                                     {
-                                                            newData[i].certification=true;
+                                                            newData[i].Certification=true;
                                                             break;
                                                     }
                                             }
@@ -100,37 +101,37 @@ export default class AdminUserList extends React.Component{
                 const columns=[
                         {
                                 title: "用户名",
-                                dataIndex:"username",
-                                key:"username",
+                                dataIndex:"Username",
+                                key:"Username",
                         },
                         {
                                 title: "电话",
-                                dataIndex:"phone",
-                                key:"phone",
+                                dataIndex:"Phone",
+                                key:"Phone",
                         },
                         {
                                 title: "电子邮箱",
-                                dataIndex:"email",
-                                key:"email",
+                                dataIndex:"Email",
+                                key:"Email",
                         },
                         {
                                 title: "医院/机构",
-                                dataIndex:"department",
-                                key:"department",
+                                dataIndex:"Department",
+                                key:"Department",
                         },
                         {
                                 title: "已完成任务数量",
-                                dataIndex:"event",
-                                key:"event",
+                                dataIndex:"Event",
+                                key:"Event",
                         },
                         {
                                 title: "管理员认证操作",
-                                dataIndex:"certification",
-                                key:"certification",
+                                dataIndex:"Certification",
+                                key:"Certification",
                                 render:(value, record)=>{
                                         if(!value)
                                                 return (
-                                                    <Button type='primary' onClick={this.handleCertificate.bind(this,record.username, record.email)}>认证</Button>
+                                                    <Button type='primary' onClick={this.handleCertificate.bind(this,record.Username, record.Email)}>认证</Button>
                                                 );
                                         else
                                                 return (

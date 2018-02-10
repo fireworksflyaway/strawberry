@@ -24,7 +24,7 @@ const typeDict=[
 
 
 
-export default class BasicEvent extends React.Component{
+export default class DiagnoseEvent extends React.Component{
         constructor(props){
                 super(props);
                 this.state={

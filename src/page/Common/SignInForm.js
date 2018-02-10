@@ -19,8 +19,9 @@ class SignInForm extends React.Component{
             e.preventDefault();
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
-                                values.password=sha256(values.password);
-                                fetch(`${config.server}/${this.props.type}login`,{
+                                values.Password=sha256(values.Password);
+                                console.log(this.props.type);
+                                fetch(`${config.server}/${this.props.type}signin`,{
                                         method:'post',
                                         body:JSON.stringify(values),
                                         headers:{'Content-Type': 'application/json'}
@@ -52,7 +53,7 @@ class SignInForm extends React.Component{
                 return(
                         <Form onSubmit={this.handleSubmit}>
                                 <FormItem hasFeedback>
-                                        {getFieldDecorator('username', {
+                                        {getFieldDecorator('Username', {
                                                 rules: [{
                                                         required: true, message: '请输入用户名',
                                                 }],
@@ -61,7 +62,7 @@ class SignInForm extends React.Component{
                                         )}
                                 </FormItem>
                                 <FormItem>
-                                        {getFieldDecorator('password', {
+                                        {getFieldDecorator('Password', {
                                                 rules: [{
                                                         required: true, message: '请输入密码!'
                                                 }],

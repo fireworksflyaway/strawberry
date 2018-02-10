@@ -11,7 +11,7 @@ const process=require('child_process');
 const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
-class BasicUploadAPI{
+class PE_UploadAPI{
         emptyDir(fileUrl) {
                 if(!fs.existsSync(fileUrl))
                         return;
@@ -28,7 +28,7 @@ class BasicUploadAPI{
         }
 
         uploadT1(req, res, upload){
-                const T1Folder=`${config.dataPath}/${req.user.username}/T1`;
+                const T1Folder=`${config.dataPath}/PE/${req.user.username}/T1`;
                 //clear T1 folder
 
 
@@ -44,7 +44,7 @@ class BasicUploadAPI{
         }
 
         uploadT2(req, res, upload){
-                const T2Folder=`${config.dataPath}/${req.user.username}/T2`;
+                const T2Folder=`${config.dataPath}/PE/${req.user.username}/T2`;
                 //clear T2 folder
                 this.emptyDir(T2Folder);
                 upload.fileHandler({
@@ -58,7 +58,7 @@ class BasicUploadAPI{
         }
 
         uploadBatch(req, res, upload){
-                const BatchFolder=`${config.dataPath}/${req.user.username}/Batch`;
+                const BatchFolder=`${config.dataPath}/PE/${req.user.username}/Batch`;
                 this.emptyDir(BatchFolder);
                 upload.fileHandler({
                         uploadDir: function () {
@@ -72,24 +72,25 @@ class BasicUploadAPI{
 
         uploadForm(req, res){
                 const {username}=req.user;
-                const {t1,t2,comment}=req.body;
+                const {p_name, p_age, p_gender, testTime, operator, device, diseases, t1,t2,comment}=req.body;
                 const isFlair=t2!=="";
                 //get event count
-                db.getCount('basicEvent',{username, type: 0}, function (count) {
+                db.getCount('PE_Event',{Username: username, IsBatch: false}, function (count) {
                         //console.log(count);
                         if(count._err){
                                 console.error(count._err);
                                 res.status(500);
                         }
+
+
                         const data={
-                                number: `S${count+1}`,
-                                username,
-                                status: 0,
-                                isFlair,
-                                comment,
-                                type: 0
+                                Number: `BN-PE-S${count+100001}`,
+                                Username: username,
+                                Status: 0,
+                                IsFlair : isFlair,
+                                IsBatch: false
                         }
-                        db.insert('basicEvent',data,function (result) {
+                        db.insert('PE_Event',data,function (result) {
                                 if(result._err){
                                         console.error(result._err);
                                         res.status(500).send('0');
@@ -97,12 +98,30 @@ class BasicUploadAPI{
                                 //const objectId=new ObjectID(result.insertedId);
                                 //console.log(moment(objectId.getTimestamp()).format('YYMMDD-HHmmss'));
                                 const objectId=result.insertedId.toString();
-                                const targetPath=`${config.dataPath}/${username}/${objectId}`;
+                                const targetPath=`${config.dataPath}/PE/${username}/${data.Number}`;
 
                                 fs.mkdirSync(targetPath);
-                                fs.renameSync(`${config.dataPath}/${username}/T1/${t1}`, `${targetPath}/dataF1.zip`);
+                                fs.renameSync(`${config.dataPath}/PE/${username}/T1/${t1}`, `${targetPath}/dataF1.zip`);
                                 if(isFlair)
-                                        fs.renameSync(`${config.dataPath}/${username}/T2/${t2}`, `${targetPath}/dataF2.zip`);
+                                        fs.renameSync(`${config.dataPath}/PE/${username}/T2/${t2}`, `${targetPath}/dataF2.zip`);
+
+
+                                const trimOperator=operator?operator:"-";
+                                const trimDevice=device?device:"-";
+                                const reportJson=JSON.stringify(
+                                    {
+                                            P_Name: p_name,
+                                            P_Age: p_age,
+                                            P_Gender: p_gender,
+                                            TestTime: testTime,
+                                            Operator: trimOperator,
+                                            Device: trimDevice,
+                                            Diseases: diseases,
+                                            Comment: comment
+                                    }
+                                );
+                                //create a report data json
+                                fs.writeFileSync(`${targetPath}/report.json`, reportJson);
 
                                 process.exec(`chmod -R 777 ${targetPath}`, function (err) {
                                         if(err)
@@ -120,9 +139,9 @@ class BasicUploadAPI{
                                                 });
 
                                                 //console.log(config.redisPwd);
-                                                const redisData=JSON.stringify({data:[objectId]});
+                                                const redisData=JSON.stringify({Type:0, Data:[objectId]});
                                                 console.log(redisData);
-                                                redisClient.LPUSH('BasicQueue', redisData);
+                                                redisClient.LPUSH('EventQueue', redisData);
                                                 redisClient.quit();
                                                 res.send({suc:true});
                                         }
@@ -135,7 +154,22 @@ class BasicUploadAPI{
 
         }
 
-        uploadBatchForm(req, res){
+        uploadBatchForm(req, res) {
+                const {username}=req.user;
+                const {filename}=req.body;
+                const cmd=`mono ${config.cmdPath}/PE_BatchProc.exe ${username} ${filename} ${config.dataPath}/PE/${username} ${config.mongoConn} ${config.redisHost} ${config.redisPwd}`;
+                //console.log(cmd);
+                process.exec(cmd, function (err, stdout, stderr) {
+                        if(err)
+                                res.status(500);
+                        else
+                                res.send({suc:true});
+                })
+
+
+        }
+
+        uploadBatchForm_back(req, res){
                 const {username}=req.user;
                 const {filename}=req.body;
                 //-------------------------------------------
@@ -188,4 +222,4 @@ class BasicUploadAPI{
         }
 }
 
-module.exports=BasicUploadAPI;
+module.exports=PE_UploadAPI;

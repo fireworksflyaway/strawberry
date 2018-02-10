@@ -6,7 +6,7 @@ import {Card, Tabs} from 'antd';
 
 import '../../style/SignUpContent.scss';
 
-import BasicSignUpForm from '../Basic/BasicSignUpForm';
+import BasicSignUpForm from '../PE/PE_SignUpForm';
 
 const TabPane = Tabs.TabPane;
 class SignUpContent extends React.Component {

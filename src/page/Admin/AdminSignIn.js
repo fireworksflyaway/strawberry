@@ -12,7 +12,7 @@ export default class AdminSignIn extends React.Component{
                 return(
                     <article>
                             <Card title="管理员登录" className='signInCard'>
-                                <SignInForm type='admin' />
+                                <SignInForm type='Admin' />
                             </Card>
                     </article>
                 )

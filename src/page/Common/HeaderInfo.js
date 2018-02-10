@@ -9,7 +9,8 @@ import logo from '../../image/logo.svg';
 
 import '../../style/HeaderInfo.scss';
 import LogoutHeader from "./LogoutHeader";
-import BasicLoginHeader from '../Basic/BasicLoginHeader';
+import LoginHeader from './LoginHeader';
+//import PE_LoginHeader from '../PE/PE_LoginHeader';
 import AdminLoginHeader from '../Admin/AdminLoginHeader';
 
 export default class HeaderInfo extends React.Component{
@@ -32,10 +33,14 @@ export default class HeaderInfo extends React.Component{
 
         render(){
                 let menuComponent;
+                //console.log(this.props.loginType);
                 switch (this.props.loginType)
                 {
-                        case 'basic': menuComponent=<BasicLoginHeader username={this.props.username} handleLogout={this.props.handleLogout} selectKey={this.state.selectKey} />;break;
-                        case 'admin': menuComponent=<AdminLoginHeader username={this.props.username} handleLogout={this.props.handleLogout} selectKey={this.state.selectKey} />;break;
+                        // case 'basic': menuComponent=<PE_LoginHeader username={this.props.username} handleLogout={this.props.handleLogout} selectKey={this.state.selectKey} />;break;
+                        case 'Diagnose':
+                        case 'Research':
+                        case 'PE_': menuComponent=<LoginHeader username={this.props.username} handleLogout={this.props.handleLogout} selectKey={this.state.selectKey} type={this.props.loginType}/>;break;
+                        case 'Admin': menuComponent=<AdminLoginHeader username={this.props.username} handleLogout={this.props.handleLogout} selectKey={this.state.selectKey} />;break;
                         default: menuComponent=<LogoutHeader selectKey={this.state.selectKey} />; break;
                 }
 

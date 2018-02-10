@@ -10,7 +10,7 @@ import handleResponse from "../../function/handleResponse";
 const config=provideConfig();
 const FormItem=Form.Item;
 
-class BasicUploadBatchForm extends React.Component{
+class PE_UploadBatchForm extends React.Component{
         constructor(props){
                 super(props);
                 this.state={
@@ -35,7 +35,7 @@ class BasicUploadBatchForm extends React.Component{
                             filename: values.batchFile[0].name,
                         }
                         const token=sessionStorage.getItem('StrawberryToken');
-                        fetch(`${config.server}/basicAuth/basicuploadbatchform`,{
+                        fetch(`${config.server}/PE_Auth/PE_uploadBatchForm`,{
                             method: 'post',
                             body:JSON.stringify(data),
                             headers: {
@@ -47,7 +47,7 @@ class BasicUploadBatchForm extends React.Component{
                             .then((res)=>{
                                 message.success('任务提交成功');
                                 //this.props.history.push('/basicevent');
-                                    window.location.href='/basicevent';
+                                    window.location.href='/PE_Event';
                             })
                             .catch((err)=>{
                                 console.error(err);
@@ -100,7 +100,7 @@ class BasicUploadBatchForm extends React.Component{
 
                 const batchProps={
                         onChange: this.handleChange,
-                        action: `${config.server}/basicAuth/basicuploadbatch`,
+                        action: `${config.server}/PE_Auth/PE_uploadBatch`,
                         accept: '.zip',
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
@@ -129,4 +129,4 @@ class BasicUploadBatchForm extends React.Component{
         }
 }
 
-export default withRouter(Form.create()(BasicUploadBatchForm));
+export default withRouter(Form.create()(PE_UploadBatchForm));

@@ -8,15 +8,18 @@ import HeaderInfo from "./Common/HeaderInfo";
 import HomeContent from './Common/HomeContent';
 import SignUpContent from './Common/SignUpContent';
 import SignInContent from './Common/SignInContent';
-import BasicProfile from './Basic/BasicProfile';
-import BasicUpload from './Basic/BasicUpload';
-import BasicEvent from './Basic/BasicEvent';
-import BasicReport from "./Basic/BasicReport";
+import BasicProfile from './PE/PE_Profile';
+import PE_Upload from './PE/PE_Upload';
+import BasicEvent from './PE/PE_Event';
+import BasicReport from "./PE/PE_Report";
+import DiagnoseUpload from './Diagnose/DiagnoseUpload';
+import DiagnoseReport from './Diagnose/DiagnoseReport';
+import DiagnoseEvent from './Diagnose/DiagnoseEvent';
 import AdminUserList from './Admin/AdminUserList';
 import AdminSignIn from './Admin/AdminSignIn';
 import AdminProfile from './Admin/AdminProfile';
 
-import withLoginFunc from '../function/withLoginFunc';
+//import withLoginFunc from '../function/withLoginFunc';
 //import withLogoutFunc from '../function/withLogoutFunc';
 // import withLoginInfo from '../function/withLoginInfo';
 import provideConfig from '../function/provideConfig';
@@ -49,9 +52,11 @@ class App extends Component {
                         return;
                 }
                 let type='';
+
                 switch (loginType){
-                        case 'basic':
-                        case 'admin': type=loginType;break;
+                        case 'Diagnose':
+                        case 'PE_':
+                        case 'Admin': type=loginType;break;
                         default: {
                                 sessionStorage.removeItem('StrawberryLoginType');
                                 sessionStorage.removeItem('StrawberryToken');
@@ -113,16 +118,19 @@ class App extends Component {
                                                                 <Route path='/adminsignin' component={AdminSignIn}/>
                                                                 <Route path='/adminprofile' component={AdminProfile}/>
                                                                 <Route path='/adminuserlist' component={AdminUserList}/>
-                                                                <Route path='/basicreport' component={BasicReport}/>
-                                                                <Route path='/basicprofile' component={BasicProfile}/>
-                                                                <Route path='/basicupload' component={BasicUpload} />
-                                                                <Route path='/basicevent' component={BasicEvent} />
-                                                                <Route path='/signup' component={withLoginFunc(SignUpContent, this.handleLogin.bind(this))}/>
-                                                                <Route path='/signin' component={withLoginFunc(SignInContent, this.handleLogin.bind(this))}/>
+                                                                <Route path='/PE_Report' component={BasicReport}/>
+                                                                <Route path='/PE_Profile' component={BasicProfile}/>
+                                                                <Route path='/PE_Upload' component={PE_Upload} />
+                                                                <Route path='/PE_Event' component={BasicEvent} />
+                                                                <Route path='/diagnoseupload' component={DiagnoseUpload} />
+                                                                <Route path='/diagnoseevent' component={DiagnoseEvent} />
+                                                                <Route path='/diagnosereport' component={DiagnoseReport} />
+                                                                <Route path='/signup' component={SignUpContent}/>
+                                                                <Route path='/signin' component={SignInContent}/>
                                                                 <Route component={HomeContent} />
                                                         </Switch>
                                                 </Content>
-                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} Version 0.0.4 All rights reserved.</Footer>
+                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} Version 0.1.0 All rights reserved.</Footer>
                                         </Layout>
                                 </BrowserRouter>
                         </div>

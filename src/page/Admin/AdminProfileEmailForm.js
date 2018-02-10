@@ -24,7 +24,7 @@ class AdminProfileEmailForm extends React.Component{
 
         componentWillMount(){
                 const token=sessionStorage.getItem('StrawberryToken');
-                fetch(`${config.server}/adminAuth/getadminprofile`, {
+                fetch(`${config.server}/AdminAuth/getAdminProfile`, {
                         method: 'get',
                         headers: {
                                 'Authorization': 'Bearer ' + token,
@@ -50,7 +50,7 @@ class AdminProfileEmailForm extends React.Component{
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if(!err){
                                 const token=sessionStorage.getItem('StrawberryToken');
-                                fetch(`${config.server}/adminAuth/updateadminprofile`,{
+                                fetch(`${config.server}/AdminAuth/updateAdminProfile`,{
                                         method: 'post',
                                         body:JSON.stringify(values),
                                         headers: {

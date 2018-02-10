@@ -10,14 +10,14 @@ const upload=require('jquery-file-upload-middleware');
 
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
-const userAPIClass=require('./BasicApi/basicUser');
-const basicUploadAPIClass=require('./BasicApi/basicUpload');
-const basicEventAPIClass=require('./BasicApi/basicEvent');
-const adminAPIClass=require('./AdminApi/admin');
-const userAPI=new userAPIClass();
-const basicUploadAPI=new basicUploadAPIClass();
-const basicEventAPI=new basicEventAPIClass();
-const adminAPI=new adminAPIClass();
+const PE_UserAPIClass=require('./PE_Api/PE_User');
+const PE_UploadAPIClass=require('./PE_Api/PE_Upload');
+const PE_EventAPIClass=require('./PE_Api/PE_Event');
+const AdminAPIClass=require('./AdminApi/admin');
+const PE_UserAPI=new PE_UserAPIClass();
+const PE_UploadAPI=new PE_UploadAPIClass();
+const PE_EventAPI=new PE_EventAPIClass();
+const AdminAPI=new AdminAPIClass();
 
 let app=express();
 
@@ -52,65 +52,65 @@ app.get('/', function (req, res) {
         res.send('Hello Brainnow');
 })
 
-app.use('/basicAuth', jwt({secret:config.accessKey}));   //6 hours
+app.use('/PE_Auth', jwt({secret:config.accessKey}));   //6 hours
 
 
-app.get('/basicAuth/username', function (req, res) {
+app.get('/PE_Auth/username', function (req, res) {
         //console.log(req.user);
         res.send({username: req.user.username});
 })
 
-app.get('/basicAuth/getbasicprofile', userAPI.getProfile);
+app.get('/PE_Auth/getPE_profile', PE_UserAPI.getProfile);
 
-app.post('/basicAuth/updatebasicprofile', userAPI.updateProfile);
+app.post('/PE_Auth/updatePE_profile', PE_UserAPI.updateProfile);
 
-app.post('/basicAuth/updatebasicpassword', userAPI.updatePassword);
+app.post('/PE_Auth/updatePE_password', PE_UserAPI.updatePassword);
 
-app.post('/basiclogin', userAPI.signIn);
+app.post('/PE_signin', PE_UserAPI.signIn);
 
-app.post('/signup', userAPI.signUp);
+app.post('/PE_signup', PE_UserAPI.signUp);
 
-app.post('/basicAuth/basicuploadt1', function (req, res) {
-        basicUploadAPI.uploadT1(req, res, upload);
+app.post('/PE_Auth/PE_uploadt1', function (req, res) {
+        PE_UploadAPI.uploadT1(req, res, upload);
 })
 
-app.post('/basicAuth/basicuploadform', basicUploadAPI.uploadForm);
-
-app.post('/basicAuth/basicuploadt2', function (req, res) {
-        basicUploadAPI.uploadT2(req, res, upload);
+app.post('/PE_Auth/PE_uploadt2', function (req, res) {
+        PE_UploadAPI.uploadT2(req, res, upload);
 })
 
-app.post('/basicAuth/basicuploadbatch', function (req, res) {
-        basicUploadAPI.uploadBatch(req, res, upload);
+app.post('/PE_Auth/PE_uploadForm', PE_UploadAPI.uploadForm);
+
+app.post('/PE_Auth/PE_uploadBatch', function (req, res) {
+        PE_UploadAPI.uploadBatch(req, res, upload);
 })
 
-app.post('/basicAuth/basicuploadbatchform', basicUploadAPI.uploadBatchForm);
+app.post('/PE_Auth/PE_uploadBatchForm', PE_UploadAPI.uploadBatchForm);
 
-app.get('/basicAuth/getbasicevent', basicEventAPI.getEvent);
+app.get('/PE_Auth/PE_getEvent', PE_EventAPI.getEvent);
 
-app.get('/basicAuth/getbasicreport', basicEventAPI.getReport);
+app.get('/PE_Auth/PE_getReport', PE_EventAPI.getReport);
 
 
 
 
 //admin
-app.use('/adminAuth', jwt({secret:config.adminAccessKey}));   //6 hours
-app.post('/adminlogin', adminAPI.signIn);
+app.use('/AdminAuth', jwt({secret:config.adminAccessKey}));   //6 hours
+app.post('/Adminsignin', AdminAPI.signIn);
 
-app.get('/adminAuth/username', function (req, res) {
+app.get('/AdminAuth/username', function (req, res) {
         //console.log(req.user);
         res.send({username: req.user.username});
 })
 
-app.post('/adminAuth/updateadminpassword', adminAPI.updatePassword)
+app.post('/AdminAuth/updateAdminpassword', AdminAPI.updatePassword)
 
-app.get('/adminAuth/getadminprofile', adminAPI.getProfile);
+app.get('/AdminAuth/getAdminProfile', AdminAPI.getProfile);
 
-app.post('/adminAuth/updateadminprofile', adminAPI.updateProfile);
+app.post('/AdminAuth/updateAdminProfile', AdminAPI.updateProfile);
 
-app.get('/adminAuth/getuserlist', adminAPI.getUserList);
+app.get('/AdminAuth/getUserList', AdminAPI.getUserList);
 
-app.post('/adminAuth/certificate', adminAPI.certificate);
+app.post('/AdminAuth/certificate', AdminAPI.certificate);
 
 const server=app.listen(8090, function () {
         let host = server.address().address;

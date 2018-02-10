@@ -12,7 +12,7 @@ const config=provideConfig();
 const FormItem=Form.Item;
 
 const lan='zh';
-class BasicProfileInfoForm extends React.Component{
+class PE_ProfileInfoForm extends React.Component{
         constructor(props){
                 super(props);
                 this.state={
@@ -24,7 +24,7 @@ class BasicProfileInfoForm extends React.Component{
 
         componentWillMount(){
                 const token=sessionStorage.getItem('StrawberryToken');
-                fetch(`${config.server}/basicAuth/getbasicprofile`, {
+                fetch(`${config.server}/PE_Auth/getPE_profile`, {
                         method: 'get',
                         headers: {
                                 'Authorization': 'Bearer ' + token,
@@ -33,9 +33,9 @@ class BasicProfileInfoForm extends React.Component{
                         .then(handleResponse)
                         .then((res)=>{
                                 this.setState({
-                                        username: res.username,
-                                        email: res.email,
-                                        phone: res.phone
+                                        username: res.Username,
+                                        email: res.Email,
+                                        phone: res.Phone
                                 })
                         })
                         .catch((err)=>{
@@ -51,7 +51,7 @@ class BasicProfileInfoForm extends React.Component{
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if(!err){
                                 const token=sessionStorage.getItem('StrawberryToken');
-                                fetch(`${config.server}/basicAuth/updatebasicprofile`,{
+                                fetch(`${config.server}/PE_Auth/updatePE_profile`,{
                                         method: 'post',
                                         body:JSON.stringify(values),
                                         headers: {
@@ -132,4 +132,4 @@ class BasicProfileInfoForm extends React.Component{
         }
 }
 
-export default Form.create()(BasicProfileInfoForm);
+export default Form.create()(PE_ProfileInfoForm);
