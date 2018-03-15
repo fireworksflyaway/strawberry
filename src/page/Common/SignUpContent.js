@@ -5,8 +5,8 @@ import React from 'react';
 import {Card, Tabs} from 'antd';
 
 import '../../style/SignUpContent.scss';
-
-import BasicSignUpForm from '../PE/PE_SignUpForm';
+import SignUpForm from '../Common/SignUpForm';
+//import PE_SignUpForm from '../PE/PE_SignUpForm';
 
 const TabPane = Tabs.TabPane;
 class SignUpContent extends React.Component {
@@ -15,9 +15,9 @@ class SignUpContent extends React.Component {
                         <article>
                                 <Card title="注册新用户" className='signUpCard'>
                                         <Tabs defaultActiveKey="1">
-                                                <TabPane tab="体检用户" key="1"> <BasicSignUpForm/></TabPane>
-                                                <TabPane tab="诊断用户" key="2">敬请期待</TabPane>
-                                                <TabPane tab="科研用户" key="3">敬请期待</TabPane>
+                                                <TabPane tab="体检用户" key="1"><SignUpForm type='PE_' /></TabPane>
+                                                <TabPane tab="诊断用户" key="2"><SignUpForm type='Diagnose' /></TabPane>
+                                                <TabPane tab="科研用户" key="3"><SignUpForm type='Research' /></TabPane>
                                         </Tabs>
                                 </Card>
                         </article>

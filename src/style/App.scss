@@ -1,16 +1,23 @@
 $headerHeight: 80px;
 $logoHeight:60px;
 $headerGray:#ebedee;
+.appLayout{
+    height: 100vh;
+}
+
 .appHeader{
     background-color: rgba(255,255,255,0.91);
     height: $headerHeight;
     border-bottom: 1px solid $headerGray;
+    flex-shrink: 0;
 }
 
 .appContent{
     background: white;
+    flex:1 0 auto;
 }
 
 .appFooter{
     text-align: center;
+    flex-shrink: 0;
 }

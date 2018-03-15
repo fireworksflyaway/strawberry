@@ -1,5 +1,5 @@
 /**
- * Created by Mason Jackson in Office on 2017/12/7.
+ * Created by Mason Jackson in Office on 2/27/18.
  */
 import React from 'react';
 import {Form,  Button, Icon, Input, message, Upload} from 'antd';
@@ -11,7 +11,7 @@ const FormItem=Form.Item;
 const {TextArea}=Input;
 
 const config=provideConfig();
-class BasicUploadSingleForm extends React.Component{
+class ResearchUploadSingleForm extends React.Component{
         constructor(props){
                 super(props);
                 this.state={
@@ -44,7 +44,7 @@ class BasicUploadSingleForm extends React.Component{
                                 }
                                 const token=sessionStorage.getItem('StrawberryToken');
 
-                                fetch(`${config.server}/basicAuth/basicuploadform`,{
+                                fetch(`${config.server}/ResearchAuth/ResearchSingleEvent`,{
                                         method: 'post',
                                         body:JSON.stringify(data),
                                         headers: {
@@ -52,17 +52,17 @@ class BasicUploadSingleForm extends React.Component{
                                                 'Authorization': 'Bearer ' + token,
                                         }
                                 })
-                                        .then(handleResponse)
-                                        .then((res)=>{
-                                                message.success('任务提交成功');
+                                    .then(handleResponse)
+                                    .then((res)=>{
+                                            message.success('任务提交成功');
                                             //this.props.history.push('/basicevent');
-                                                window.location.href='/basicevent';
-                                        })
-                                        .catch((err)=>{
-                                                console.error(err);
-                                                message.error('上传失败');
-                                                this.setState({isUpdating: false});
-                                        })
+                                            window.location.href='/ResearchEvent';
+                                    })
+                                    .catch((err)=>{
+                                            console.error(err);
+                                            message.error('上传失败');
+                                            this.setState({isUpdating: false});
+                                    })
                         }
                 })
         }
@@ -91,13 +91,10 @@ class BasicUploadSingleForm extends React.Component{
         render(){
                 const {getFieldDecorator} = this.props.form;
                 const formItemLayout = {
-                        labelCol: { span: 8 },
-                        wrapperCol: { span: 14 },
+                        labelCol: { span: 6 },
+                        wrapperCol: { span: 16 },
                 };
-                const formItemLayout2 = {
-                        labelCol: { span: 3 },
-                        wrapperCol: { span: 19 },
-                };
+
                 const tailFormItemLayout = {
                         wrapperCol: {
                                 xs: {
@@ -113,17 +110,16 @@ class BasicUploadSingleForm extends React.Component{
 
                 const T1Props = {
                         onChange: this.handleChange,
-                        action: `${config.server}/basicAuth/basicuploadt1`,
+                        action: `${config.server}/ResearchAuth/ResearchT1`,
                         accept: '.zip',
                         headers: {
-                                //authorization: 'authorization-text',
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
                 };
 
                 const T2Props = {
                         onChange: this.handleChange,
-                        action: `${config.server}/basicAuth/basicuploadt2`,
+                        action: `${config.server}/ResearchAuth/ResearchT2`,
                         accept: '.zip',
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
@@ -134,50 +130,50 @@ class BasicUploadSingleForm extends React.Component{
 
 
                 return (
-                        <Form onSubmit={this.handleSubmit}>
-                                <br />
-                                <FormItem {...formItemLayout} label="上传T1W文件（.zip格式)">
-                                        {getFieldDecorator('fileT1', {
-                                                valuePropName: 'fileList',
-                                                getValueFromEvent: this.normFile,
-                                                rules: [{required: true, message:'请先上传文件'}]
-                                        })(
-                                                <Upload {...T1Props}>
-                                                        <Button>
-                                                                <Icon type="upload" />点击上传文件
-                                                        </Button>
-                                                </Upload>
-                                        )}
-                                </FormItem>
-                                <FormItem {...formItemLayout} label="上传FLAIR/T2W文件（.zip格式)">
-                                        {getFieldDecorator('fileT2', {
-                                                valuePropName: 'fileList',
-                                                getValueFromEvent: this.normFile
-                                        })(
-                                                <Upload {...T2Props}>
-                                                        <Button>
-                                                                <Icon type="upload" />点击上传文件
-                                                        </Button>
-                                                </Upload>
-                                        )}
-                                </FormItem>
-                                <FormItem {...formItemLayout2} label="医师备注">
-                                        {
-                                                getFieldDecorator('comment', {
-                                                        rules: [{
-                                                                required: true, message: '请输入医师备注'
-                                                        }]
-                                                })(
-                                                        <TextArea style={{minHeight:'100px'}}/>
-                                                )
-                                        }
-                                </FormItem>
-                                <FormItem {...tailFormItemLayout}>
-                                        <Button type="primary" icon="rocket" htmlType="submit" loading={this.state.isUpdating}>提交任务</Button>
-                                </FormItem>
-                        </Form>
+                    <Form onSubmit={this.handleSubmit}>
+                            <br />
+                            <FormItem {...formItemLayout} label="上传T1W文件">
+                                    {getFieldDecorator('fileT1', {
+                                            valuePropName: 'fileList',
+                                            getValueFromEvent: this.normFile,
+                                            rules: [{required: true, message:'请先上传文件'}]
+                                    })(
+                                        <Upload {...T1Props}>
+                                                <Button>
+                                                        <Icon type="upload" />点击上传文件（.zip格式)
+                                                </Button>
+                                        </Upload>
+                                    )}
+                            </FormItem>
+                            <FormItem {...formItemLayout} label="上传FLAIR/T2W文件">
+                                    {getFieldDecorator('fileT2', {
+                                            valuePropName: 'fileList',
+                                            getValueFromEvent: this.normFile
+                                    })(
+                                        <Upload {...T2Props}>
+                                                <Button>
+                                                        <Icon type="upload" />点击上传文件（.zip格式)
+                                                </Button>
+                                        </Upload>
+                                    )}
+                            </FormItem>
+                            <FormItem {...formItemLayout} label="医师备注">
+                                    {
+                                            getFieldDecorator('comment', {
+                                                    // rules: [{
+                                                    //         required: true, message: '请输入医师备注'
+                                                    // }]
+                                            })(
+                                                <TextArea style={{minHeight:'100px'}}/>
+                                            )
+                                    }
+                            </FormItem>
+                            <FormItem {...tailFormItemLayout}>
+                                    <Button type="primary" icon="rocket" htmlType="submit" loading={this.state.isUpdating}>提交任务</Button>
+                            </FormItem>
+                    </Form>
                 )
         }
 }
 
-export default withRouter(Form.create()(BasicUploadSingleForm));
+export default withRouter(Form.create()(ResearchUploadSingleForm));

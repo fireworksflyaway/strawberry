@@ -1,5 +1,5 @@
 /**
- * Created by Mason Jackson in Office on 2017/12/7.
+ * Created by Mason Jackson in Office on 2/27/18.
  */
 import React from 'react';
 import {Card, Table, Badge, Modal } from 'antd';
@@ -10,11 +10,11 @@ const errorInfo=provideErrorInfo();
 const config=provideConfig();
 const lan='zh';
 const statusDict=[
-    {"en": 'Waiting',"zh": '等待中'},
-    {"en": 'Running', "zh":'运行中'},
-    {"en": 'Success', "zh":"完成"},
-    {"en": 'Failed', "zh":"失败"},
-    {"en": 'Expired', "zh":"超时"}
+        {"en": 'Waiting',"zh": '等待中'},
+        {"en": 'Running', "zh":'运行中'},
+        {"en": 'Success', "zh":"完成"},
+        {"en": 'Failed', "zh":"失败"},
+        {"en": 'Expired', "zh":"超时"}
 ];
 const typeDict=[
         {"zh":"单文件任务"},
@@ -23,7 +23,7 @@ const typeDict=[
 
 
 
-export default class PE_Event extends React.Component{
+export default class ResearchEvent extends React.Component{
         constructor(props){
                 super(props);
                 this.state={
@@ -61,60 +61,59 @@ export default class PE_Event extends React.Component{
         }
 
         getData=()=>{
-                console.log('timer');
+                //console.log('timer');
                 const token=sessionStorage.getItem('StrawberryToken');
-                fetch(`${config.server}/PE_Auth/PE_getEvent`, {
+                fetch(`${config.server}/ResearchAuth/ResearchEvents`, {
                         method: 'get',
                         headers: {
                                 'Authorization': 'Bearer ' + token,
                         }
                 })
-                        .then(handleResponse)
-                        .then((res)=> {
-                                const eventList=[];
-                                const mapper={};
-                                //console.log(res.eventList);
-                                for(let i=0;i<res.eventList.length;i++){
-                                        if(res.eventList[i].IsBatch===false)
-                                                eventList.push(res.eventList[i]);
-                                        else{
-                                                eventList.push(res.eventList[i]);
-                                                mapper[res.eventList[i].number]=eventList.length-1;
-                                        }
-                                        eventList[eventList.length-1].key=eventList[eventList.length-1].number;
-                                }
+                    .then(handleResponse)
+                    .then((res)=> {
+                            const eventList=[];
+                            const mapper={};
+                            //console.log(res.eventList);
+                            for(let i=0;i<res.eventList.length;i++){
+                                    if(res.eventList[i].IsBatch===false)
+                                            eventList.push(res.eventList[i]);
+                                    else{
+                                            eventList.push(res.eventList[i]);
+                                            mapper[res.eventList[i].number]=eventList.length-1;
+                                    }
+                                    eventList[eventList.length-1].key=eventList[eventList.length-1].number;
+                            }
 
-                                //console.log(mapper);
+                            //console.log(mapper);
 
-                                for(let i=0;i<res.eventList.length;i++){
-                                        if(res.eventList[i].type===2)
-                                        {
-                                                let fatherNum=res.eventList[i].number.split('_')[0];
-                                                //console.log(eventList[mapper[fatherNum]]);
-                                                if(eventList[mapper[fatherNum]]["children"]===undefined)
-                                                        eventList[mapper[fatherNum]]["children"]=[];
-                                                eventList[mapper[fatherNum]]["children"].push(res.eventList[i]);
+                            // for(let i=0;i<res.eventList.length;i++){
+                            //         if(res.eventList[i].type===2)
+                            //         {
+                            //                 let fatherNum=res.eventList[i].number.split('_')[0];
+                            //                 //console.log(eventList[mapper[fatherNum]]);
+                            //                 if(eventList[mapper[fatherNum]]["children"]===undefined)
+                            //                         eventList[mapper[fatherNum]]["children"]=[];
+                            //                 eventList[mapper[fatherNum]]["children"].push(res.eventList[i]);
+                            //         }
+                            // }
 
-                                        }
-                                }
+                            eventList.reverse();
+                            //console.log(eventList);
 
-                                eventList.reverse();
-                                //console.log(eventList);
-
-                                this.setState({
-                                        data: eventList
-                                });
-                        })
-                        .catch((err)=>{
-                                console.error(err);
-                                Modal.error({
-                                        content:errorInfo[err][lan],
-                                        onOk:()=>{
-                                                if(err==='10000')
-                                                        window.location.href='/signin';
-                                        }
-                                });
-                        });
+                            this.setState({
+                                    data: eventList
+                            });
+                    })
+                    .catch((err)=>{
+                            console.error(err);
+                            Modal.error({
+                                    content:errorInfo[err][lan],
+                                    onOk:()=>{
+                                            if(err==='10000')
+                                                    window.location.href='/signin';
+                                    }
+                            });
+                    });
         }
 
         handleChange = (pagination, filters, sorter) => {
@@ -209,11 +208,11 @@ export default class PE_Event extends React.Component{
 
 
                 return(
-                        <article style={{minHeight:'600px'}}>
-                                <Card title="查看任务数据" style={{width: '1200px', margin:'150px auto'}}>
-                                        <Table columns={columns} dataSource={this.state.data} onChange={this.handleChange}  pagination={{pageSize:20}}/>
-                                </Card>
-                        </article>
+                    <article style={{minHeight:'600px'}}>
+                            <Card title="查看任务数据" style={{width: '1200px', margin:'150px auto'}}>
+                                    <Table columns={columns} dataSource={this.state.data} onChange={this.handleChange}  pagination={{pageSize:20}}/>
+                            </Card>
+                    </article>
                 )
         }
 }

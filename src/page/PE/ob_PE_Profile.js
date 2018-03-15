@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {Card, Tabs} from 'antd';
-import BasicProfileInfoForm from './PE_ProfileInfoForm';
+import BasicProfileInfoForm from './ob_PE_ProfileInfoForm';
 import ChangePasswordForm from '../Common/ChangePasswordForm';
 import '../../style/Profile.scss'
 

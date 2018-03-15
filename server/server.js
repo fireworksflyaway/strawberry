@@ -13,11 +13,19 @@ const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 const PE_UserAPIClass=require('./PE_Api/PE_User');
 const PE_UploadAPIClass=require('./PE_Api/PE_Upload');
 const PE_EventAPIClass=require('./PE_Api/PE_Event');
+const ResearchUserAPIClass=require('./ResearchApi/ResearchUser');
+const ResearchUploadAPIClass=require('./ResearchApi/ResearchUpload');
+const ResearchEventAPIClass=require('./ResearchApi/ResearchEvent');
 const AdminAPIClass=require('./AdminApi/admin');
+const CommonAPIClass=require('./CommonApi');
 const PE_UserAPI=new PE_UserAPIClass();
 const PE_UploadAPI=new PE_UploadAPIClass();
 const PE_EventAPI=new PE_EventAPIClass();
+const ResearchUserAPI=new ResearchUserAPIClass();
+const ResearchUploadAPI=new ResearchUploadAPIClass();
+const ResearchEventAPI=new ResearchEventAPIClass();
 const AdminAPI=new AdminAPIClass();
+const CommonAPI=new CommonAPIClass();
 
 let app=express();
 
@@ -60,15 +68,15 @@ app.get('/PE_Auth/username', function (req, res) {
         res.send({username: req.user.username});
 })
 
-app.get('/PE_Auth/getPE_profile', PE_UserAPI.getProfile);
+app.get('/PE_Auth/PE_profile', PE_UserAPI.getProfile);
 
-app.post('/PE_Auth/updatePE_profile', PE_UserAPI.updateProfile);
+app.post('/PE_Auth/UpdatePE_Profile', PE_UserAPI.updateProfile);
 
 app.post('/PE_Auth/updatePE_password', PE_UserAPI.updatePassword);
 
-app.post('/PE_signin', PE_UserAPI.signIn);
+app.post('/PE_SignIn', PE_UserAPI.signIn);
 
-app.post('/PE_signup', PE_UserAPI.signUp);
+app.post('/PE_SignUp', PE_UserAPI.signUp);
 
 app.post('/PE_Auth/PE_uploadt1', function (req, res) {
         PE_UploadAPI.uploadT1(req, res, upload);
@@ -90,12 +98,46 @@ app.get('/PE_Auth/PE_getEvent', PE_EventAPI.getEvent);
 
 app.get('/PE_Auth/PE_getReport', PE_EventAPI.getReport);
 
+//research
+app.use('/ResearchAuth', jwt({secret:config.researchAccessKey}));   //6 hours
 
+app.get('/ResearchAuth/username', function (req, res) {
+        res.send({username: req.user.username});
+})
 
+app.get('/ResearchAuth/ResearchProfile', ResearchUserAPI.getProfile);
+
+app.post('/ResearchAuth/UpdateResearchProfile', ResearchUserAPI.updateProfile);
+
+app.post('/ResearchAuth/updateResearchPassword', ResearchUserAPI.updatePassword);
+
+app.post('/ResearchSignIn', ResearchUserAPI.signIn);
+
+app.post('/ResearchSignUp', ResearchUserAPI.signUp);
+
+app.post('/ResearchAuth/ResearchT1', function (req, res) {
+        ResearchUploadAPI.uploadT1(req, res, upload);
+})
+
+app.post('/ResearchAuth/ResearchT2', function (req, res) {
+        ResearchUploadAPI.uploadT2(req, res, upload);
+})
+
+app.post('/ResearchAuth/ResearchBatchFile', function (req, res) {
+        ResearchUploadAPI.uploadBatchFile(req, res, upload);
+})
+
+app.post('/ResearchAuth/ResearchSingleEvent',ResearchUploadAPI.uploadSingleEvent);
+
+app.post('/ResearchAuth/ResearchBatchEvent', ResearchUploadAPI.uploadBatchEvent);
+
+app.get('/ResearchAuth/ResearchEvents', ResearchEventAPI.getEvent);
+
+app.get('/ResearchAuth/ResearchReport', ResearchEventAPI.getReport);
 
 //admin
 app.use('/AdminAuth', jwt({secret:config.adminAccessKey}));   //6 hours
-app.post('/Adminsignin', AdminAPI.signIn);
+app.post('/AdminSignIn', AdminAPI.signIn);
 
 app.get('/AdminAuth/username', function (req, res) {
         //console.log(req.user);
@@ -111,6 +153,14 @@ app.post('/AdminAuth/updateAdminProfile', AdminAPI.updateProfile);
 app.get('/AdminAuth/getUserList', AdminAPI.getUserList);
 
 app.post('/AdminAuth/certificate', AdminAPI.certificate);
+
+
+//common
+app.post('/ForgetPassword', CommonAPI.forgetPassword);
+
+app.post('/ConfirmResetAuth', CommonAPI.confirmResetAuth);
+
+app.post('/ResetPassword', CommonAPI.resetPassword);
 
 const server=app.listen(8090, function () {
         let host = server.address().address;

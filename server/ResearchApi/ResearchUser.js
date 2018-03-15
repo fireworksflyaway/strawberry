@@ -1,5 +1,5 @@
 /**
- * Created by Mason Jackson in Office on 2017/12/3.
+ * Created by Mason Jackson in Office on 2/26/18.
  */
 const jsonwebtoken=require('jsonwebtoken');
 const fs=require('fs');
@@ -11,23 +11,23 @@ const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 const accessOption={expiresIn: '6h'};
 
-class UserAPI{
+class ResearchAPI{
         signIn(req, res){
                 let {Username, Password}= req.body;
                 Password=sha256(Password);
-                db.select('PE_User', {Username, Password}, function (result) {
+                db.select('ResearchUser', {Username, Password}, function (result) {
                         let code='0'; //未知错误
                         if(result._err){
                                 res.status(500).send(code);
                         } else {
                                 if(result.length==0){
-                                        code='10001'  //用户名不存在或密码错误;
+                                        code='10001';  //用户名不存在或密码错误;
                                         res.status(500).send(code);
                                 } else {
                                         if(result[0].Certification===false)
                                                 res.status(500).send('10005');  //用户尚未获得授权
                                         else {
-                                                const token=jsonwebtoken.sign({username: Username}, config.accessKey, accessOption);
+                                                const token=jsonwebtoken.sign({username: Username}, config.researchAccessKey, accessOption);
                                                 res.send({token});
                                         }
                                 }
@@ -39,7 +39,7 @@ class UserAPI{
                 let {Username, Password, Email, Phone, Department} = req.body;
                 Password=sha256(Password);
                 const userData={Username, Password, Email, Phone, Department, Certification: false};
-                db.insert('PE_User', userData, function (result) {
+                db.insert('ResearchUser', userData, function (result) {
                         if(result._err){
                                 let code='0'; //未知错误
                                 console.log(result._err);
@@ -84,10 +84,10 @@ class UserAPI{
                         }
                 })
         }
-        
+
         getProfile(req, res){
                 const username=req.user.username;
-                db.select('PE_User',{Username: username},function (result) {
+                db.select('ResearchUser',{Username: username},function (result) {
                         let code='0';
                         if(result._err){
                                 res.status(500).send(code);
@@ -107,7 +107,7 @@ class UserAPI{
         updateProfile(req, res){
                 const username=req.user.username;
                 const {email, phone, department}=req.body;
-                db.updateOne('PE_User', {Username: username}, {$set:{Email:email, Phone: phone, Department: department}}, function (result) {
+                db.updateOne('ResearchUser', {Username: username}, {$set:{Email:email, Phone: phone, Department: department}}, function (result) {
                         if(result._err){
                                 res.status(500).send('0');
                         }
@@ -121,7 +121,7 @@ class UserAPI{
                 const {username}=req.user;
                 let {currentPassword, newPassword}= req.body;
                 currentPassword=sha256(currentPassword);
-                db.select('PE_User', {Username:username, Password:currentPassword}, function (result) {
+                db.select('ResearchUser', {Username:username, Password:currentPassword}, function (result) {
                         if(result._err){
                                 res.status(500).send('0');
                         }
@@ -132,7 +132,7 @@ class UserAPI{
                                 else{
                                         //update
                                         newPassword=sha256(newPassword);
-                                        db.updateOne('PE_User', {Username: username}, {$set:{Password: newPassword}}, function (result) {
+                                        db.updateOne('ResearchUser', {Username: username}, {$set:{Password: newPassword}}, function (result) {
                                                 if(result._err){
                                                         res.status(500).send('0');
                                                 }
@@ -140,13 +140,16 @@ class UserAPI{
                                                         res.send({suc:true});
                                                 }
                                         })
+
+
                                 }
                         }
                 })
+
+
+
         }
-
-
 
 }
 
-module.exports=UserAPI;
+module.exports=ResearchAPI;

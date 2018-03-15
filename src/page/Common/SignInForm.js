@@ -8,6 +8,7 @@ import {sha256} from 'js-sha256';
 import handleResponse from '../../function/handleResponse';
 import provideConfig from '../../function/provideConfig';
 import provideErrorInfo from '../../function/provideErrorInfo';
+import ForgetPasswordModal from './ForgetPasswordModal';
 
 const config=provideConfig();
 const errorInfo=provideErrorInfo();
@@ -15,6 +16,11 @@ const FormItem=Form.Item;
 const lan='zh';
 
 class SignInForm extends React.Component{
+        constructor(){
+                super();
+                this.state={visible: false};
+        }
+
         handleSubmit=(e)=>{
             e.preventDefault();
                 this.props.form.validateFieldsAndScroll((err, values) => {
@@ -48,6 +54,15 @@ class SignInForm extends React.Component{
                 this.props.form.resetFields();
         }
 
+        handleForgetPasswordLinkClick(e){
+                e.preventDefault();
+                this.setState({visible:true});
+        }
+
+        handleCloseForgetPasswordModal(){
+                this.setState({visible: false});
+        }
+
         render(){
                 const {getFieldDecorator} = this.props.form;
                 return(
@@ -73,6 +88,8 @@ class SignInForm extends React.Component{
                                 <FormItem>
                                         <Button type="primary" htmlType="submit" icon="login">登录</Button>&emsp;
                                         <Button htmlType="reset" onClick={this.handleReset.bind(this)} icon="reload">重置</Button>
+                                        <a style={{float: 'right'}} onClick={this.handleForgetPasswordLinkClick.bind(this)}>忘记密码?</a>
+                                        <ForgetPasswordModal visible={this.state.visible} onClose={this.handleCloseForgetPasswordModal.bind(this)} type={this.props.type} />
                                 </FormItem>
                         </Form>
                 )

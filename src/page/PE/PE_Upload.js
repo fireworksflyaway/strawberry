@@ -19,7 +19,7 @@ export default class PE_Upload extends React.Component{
         render(){
                 return(
                         <article style={{minHeight:'600px'}}>
-                                <Card title="上传数据" style={{width: '700px', margin:'150px auto'}}>
+                                <Card title="体检版上传数据" style={{width: '700px', margin:'150px auto'}}>
                                         <Tabs defaultActiveKey="1">
                                                 <TabPane tab="单任务上传" key="1"><PE_UploadSingleForm /></TabPane>
                                                 <TabPane tab="批量上传" key="2"><PE_UploadBatchForm /></TabPane>

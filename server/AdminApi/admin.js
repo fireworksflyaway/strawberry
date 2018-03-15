@@ -32,8 +32,9 @@ class AdminAPI{
         }
 
         getUserList(req, res){
-                db.select('PE_User',{}, function (result) {
-                        db.aggregate('PE_Report',{$group:{_id:"$Username", event:{$sum:1}}}, function (err, list) {
+                const {type}=req.query;
+                db.select(`${type}User`,{}, function (result) {
+                        db.aggregate(`${type}Report`, {$group:{_id:"$Username", event:{$sum:1}}}, function (err, list) {
                                 if(err){
                                         res.status(500).send('0');
                                 } else {
@@ -116,8 +117,8 @@ class AdminAPI{
         }
 
         certificate(req, res){
-                const {Username, Email}=req.body;
-                db.updateOne('PE_User', {Username}, {$set:{Certification:true}}, function (result) {
+                const {Username, Email, Type}=req.body;
+                db.updateOne(`${Type}User`, {Username}, {$set:{Certification:true}}, function (result) {
                         if(result._err){
                                 res.status(500).send('0');
                         }

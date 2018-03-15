@@ -3,14 +3,10 @@
  */
 import React from 'react';
 import {Link} from 'react-router-dom';
-
 import logo from '../../image/logo.svg';
-
-
 import '../../style/HeaderInfo.scss';
 import LogoutHeader from "./LogoutHeader";
 import LoginHeader from './LoginHeader';
-//import PE_LoginHeader from '../PE/PE_LoginHeader';
 import AdminLoginHeader from '../Admin/AdminLoginHeader';
 
 export default class HeaderInfo extends React.Component{
@@ -36,7 +32,6 @@ export default class HeaderInfo extends React.Component{
                 //console.log(this.props.loginType);
                 switch (this.props.loginType)
                 {
-                        // case 'basic': menuComponent=<PE_LoginHeader username={this.props.username} handleLogout={this.props.handleLogout} selectKey={this.state.selectKey} />;break;
                         case 'Diagnose':
                         case 'Research':
                         case 'PE_': menuComponent=<LoginHeader username={this.props.username} handleLogout={this.props.handleLogout} selectKey={this.state.selectKey} type={this.props.loginType}/>;break;

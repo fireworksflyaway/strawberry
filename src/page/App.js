@@ -8,22 +8,28 @@ import HeaderInfo from "./Common/HeaderInfo";
 import HomeContent from './Common/HomeContent';
 import SignUpContent from './Common/SignUpContent';
 import SignInContent from './Common/SignInContent';
-import BasicProfile from './PE/PE_Profile';
+import Profile from './Common/Profile';
 import PE_Upload from './PE/PE_Upload';
-import BasicEvent from './PE/PE_Event';
-import BasicReport from "./PE/PE_Report";
+import PE_Event from './PE/PE_Event';
+import PE_Report from "./PE/PE_Report";
 import DiagnoseUpload from './Diagnose/DiagnoseUpload';
 import DiagnoseReport from './Diagnose/DiagnoseReport';
 import DiagnoseEvent from './Diagnose/DiagnoseEvent';
+import ResearchUpload from './Research/ResearchUpload';
+import ResearchEvent from './Research/ResearchEvent';
+import ResearchReport from './Research/ResearchReport';
 import AdminUserList from './Admin/AdminUserList';
 import AdminSignIn from './Admin/AdminSignIn';
 import AdminProfile from './Admin/AdminProfile';
+import ResetPassword from "./Common/ResetPassword";
 
 //import withLoginFunc from '../function/withLoginFunc';
 //import withLogoutFunc from '../function/withLogoutFunc';
 // import withLoginInfo from '../function/withLoginInfo';
+import withLoginType from '../function/withLoginType';
 import provideConfig from '../function/provideConfig';
 import handleResponse from '../function/handleResponse';
+
 
 
 
@@ -56,6 +62,7 @@ class App extends Component {
                 switch (loginType){
                         case 'Diagnose':
                         case 'PE_':
+                        case 'Research':
                         case 'Admin': type=loginType;break;
                         default: {
                                 sessionStorage.removeItem('StrawberryLoginType');
@@ -109,28 +116,32 @@ class App extends Component {
                 return(
                         <div>
                                 <BrowserRouter>
-                                        <Layout>
+                                        <Layout className='appLayout'>
                                                 <Header className='appHeader'>
                                                         <HeaderInfo loginType={this.state.loginType} username={this.state.username} handleLogout={this.handleLogout.bind(this)}/>
                                                 </Header>
                                                 <Content className='appContent' >
                                                         <Switch>
-                                                                <Route path='/adminsignin' component={AdminSignIn}/>
-                                                                <Route path='/adminprofile' component={AdminProfile}/>
-                                                                <Route path='/adminuserlist' component={AdminUserList}/>
-                                                                <Route path='/PE_Report' component={BasicReport}/>
-                                                                <Route path='/PE_Profile' component={BasicProfile}/>
+                                                                <Route path='/AdminSignIn' component={AdminSignIn}/>
+                                                                <Route path='/AdminProfile' component={AdminProfile}/>
+                                                                <Route path='/AdminUserList' component={AdminUserList}/>
+                                                                <Route path='/PE_Report' component={PE_Report}/>
                                                                 <Route path='/PE_Upload' component={PE_Upload} />
-                                                                <Route path='/PE_Event' component={BasicEvent} />
-                                                                <Route path='/diagnoseupload' component={DiagnoseUpload} />
-                                                                <Route path='/diagnoseevent' component={DiagnoseEvent} />
-                                                                <Route path='/diagnosereport' component={DiagnoseReport} />
-                                                                <Route path='/signup' component={SignUpContent}/>
-                                                                <Route path='/signin' component={SignInContent}/>
+                                                                <Route path='/PE_Event' component={PE_Event} />
+                                                                <Route path='/DiagnoseUpload' component={DiagnoseUpload} />
+                                                                <Route path='/DiagnoseEvent' component={DiagnoseEvent} />
+                                                                <Route path='/DiagnoseReport' component={DiagnoseReport} />
+                                                                <Route path='/ResearchUpload' component={ResearchUpload} />
+                                                                <Route path='/ResearchEvent' component={ResearchEvent} />
+                                                                <Route path='/ResearchReport' component={ResearchReport} />
+                                                                <Route path='/SignUp' component={SignUpContent}/>
+                                                                <Route path='/SignIn' component={SignInContent}/>
+                                                                <Route path='/Profile' component={withLoginType(Profile, this.state.loginType)} />
+                                                                <Route path='/ResetPassword' component={ResetPassword} />
                                                                 <Route component={HomeContent} />
                                                         </Switch>
                                                 </Content>
-                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} Version 0.1.0 All rights reserved.</Footer>
+                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} Version 0.1.1 All rights reserved.</Footer>
                                         </Layout>
                                 </BrowserRouter>
                         </div>
