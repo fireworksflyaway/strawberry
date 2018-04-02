@@ -19,13 +19,14 @@ class PE_EventAPI{
                 }
                 let eventList=[];
                 result.forEach(function (rr) {
+
                     eventList.push({
                         Number: rr.Number,
                         IsBatch: rr.IsBatch,
                         Status: rr.Status,
                         CreationTime: moment((new ObjectID(rr._id)).getTimestamp()).format('YYYY/MM/DD HH:mm:ss'),
-                        StartTime: rr.StartTime?moment(rr.startTime).format('YYYY/MM/DD HH:mm:ss'):'',
-                        EndTime: rr.EndTime?moment(rr.endTime).format('YYYY/MM/DD HH:mm:ss'):'',
+                        StartTime: rr.StartTime!==undefined?moment(rr.StartTime).format('YYYY/MM/DD HH:mm:ss'):'',
+                        EndTime: rr.EndTime!==undefined?moment(rr.EndTime).format('YYYY/MM/DD HH:mm:ss'):'',
                     });
                 })
                 res.send({suc:true, eventList});

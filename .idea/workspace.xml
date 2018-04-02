@@ -2,47 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07f9186f-7c72-4f3e-bc6d-8faa5c42383a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/server/CommonApi.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/server/ResearchApi/ResearchEvent.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/server/ResearchApi/ResearchUpload.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/server/ResearchApi/ResearchUser.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/function/withLoginType.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Admin/AdminUserListTable.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Common/ForgetPasswordModal.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Common/Profile.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Common/ProfileInfoForm.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Common/ResetPassword.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Common/SignUpForm.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Research/ResearchEvent.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Research/ResearchReport.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Research/ResearchUpload.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Research/ResearchUploadBatchForm.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/page/Research/ResearchUploadSingleForm.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/style/Common.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/server/DiagnoseApi/DiagnoseEvent.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/server/DiagnoseApi/DiagnoseUser.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/server/definition.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/server/AdminApi/admin.js" afterPath="$PROJECT_DIR$/server/AdminApi/admin.js" />
-      <change beforePath="$PROJECT_DIR$/server/MailApi.js" afterPath="$PROJECT_DIR$/server/MailApi.js" />
+      <change beforePath="$PROJECT_DIR$/server/PE_Api/PE_Event.js" afterPath="$PROJECT_DIR$/server/PE_Api/PE_Event.js" />
       <change beforePath="$PROJECT_DIR$/server/PE_Api/PE_Upload.js" afterPath="$PROJECT_DIR$/server/PE_Api/PE_Upload.js" />
-      <change beforePath="$PROJECT_DIR$/server/PE_Api/PE_User.js" afterPath="$PROJECT_DIR$/server/PE_Api/PE_User.js" />
+      <change beforePath="$PROJECT_DIR$/server/ResearchApi/ResearchEvent.js" afterPath="$PROJECT_DIR$/server/ResearchApi/ResearchEvent.js" />
+      <change beforePath="$PROJECT_DIR$/server/ResearchApi/ResearchUpload.js" afterPath="$PROJECT_DIR$/server/ResearchApi/ResearchUpload.js" />
       <change beforePath="$PROJECT_DIR$/server/config.json" afterPath="$PROJECT_DIR$/server/config.json" />
       <change beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
-      <change beforePath="$PROJECT_DIR$/src/function/provideErrorInfo.js" afterPath="$PROJECT_DIR$/src/function/provideErrorInfo.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/Admin/AdminUserList.js" afterPath="$PROJECT_DIR$/src/page/Admin/AdminUserList.js" />
       <change beforePath="$PROJECT_DIR$/src/page/App.js" afterPath="$PROJECT_DIR$/src/page/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/Common/HeaderInfo.js" afterPath="$PROJECT_DIR$/src/page/Common/HeaderInfo.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/Common/LoginHeader.js" afterPath="$PROJECT_DIR$/src/page/Common/LoginHeader.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/Common/SignInContent.js" afterPath="$PROJECT_DIR$/src/page/Common/SignInContent.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/Common/SignInForm.js" afterPath="$PROJECT_DIR$/src/page/Common/SignInForm.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/Common/SignUpContent.js" afterPath="$PROJECT_DIR$/src/page/Common/SignUpContent.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/PE/BasicUploadSingleForm_back.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/page/PE/PE_Event.js" afterPath="$PROJECT_DIR$/src/page/PE/PE_Event.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/PE/PE_LoginHeader.js" afterPath="$PROJECT_DIR$/src/page/PE/ob_PE_LoginHeader.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/PE/PE_Profile.js" afterPath="$PROJECT_DIR$/src/page/PE/ob_PE_Profile.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/PE/PE_ProfileInfoForm.js" afterPath="$PROJECT_DIR$/src/page/PE/ob_PE_ProfileInfoForm.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/PE/PE_SignUpForm.js" afterPath="$PROJECT_DIR$/src/page/PE/ob_PE_SignUpForm.js" />
-      <change beforePath="$PROJECT_DIR$/src/page/PE/PE_Upload.js" afterPath="$PROJECT_DIR$/src/page/PE/PE_Upload.js" />
-      <change beforePath="$PROJECT_DIR$/src/style/App.scss" afterPath="$PROJECT_DIR$/src/style/App.scss" />
+      <change beforePath="$PROJECT_DIR$/src/page/Diagnose/DiagnoseEvent.js" afterPath="$PROJECT_DIR$/src/page/Diagnose/DiagnoseEvent.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/Diagnose/DiagnoseReport.js" afterPath="$PROJECT_DIR$/src/page/Diagnose/DiagnoseReport.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/Diagnose/DiagnoseUploadForm.js" afterPath="$PROJECT_DIR$/src/page/Diagnose/DiagnoseUploadForm.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/PE/PE_UploadBatchForm.js" afterPath="$PROJECT_DIR$/src/page/PE/PE_UploadBatchForm.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/PE/ob_PE_LoginHeader.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/page/PE/ob_PE_Profile.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/page/PE/ob_PE_ProfileInfoForm.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/page/PE/ob_PE_SignUpForm.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/page/Research/ResearchReport.js" afterPath="$PROJECT_DIR$/src/page/Research/ResearchReport.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,58 +34,67 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.47595078">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ResearchUploadBatchForm.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchUploadBatchForm.js">
+          <file leaf-file-name="DiagnoseUploadForm.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseUploadForm.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="22">
-                  <caret line="37" column="90" lean-forward="false" selection-start-line="37" selection-start-column="90" selection-end-line="37" selection-end-column="90" />
+                <state relative-caret-position="6974">
+                  <caret line="323" column="78" lean-forward="false" selection-start-line="323" selection-start-column="78" selection-end-line="323" selection-end-column="78" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="App.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/style/App.scss">
+          <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/page/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="462">
-                  <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+                <state relative-caret-position="2794">
+                  <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ResetPassword.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/page/Common/ResetPassword.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="132">
-                  <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-                  <folding>
-                    <element signature="e#57#83#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ResearchUpload.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/ResearchApi/ResearchUpload.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="484">
-                  <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-                  <folding>
-                    <element signature="n#!!block;n#uploadSingleEvent#0;n#ResearchUploadAPI#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="provideConfig.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="provideConfig.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/function/provideConfig.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="352">
-                  <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+                <state relative-caret-position="264">
+                  <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DiagnoseReport.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseReport.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2112">
+                  <caret line="104" column="22" lean-forward="false" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="e#60#86#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DiagnoseUpload.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseUpload.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DiagnoseEvent.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseEvent.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2706">
+                  <caret line="129" column="45" lean-forward="false" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
@@ -116,63 +104,31 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="ResearchEvent.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/server/ResearchApi/ResearchEvent.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="608">
+                  <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/server.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2926">
-                  <caret line="135" column="50" lean-forward="false" selection-start-line="135" selection-start-column="50" selection-end-line="135" selection-end-column="50" />
-                  <folding>
-                    <element signature="e#3908#3965#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="PE_Event.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/PE_Api/PE_Event.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="440">
-                  <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+                <state relative-caret-position="3168">
+                  <caret line="144" column="61" lean-forward="false" selection-start-line="144" selection-start-column="61" selection-end-line="144" selection-end-column="61" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/page/App.js">
+          <file leaf-file-name="definition.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/definition.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="426">
-                  <caret line="128" column="113" lean-forward="false" selection-start-line="128" selection-start-column="113" selection-end-line="128" selection-end-column="113" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ResearchEvent.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/ResearchApi/ResearchEvent.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ResearchEvent.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchEvent.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1144">
-                  <caret line="58" column="50" lean-forward="false" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="PE_Event.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/page/PE/PE_Event.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2530">
-                  <caret line="121" column="31" lean-forward="false" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
+                <state relative-caret-position="330">
+                  <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -185,8 +141,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -194,7 +150,6 @@
     <findStrings>
       <find>style={{ fontSize: 13 }}</find>
       <find>localhost</find>
-      <find>T1</find>
       <find>exclude</find>
       <find>startsWith</find>
       <find>auth</find>
@@ -206,6 +161,11 @@
       <find>basic</find>
       <find>adminAuth</find>
       <find>PE_</find>
+      <find>T1</find>
+      <find>data['SWI']</find>
+      <find>2DT2</find>
+      <find>T1W</find>
+      <find>report.json</find>
     </findStrings>
     <replaceStrings>
       <replace>Batch</replace>
@@ -219,6 +179,11 @@
       <replace>PE_</replace>
       <replace>AdminAuth</replace>
       <replace>Research</replace>
+      <replace>Diagnose</replace>
+      <replace>T1W</replace>
+      <replace>DWI</replace>
+      <replace>data._SWI</replace>
+      <replace>SWI</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -232,23 +197,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/page/PE/BasicEvent.js" />
-        <option value="$PROJECT_DIR$/src/page/PE/BasicProfile.js" />
-        <option value="$PROJECT_DIR$/src/page/PE/BasicReport.js" />
-        <option value="$PROJECT_DIR$/src/page/PE/BasicProfileInfoForm.js" />
-        <option value="$PROJECT_DIR$/src/page/PE/PE_ProfileInfoForm.js" />
-        <option value="$PROJECT_DIR$/server/PE_Api/basicUpload.js" />
         <option value="$PROJECT_DIR$/src/page/PE/BasicUploadBatchForm.js" />
-        <option value="$PROJECT_DIR$/src/page/PE/PE_UploadBatchForm.js" />
-        <option value="$PROJECT_DIR$/server/PE_Api/PE_Event.js" />
         <option value="$PROJECT_DIR$/src/page/PE/PE_UploadSingleForm.js" />
         <option value="$PROJECT_DIR$/src/page/Admin/AdminSignIn.js" />
         <option value="$PROJECT_DIR$/src/page/Admin/AdminProfileEmailForm.js" />
         <option value="$PROJECT_DIR$/src/page/PE/PE_Report.js" />
-        <option value="$PROJECT_DIR$/src/page/Diagnose/DiagnoseReport.js" />
         <option value="$PROJECT_DIR$/src/page/PE/PE_SignUpForm.js" />
-        <option value="$PROJECT_DIR$/src/function/provideConfig.js" />
-        <option value="$PROJECT_DIR$/server/config.json" />
         <option value="$PROJECT_DIR$/src/page/Admin/AdminUserList.js" />
         <option value="$PROJECT_DIR$/server/AdminApi/admin.js" />
         <option value="$PROJECT_DIR$/src/page/Admin/AdminUserListTable.js" />
@@ -266,9 +220,7 @@
         <option value="$PROJECT_DIR$/server/ResearchApi/ResearchUser.js" />
         <option value="$PROJECT_DIR$/src/page/Common/Profile.js" />
         <option value="$PROJECT_DIR$/src/page/Research/ResearchUploadSingleForm.js" />
-        <option value="$PROJECT_DIR$/server/ResearchApi/ResearchEvent.js" />
         <option value="$PROJECT_DIR$/src/page/Research/ResearchEvent.js" />
-        <option value="$PROJECT_DIR$/src/page/Research/ResearchReport.js" />
         <option value="$PROJECT_DIR$/server/MailApi.js" />
         <option value="$PROJECT_DIR$/server/PE_Api/PE_User.js" />
         <option value="$PROJECT_DIR$/src/page/Common/ForgetPasswordModal.js" />
@@ -276,13 +228,26 @@
         <option value="$PROJECT_DIR$/src/function/provideErrorInfo.js" />
         <option value="$PROJECT_DIR$/src/style/Common.scss" />
         <option value="$PROJECT_DIR$/server/CommonApi.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/src/page/Research/ResearchUploadBatchForm.js" />
-        <option value="$PROJECT_DIR$/server/PE_Api/PE_Upload.js" />
         <option value="$PROJECT_DIR$/src/page/Common/ResetPassword.js" />
-        <option value="$PROJECT_DIR$/server/ResearchApi/ResearchUpload.js" />
-        <option value="$PROJECT_DIR$/src/page/App.js" />
         <option value="$PROJECT_DIR$/src/style/App.scss" />
+        <option value="$PROJECT_DIR$/src/page/PE/PE_UploadBatchForm.js" />
+        <option value="$PROJECT_DIR$/server/config.json" />
+        <option value="$PROJECT_DIR$/server/DiagnoseApi/DiagnoseUser.js" />
+        <option value="$PROJECT_DIR$/src/page/Research/ResearchReport.js" />
+        <option value="$PROJECT_DIR$/server/definition.js" />
+        <option value="$PROJECT_DIR$/server/ResearchApi/ResearchUpload.js" />
+        <option value="$PROJECT_DIR$/server/PE_Api/PE_Upload.js" />
+        <option value="$PROJECT_DIR$/server/DiagnoseApi/DiagnoseUpload.js" />
+        <option value="$PROJECT_DIR$/server/PE_Api/PE_Event.js" />
+        <option value="$PROJECT_DIR$/server/ResearchApi/ResearchEvent.js" />
+        <option value="$PROJECT_DIR$/server/DiagnoseApi/DiagnoseEvent.js" />
+        <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/src/page/Diagnose/DiagnoseEvent.js" />
+        <option value="$PROJECT_DIR$/src/page/Diagnose/DiagnoseReport.js" />
+        <option value="$PROJECT_DIR$/src/page/Diagnose/DiagnoseUploadForm.js" />
+        <option value="$PROJECT_DIR$/src/page/App.js" />
+        <option value="$PROJECT_DIR$/src/function/provideConfig.js" />
       </list>
     </option>
   </component>
@@ -307,10 +272,10 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="53" />
-    <option name="y" value="-4" />
-    <option name="width" value="2503" />
-    <option name="height" value="1291" />
+    <option name="x" value="193" />
+    <option name="y" value="51" />
+    <option name="width" value="1325" />
+    <option name="height" value="1199" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -346,8 +311,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -358,13 +321,18 @@
             <path>
               <item name="strawberry" type="b2602c69:ProjectViewProjectNode" />
               <item name="strawberry" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="strawberry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strawberry" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="strawberry" type="b2602c69:ProjectViewProjectNode" />
               <item name="strawberry" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="PE_Api" type="462c0819:PsiDirectoryNode" />
+              <item name="DiagnoseApi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="strawberry" type="b2602c69:ProjectViewProjectNode" />
@@ -394,13 +362,6 @@
               <item name="strawberry" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strawberry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strawberry" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
               <item name="Common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -424,16 +385,12 @@
               <item name="page" type="462c0819:PsiDirectoryNode" />
               <item name="Research" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="strawberry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strawberry" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,8 +433,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.PE_Event.js">
+    <configuration name="PE_Event.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="PE_Event.js" working-dir="$PROJECT_DIR$/src/page/PE" />
     <configuration name="Unnamed" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Node.js.Unnamed" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.PE_Event.js" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.PE_Event.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -612,7 +579,21 @@
       <workItem from="1520818773374" duration="10390000" />
       <workItem from="1520922643258" duration="378000" />
       <workItem from="1520997503946" duration="677000" />
-      <workItem from="1521078115384" duration="6000" />
+      <workItem from="1521078115384" duration="7907000" />
+      <workItem from="1521107708989" duration="1956000" />
+      <workItem from="1521165103687" duration="4894000" />
+      <workItem from="1521423208516" duration="2960000" />
+      <workItem from="1521524897088" duration="4790000" />
+      <workItem from="1521596031995" duration="15042000" />
+      <workItem from="1521683768121" duration="15306000" />
+      <workItem from="1521767902722" duration="3797000" />
+      <workItem from="1521854867825" duration="3816000" />
+      <workItem from="1522029612987" duration="3194000" />
+      <workItem from="1522113929743" duration="2756000" />
+      <workItem from="1522200224269" duration="5963000" />
+      <workItem from="1522287661506" duration="8597000" />
+      <workItem from="1522372464228" duration="2092000" />
+      <workItem from="1522633315599" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="install ant design">
       <created>1511330449063</created>
@@ -859,11 +840,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518226331929</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Web 0.1.1&#10;科研版基本功能完成">
+      <created>1521078156155</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1521078156155</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="638442000" />
+    <option name="totallyTimeSpent" value="721523000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -875,19 +863,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="-4" width="1504" height="1091" extended-state="6" />
-    <editor active="true" />
+    <frame x="193" y="51" width="2409" height="1232" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14746228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11891663" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947463" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2085354" sideWeight="0.50342935" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3260188" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3251366" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13443072" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16388309" sideWeight="0.49657065" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24021839" sideWeight="0.49657065" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925718" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -934,7 +921,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix header width bug" />
     <MESSAGE value="Chinese carousel caption" />
     <MESSAGE value="router" />
     <MESSAGE value="signup form setup" />
@@ -959,11 +945,12 @@
     <MESSAGE value="Web 0.0.3&#10;1. 更新了错误提示列表&#10;2. 增加了登录超时退出" />
     <MESSAGE value="Web 0.0.4&#10;1. 增加了管理员功能之登录, 修改邮箱和密码,查看用户列表,授权&#10;2. 增加了邮件模块" />
     <MESSAGE value="Web 0.1.0&#10;体检版基本功能完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="Web 0.1.0&#10;体检版基本功能完成" />
+    <MESSAGE value="Web 0.1.1&#10;科研版基本功能完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="Web 0.1.1&#10;科研版基本功能完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1010,112 +997,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/page/Common/SignUpContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="17" column="111" lean-forward="true" selection-start-line="17" selection-start-column="111" selection-end-line="17" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/HomeContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PE/ob_PE_LoginHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PE/ob_BasicUploadSingleForm.js" />
-    <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchUpload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseUpload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="21" column="68" lean-forward="true" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PE/ob_PE_Profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PE/PE_Report.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-346">
-          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PE/ob_PE_ProfileInfoForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="21" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="134" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/function/withLoginInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/ChangePasswordForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/HeaderInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/ProfileInfoForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="56" column="95" lean-forward="false" selection-start-line="56" selection-start-column="95" selection-end-line="56" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/function/withLoginType.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/Profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/PE/PE_UploadSingleForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3116">
@@ -1134,13 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/LoginHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="15" column="103" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="103" />
         </state>
       </provider>
     </entry>
@@ -1214,20 +1088,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/PE_Api/PE_User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/SignInForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/CommonApi.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1235,17 +1095,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchReport.js">
+    <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchEvent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="121" column="23" lean-forward="false" selection-start-line="121" selection-start-column="23" selection-end-line="121" selection-end-column="23" />
+        <state relative-caret-position="1144">
+          <caret line="58" column="50" lean-forward="false" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/db.js">
+    <entry file="file://$PROJECT_DIR$/src/page/Common/ResetPassword.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchUploadBatchForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="37" column="90" lean-forward="false" selection-start-line="37" selection-start-column="90" selection-end-line="37" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/App.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-overrides.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pm2-start.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1258,122 +1160,209 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/PE/PE_UploadBatchForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2468">
-          <caret line="131" column="61" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="131" selection-end-column="61" />
+        <state relative-caret-position="990">
+          <caret line="52" column="67" lean-forward="false" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Common/SignInForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/DiagnoseApi/DiagnoseUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Common/Profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Common/ProfileInfoForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1078">
+          <caret line="56" column="95" lean-forward="false" selection-start-line="56" selection-start-column="95" selection-end-line="56" selection-end-column="95" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="242">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/function/handleResponse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="55" lean-forward="false" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/PE_Api/PE_User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3322">
+          <caret line="151" column="23" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="151" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="29" column="60" lean-forward="false" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Common/LoginHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="15" column="53" lean-forward="false" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Common/HeaderInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/PE/PE_Report.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="33" column="64" lean-forward="true" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/PE/PE_Event.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2530">
-          <caret line="121" column="31" lean-forward="false" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="918">
+          <caret line="92" column="92" lean-forward="false" selection-start-line="92" selection-start-column="92" selection-end-line="92" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchReport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="34" column="62" lean-forward="true" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/PE_Api/PE_Upload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2838">
-          <caret line="15" column="43" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        <state relative-caret-position="3366">
+          <caret line="153" column="9" lean-forward="true" selection-start-line="153" selection-start-column="9" selection-end-line="153" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchEvent.js">
+    <entry file="file://$PROJECT_DIR$/server/ResearchApi/ResearchUpload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="58" column="50" lean-forward="false" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+        <state relative-caret-position="529">
+          <caret line="154" column="31" lean-forward="true" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/definition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/PE_Api/PE_Event.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/DiagnoseApi/DiagnoseUpload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3212">
+          <caret line="146" column="48" lean-forward="false" selection-start-line="146" selection-start-column="48" selection-end-line="146" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/DiagnoseApi/DiagnoseEvent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="26" column="59" lean-forward="false" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3168">
+          <caret line="144" column="61" lean-forward="false" selection-start-line="144" selection-start-column="61" selection-end-line="144" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/ResearchApi/ResearchEvent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        <state relative-caret-position="608">
+          <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
+    <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseEvent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2926">
-          <caret line="135" column="50" lean-forward="false" selection-start-line="135" selection-start-column="50" selection-end-line="135" selection-end-column="50" />
-          <folding>
-            <element signature="e#3908#3965#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/function/provideConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        <state relative-caret-position="2706">
+          <caret line="129" column="45" lean-forward="false" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/ResearchApi/ResearchUpload.js">
+    <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseReport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        <state relative-caret-position="2112">
+          <caret line="104" column="22" lean-forward="false" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
           <folding>
-            <element signature="n#!!block;n#uploadSingleEvent#0;n#ResearchUploadAPI#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#60#86#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/ResetPassword.js">
+    <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseUpload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#57#83#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/PE_Api/PE_Event.js">
+    <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseUploadForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        <state relative-caret-position="6974">
+          <caret line="323" column="78" lean-forward="false" selection-start-line="323" selection-start-column="78" selection-end-line="323" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="128" column="113" lean-forward="false" selection-start-line="128" selection-start-column="113" selection-end-line="128" selection-end-column="113" />
+        <state relative-caret-position="2794">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/index.css">
+    <entry file="file://$PROJECT_DIR$/src/function/provideConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/App.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchUploadBatchForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="37" column="90" lean-forward="false" selection-start-line="37" selection-start-column="90" selection-end-line="37" selection-end-column="90" />
+        <state relative-caret-position="264">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>

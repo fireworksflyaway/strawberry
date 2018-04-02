@@ -16,11 +16,17 @@ const statusDict=[
     {"en": 'Failed', "zh":"失败"},
     {"en": 'Expired', "zh":"超时"}
 ];
-const typeDict=[
-        {"zh":"单文件任务"},
-        {"zh":"批处理任务组"},
-        {"zh":"批处理任务"}
-];
+
+
+const DsType=[
+        {"zh": "阿尔兹海默"},
+        {"zh": "血管性痴呆"},
+        {"zh": "小血管病变"},
+        {"zh": "额颞叶痴呆"},
+        {"zh": "多发性硬化症"},
+        {"zh": "帕金森综合症"},
+        {"zh": "中风后脑改变"},
+]
 
 
 
@@ -64,7 +70,7 @@ export default class DiagnoseEvent extends React.Component{
         getData=()=>{
                 console.log('timer');
                 const token=sessionStorage.getItem('StrawberryToken');
-                fetch(`${config.server}/basicAuth/getbasicevent`, {
+                fetch(`${config.server}/DiagnoseAuth/DiagnoseEvents`, {
                         method: 'get',
                         headers: {
                                 'Authorization': 'Bearer ' + token,
@@ -72,34 +78,7 @@ export default class DiagnoseEvent extends React.Component{
                 })
                         .then(handleResponse)
                         .then((res)=> {
-                                const eventList=[];
-                                const mapper={};
-                                //console.log(res.eventList);
-                                for(let i=0;i<res.eventList.length;i++){
-                                        if(res.eventList[i].type===0)
-                                                eventList.push(res.eventList[i]);
-                                        if(res.eventList[i].type===1)
-                                        {
-                                                eventList.push(res.eventList[i]);
-                                                mapper[res.eventList[i].number]=eventList.length-1;
-                                        }
-                                        eventList[eventList.length-1].key=eventList[eventList.length-1].number;
-                                }
-
-                                //console.log(mapper);
-
-                                for(let i=0;i<res.eventList.length;i++){
-                                        if(res.eventList[i].type===2)
-                                        {
-                                                let fatherNum=res.eventList[i].number.split('_')[0];
-                                                //console.log(eventList[mapper[fatherNum]]);
-                                                if(eventList[mapper[fatherNum]]["children"]===undefined)
-                                                        eventList[mapper[fatherNum]]["children"]=[];
-                                                eventList[mapper[fatherNum]]["children"].push(res.eventList[i]);
-
-                                        }
-                                }
-
+                                const {eventList}=res;
                                 eventList.reverse();
                                 //console.log(eventList);
 
@@ -131,38 +110,32 @@ export default class DiagnoseEvent extends React.Component{
                 let { sortedInfo, filteredInfo } = this.state;
                 sortedInfo = sortedInfo || {};
                 filteredInfo = filteredInfo || {};
-
+                const dsTypeFilter=[];
+                for(let i=0;i<7;i++){
+                        dsTypeFilter.push({
+                                text: DsType[i].zh,
+                                value: i,
+                        })
+                }
                 const columns=[
                         {
                                 title: "任务编号",
-                                dataIndex: "number",
-                                key: "number",
-                                sorter: (a,b)=>a.number >= b.number?1:-1,
-                                sortOrder: sortedInfo.columnKey==='number'&&sortedInfo.order,
-                                // render:(value,record)=>{
-                                //         if(record.type===1)
-                                //                 return <Badge dot >{value}</Badge>;
-                                //         else
-                                //                 return value;
-                                // }
+                                dataIndex: "Number",
+                                key: "Number",
+                                sorter: (a,b)=>a.Number >= b.Number?1:-1,
+                                sortOrder: sortedInfo.columnKey==='Number'&&sortedInfo.order,
                         },{
                                 title: "任务类型",
-                                dataIndex: "type",
-                                key:"type",
-                                filters:[{
-                                        text: "单文件任务",
-                                        value: "0"
-                                },{
-                                        text: "批处理任务",
-                                        value: "1"
-                                }],
+                                dataIndex: "DsType",
+                                key:"DsType",
+                                filters:dsTypeFilter,
                                 filteredValue: filteredInfo.type||null,
-                                onFilter: (value, record)=> record.type.toString()===value,
-                                render:(value, record)=>typeDict[value].zh,
+                                onFilter: (value, record)=> record.DsType.toString()===value,
+                                render:(value, record)=>DsType[value].zh
                         },{
                                 title: "任务状态",
-                                dataIndex: "status",
-                                key: "status",
+                                dataIndex: "Status",
+                                key: "Status",
                                 // filters:[
                                 //     {
                                 //         text: "等待中",
@@ -197,22 +170,22 @@ export default class DiagnoseEvent extends React.Component{
                                 }
                         },{
                                 title: "任务生成时间",
-                                dataIndex: "creationTime",
-                                key: "creationTime",
-                                sorter: (a,b)=>a.creationTime>b.creationTime?1:-1,
-                                sortOrder: sortedInfo.columnKey==='creationTime'&&sortedInfo.order
+                                dataIndex: "CreationTime",
+                                key: "CreationTime",
+                                sorter: (a,b)=>a.CreationTime>b.CreationTime?1:-1,
+                                sortOrder: sortedInfo.columnKey==='CreationTime'&&sortedInfo.order
                         },{
                                 title: "任务开始时间",
-                                dataIndex: "startTime",
-                                key: "startTime",
-                                sorter: (a,b)=>a.startTime>b.startTime?1:-1,
-                                sortOrder: sortedInfo.columnKey==='startTime'&&sortedInfo.order
+                                dataIndex: "StartTime",
+                                key: "StartTime",
+                                sorter: (a,b)=>a.StartTime>b.StartTime?1:-1,
+                                sortOrder: sortedInfo.columnKey==='StartTime'&&sortedInfo.order
                         },{
                                 title: "完成时间",
-                                dataIndex: "endTime",
-                                key: "endTime",
-                                sorter: (a,b)=>a.endTime>b.endTime?1:-1,
-                                sortOrder: sortedInfo.columnKey==='endTime'&&sortedInfo.order
+                                dataIndex: "EndTime",
+                                key: "EndTime",
+                                sorter: (a,b)=>a.EndTime>b.EndTime?1:-1,
+                                sortOrder: sortedInfo.columnKey==='EndTime'&&sortedInfo.order
                         }];
 
 

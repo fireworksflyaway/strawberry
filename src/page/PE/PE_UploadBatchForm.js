@@ -46,7 +46,6 @@ class PE_UploadBatchForm extends React.Component{
                             .then(handleResponse)
                             .then((res)=>{
                                 message.success('任务提交成功');
-                                //this.props.history.push('/basicevent');
                                     window.location.href='/PE_Event';
                             })
                             .catch((err)=>{

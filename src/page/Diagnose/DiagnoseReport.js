@@ -16,7 +16,15 @@ const lan='zh';
 //         {"zh":"批处理任务组"},
 //         {"zh":"批处理任务"}
 // ];
-
+const DsType=[
+        {"zh": "阿尔兹海默"},
+        {"zh": "血管性痴呆"},
+        {"zh": "小血管病变"},
+        {"zh": "额颞叶痴呆"},
+        {"zh": "多发性硬化症"},
+        {"zh": "帕金森综合症"},
+        {"zh": "中风后脑改变"},
+]
 const genderDict=[
         {"zh": "男"},
         {"zh": "女"},
@@ -25,50 +33,51 @@ const genderDict=[
 const columns=[
     {
         title: "任务编号",
-        dataIndex: "eventNum",
-        key:"eventNum",
-        sorter: (a,b)=>a.eventNum >= b.eventNum?1:-1,
+        dataIndex: "Number",
+        key:"Number",
+        sorter: (a,b)=>a.Number >= b.Number?1:-1,
         //sortOrder: sortedInfo.columnKey==='number'&&sortedInfo.order,
 },{
         title: "诊断疾病",
-        dataIndex: "eventType",
-        render:(value, record)=>'阿尔兹海默',
-        onFilter: (value, record)=> record.eventType.toString()===value,
+        dataIndex: "DsType",
+        key:"DsType",
+        render:(value, record)=>DsType[value].zh,
+        onFilter: (value, record)=> record.DsType.toString()===value,
         filters:[{
                 text: "阿尔兹海默（Alzheimer’s Disease）",
-                value: "AD"
+                value: "0"
         },{
                 text: "血管性痴呆（Vascular Dementia）",
-                value: "VD"
+                value: "1"
         },{
                 text: "小血管病变（Small Vessel Disease）",
-                value: "SVD"
+                value: "2"
         },{
                 text: "额颞叶痴呆 （Frontotemporal Dementia）",
-                value: "FD"
+                value: "3"
         },{
                 text: "多发性硬化症（Multiple Scelosis）",
-                value: "MS"
+                value: "4"
         },{
                 text: "帕金森综合症（Parkinsonism）",
-                value: "PK"
+                value: "5"
         },{
                 text: "中风后脑改变（Post-Stroke Brain Changes）",
-                value: "PSBC"
+                value: "6"
         },
 
         ]
 },{
         title: "病人ID",
-        dataIndex: "pid"
+        dataIndex: "P_Id"
 },{
         title: "病人姓名",
-        dataIndex: "pname"
+        dataIndex: "P_Name"
 },{
         title: "性别",
-        dataIndex: "gender",
-        render:(value, record)=>genderDict[value].zh,
-        onFilter: (value, record)=> record.gender.toString()===value,
+        dataIndex: "P_Gender",
+        //render:(value, record)=>genderDict[value].zh,
+        onFilter: (value, record)=> record.P_Gender.toString()===value,
         filters:[{
                 text: "男",
                 value: "0"
@@ -78,31 +87,28 @@ const columns=[
         }]
 },{
         title: "年龄",
-        dataIndex: "age",
-        sorter:(a,b)=>a.age-b.age,
+        dataIndex: "P_Age",
+        sorter:(a,b)=>a.P_Age-b.P_Age,
 },{
         title: "扫描时间",
-        dataIndex: "scanTime",
-        sorter:(a,b)=>a.scanTime>b.scanTime?1:-1,
+        dataIndex: "TestTime",
+        sorter:(a,b)=>a.TestTime>b.TestTime?1:-1,
         render:(value, record)=>moment(value).format("YYYY-MM-DD")
 },{
         title: "医院",
-        dataIndex: "hospital",
-},{
-        title: "PDF文件名",
-        dataIndex: "pdfId"
+        dataIndex: "Operator",
 },{
         title: "报告生成时间",
-        dataIndex: "creationTime",
-        sorter:(a,b)=>a.creationTime>b.creationTime?1:-1,
+        dataIndex: "CreationTime",
+        sorter:(a,b)=>a.CreationTime>b.CreationTime?1:-1,
 },{
         title: "报告下载",
-        key:"download",
+        key:"Download",
         render:(text, record)=>(
             <span>
-                <a onClick={(e)=>{window.open(`${config.fileServer}/${record.pdfId}_En.pdf`);}}>英文版</a>
+                <a onClick={(e)=>{window.open(`${config.fileServer}/${record.Filename}_En.pdf`);}}>英文版</a>
                 <span className="ant-divider" />
-                <a onClick={(e)=>{window.open(`${config.fileServer}/${record.pdfId}_Zh.pdf`);}}>中文版</a>
+                <a onClick={(e)=>{window.open(`${config.fileServer}/${record.Filename}_Zh.pdf`);}}>中文版</a>
             </span>
         )
 }]
@@ -122,7 +128,7 @@ export default class DiagnoseReport extends React.Component{
                     window.location.href="/";
                     return;
             }
-            fetch(`${config.server}/basicAuth/getbasicreport`, {
+            fetch(`${config.server}/DiagnoseAuth/DiagnoseReport`, {
                 method: 'get',
                 headers: {
                     'Authorization': 'Bearer ' + token,
@@ -135,7 +141,8 @@ export default class DiagnoseReport extends React.Component{
                     //     event.status=statusDict[event.status].zh;
                     //     event.type=typeDict[event.type].zh;
                     // })
-                res.result.reverse();
+                        console.log(res.result);
+                        res.result.reverse();
                     this.setState({
                         data:res.result
                     });

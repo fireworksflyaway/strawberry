@@ -65,8 +65,10 @@ const columns=[
                 key:"report",
                 render:(text, record)=>(
                     <span>
-                <a onClick={(e)=>{window.open(`${config.fileServer}/${record.Filename}.pdf`);}}>点击下载报告</a>
-            </span>
+                        <a onClick={(e)=>{window.open(`${config.fileServer}/${record.Filename}_En.pdf`);}}>英文版</a>
+                        <span className="ant-divider" />
+                        <a onClick={(e)=>{window.open(`${config.fileServer}/${record.Filename}_Zh.pdf`);}}>中文版</a>
+                    </span>
                 )
         },{
                 title:"原始数据下载",

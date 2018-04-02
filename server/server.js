@@ -26,6 +26,11 @@ const ResearchUploadAPI=new ResearchUploadAPIClass();
 const ResearchEventAPI=new ResearchEventAPIClass();
 const AdminAPI=new AdminAPIClass();
 const CommonAPI=new CommonAPIClass();
+const DiagnoseUserAPIClass=require('./DiagnoseApi/DiagnoseUser');
+const DiagnoseUserAPI=new DiagnoseUserAPIClass();
+const DiagnoseUploadAPIClass=require('./DiagnoseApi/DiagnoseUpload');
+const DiagnoseUploadAPI=new DiagnoseUploadAPIClass();
+const DiagnoseEventAPI=require('./DiagnoseApi/DiagnoseEvent');
 
 let app=express();
 
@@ -39,8 +44,6 @@ upload.configure({
                 }
         }
 })
-
-
 
 
 app.use(bodyParser.json({limit: '1mb'}));
@@ -97,6 +100,49 @@ app.post('/PE_Auth/PE_uploadBatchForm', PE_UploadAPI.uploadBatchForm);
 app.get('/PE_Auth/PE_getEvent', PE_EventAPI.getEvent);
 
 app.get('/PE_Auth/PE_getReport', PE_EventAPI.getReport);
+
+//diagnose
+app.use('/DiagnoseAuth', jwt({secret: config.diagnoseAccessKey}));
+
+app.get('/DiagnoseAuth/username', function (req, res) {
+        res.send({username: req.user.username});
+})
+
+app.get('/DiagnoseAuth/DiagnoseProfile', DiagnoseUserAPI.getProfile);
+
+app.post('/DiagnoseAuth/UpdateDiagnoseProfile', DiagnoseUserAPI.updateProfile);
+
+app.post('/DiagnoseAuth/updateDiagnosePassword', DiagnoseUserAPI.updatePassword);
+
+app.post('/DiagnoseSignIn', DiagnoseUserAPI.signIn);
+
+app.post('/DiagnoseSignUp', DiagnoseUserAPI.signUp);
+
+app.post('/DiagnoseAuth/T1W', function (req, res) {
+        DiagnoseUploadAPI.uploadT1W(req, res, upload);
+});
+
+app.post('/DiagnoseAuth/2DT2', function (req, res) {
+        DiagnoseUploadAPI.upload2DT2(req, res, upload);
+});
+
+app.post('/DiagnoseAuth/3DT2', function (req, res) {
+        DiagnoseUploadAPI.upload3DT2(req, res, upload);
+});
+
+app.post('/DiagnoseAuth/DWI', function (req, res) {
+        DiagnoseUploadAPI.uploadDWI(req, res, upload);
+});
+
+app.post('/DiagnoseAuth/SWI', function (req, res) {
+        DiagnoseUploadAPI.uploadSWI(req, res, upload);
+});
+
+app.post('/DiagnoseAuth/DiagnoseEvent', DiagnoseUploadAPI.uploadForm);
+
+app.get('/DiagnoseAuth/DiagnoseEvents', DiagnoseEventAPI.getEvent);
+
+app.get('/DiagnoseAuth/DiagnoseReport', DiagnoseEventAPI.getReport);
 
 //research
 app.use('/ResearchAuth', jwt({secret:config.researchAccessKey}));   //6 hours

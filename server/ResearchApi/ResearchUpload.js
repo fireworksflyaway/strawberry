@@ -7,7 +7,7 @@ const moment=require('moment');
 const ObjectID = require('mongodb').ObjectID;
 const redis=require('redis');
 const process=require('child_process');
-
+const {EventStatus, EventType}=require('../definition');
 const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
@@ -86,7 +86,7 @@ class ResearchUploadAPI{
                         const data={
                                 Number: `BN-RS-S${count+100001}`,
                                 Username: username,
-                                Status: 0,
+                                Status: EventStatus.Waiting,
                                 IsFlair : isFlair,
                                 IsBatch: false
                         }
@@ -109,13 +109,6 @@ class ResearchUploadAPI{
 
                                 const reportJson=JSON.stringify(
                                     {
-                                            // P_Name: p_name,
-                                            // P_Age: p_age,
-                                            // P_Gender: p_gender,
-                                            // TestTime: testTime,
-                                            // Operator: trimOperator,
-                                            // Device: trimDevice,
-                                            // Diseases: diseases,
                                             Comment: comment
                                     }
                                 );
@@ -138,7 +131,7 @@ class ResearchUploadAPI{
                                                 });
 
                                                 //console.log(config.redisPwd);
-                                                const redisData=JSON.stringify({Type:2, Data:[objectId]});
+                                                const redisData=JSON.stringify({Type: EventType.RS, Data:[objectId]});
                                                 console.log(redisData);
                                                 redisClient.LPUSH('EventQueue', redisData);
                                                 redisClient.quit();
@@ -156,7 +149,7 @@ class ResearchUploadAPI{
         uploadBatchEvent(req, res) {
                 const {username}=req.user;
                 const {filename}=req.body;
-                const cmd=`mono ${config.cmdPath}/BatchProc.exe ${username} ${filename} ${config.dataPath}/Research/${username} ${config.mongoConn} ${config.redisHost} ${config.redisPwd} 2`;
+                const cmd=`mono ${config.cmdPath}/BatchProc.exe ${username} ${filename} ${config.dataPath}/Research/${username} ${config.mongoConn} ${config.redisHost} ${config.redisPwd} ${EventType.RS}`;
                 //console.log(cmd);
                 process.exec(cmd, function (err, stdout, stderr) {
                         if(err)

@@ -7,7 +7,7 @@ const moment=require('moment');
 const ObjectID = require('mongodb').ObjectID;
 const redis=require('redis');
 const process=require('child_process');
-
+const {EventStatus, EventType}=require('../definition');
 const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
@@ -86,7 +86,7 @@ class PE_UploadAPI{
                         const data={
                                 Number: `BN-PE-S${count+100001}`,
                                 Username: username,
-                                Status: 0,
+                                Status: EventStatus.Waiting,
                                 IsFlair : isFlair,
                                 IsBatch: false
                         }
@@ -139,14 +139,13 @@ class PE_UploadAPI{
                                                 });
 
                                                 //console.log(config.redisPwd);
-                                                const redisData=JSON.stringify({Type:0, Data:[objectId]});
+                                                const redisData=JSON.stringify({Type: EventType.PE, Data:[objectId]});
                                                 console.log(redisData);
                                                 redisClient.LPUSH('EventQueue', redisData);
                                                 redisClient.quit();
                                                 res.send({suc:true});
                                         }
                                 })
-
 
                         })
 
@@ -157,7 +156,7 @@ class PE_UploadAPI{
         uploadBatchForm(req, res) {
                 const {username}=req.user;
                 const {filename}=req.body;
-                const cmd=`mono ${config.cmdPath}/BatchProc.exe ${username} ${filename} ${config.dataPath}/PE/${username} ${config.mongoConn} ${config.redisHost} ${config.redisPwd} 0`;
+                const cmd=`mono ${config.cmdPath}/BatchProc.exe ${username} ${filename} ${config.dataPath}/PE/${username} ${config.mongoConn} ${config.redisHost} ${config.redisPwd} ${EventType.PE}`;
                 //console.log(cmd);
                 process.exec(cmd, function (err, stdout, stderr) {
                         if(err)
@@ -169,57 +168,6 @@ class PE_UploadAPI{
 
         }
 
-        uploadBatchForm_back(req, res){
-                const {username}=req.user;
-                const {filename}=req.body;
-                //-------------------------------------------
-
-                //get event count
-                db.getCount('basicEvent',{username, type: 1}, function (count) {
-                        //console.log(count);
-                        if(count._err){
-                                console.error(count._err);
-                                res.status(500);
-                        }
-                        const data={
-                                number:`B${count+1}`,
-                                username,
-                                status: 5,  //None
-                                type: 1
-                        }
-                        db.insert('basicEvent',data,function (result) {
-                                if(result._err){
-                                        console.error(result._err);
-                                        res.status(500);
-                                }
-                                //const objectId=new ObjectID(result.insertedId);
-                                //console.log(moment(objectId.getTimestamp()).format('YYMMDD-HHmmss'));
-                                const objectId=result.insertedId.toString();
-
-                                fs.mkdirSync(`${config.dataPath}/${username}/${result.insertedId}`);
-                                const batchFolder=`${config.dataPath}/${username}/${objectId}`;
-                                fs.renameSync(`${config.dataPath}/${username}/Batch/${filename}`, `${batchFolder}/batch.zip`);
-                                //BatchProc
-                                const root = `${config.dataPath}/${username}`;
-                                //objectId
-                                const number = `B${count+1}`;
-                                //username;
-                                const connectionString = config.mongoConn;
-                                const redisHost = config.redisHost;
-                                //pwd
-                                const cmd=`mono ${config.cmdPath}/BatchProc.exe ${root} ${objectId} ${number} ${username} ${connectionString} ${redisHost} ${config.redisPwd}`;
-                                //console.log(cmd);
-                                process.exec(cmd, function (err, stdout, stderr) {
-                                        if(err)
-                                                res.status(500);
-                                        else
-                                                res.send({suc:true});
-                                })
-
-                        })
-
-                })
-        }
 }
 
 module.exports=PE_UploadAPI;

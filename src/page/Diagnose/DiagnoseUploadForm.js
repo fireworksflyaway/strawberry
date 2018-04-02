@@ -26,26 +26,86 @@ class DiagnoseUploadForm extends React.Component{
                 this.setState({isUpdating: true});
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
-                                if(values.fileT1[0].status!=="done")
+                                const {disease}=this.state;
+                                if(values.fileT1W[0].status!=="done")
                                 {
-                                        message.error("请重新上传T1文件");
+                                        message.error("请重新上传T1W文件");
                                         this.setState({isUpdating: false});
                                         return;
                                 }
-                                if(values.fileT2!==undefined&&values.fileT2[0].status!=="done")
+                                if(values.file2DT2!==undefined&&values.file2DT2[0].status!=="done")
                                 {
-                                        message.error("请重新上传T2文件");
+                                        message.error("请重新上传2D T2文件");
+                                        this.setState({isUpdating: false});
+                                        return;
+                                }
+                                if(values.file3DT2!==undefined&&values.file3DT2[0].status!=="done")
+                                {
+                                        message.error("请重新上传3D T2文件");
+                                        this.setState({isUpdating: false});
+                                        return;
+                                }
+                                if(values.fileDWI!==undefined&&values.fileDWI[0].status!=="done")
+                                {
+                                        message.error("请重新上传2D T2文件");
+                                        this.setState({isUpdating: false});
+                                        return;
+                                }
+                                if(values.fileSWI!==undefined&&values.fileSWI[0].status!=="done")
+                                {
+                                        message.error("请重新上传2D T2文件");
                                         this.setState({isUpdating: false});
                                         return;
                                 }
                                 const data={
-                                        t1: values.fileT1[0].name,
-                                        t2: values.fileT2?values.fileT2[0].name:"",
-                                        comment: values.comment
+                                        T1W: values.fileT1W[0].name,
+                                        disease,
+                                        comment: values.comment,
+                                        _2DT2: '',
+                                        _3DT2: '',
+                                        DWI: '',
+                                        SWI: ''
                                 }
+                                switch (disease){
+                                        case 'AD':{
+                                                data._2DT2=values.file2DT2?values.file2DT2[0].name:"";
+                                                break;
+                                        }
+                                        case 'VD':{
+                                                data._2DT2=values.file2DT2?values.file2DT2[0].name:"";
+                                                data._DWI=values.fileDWI?values.fileDWI[0].name:"";
+                                                data._SWI=values.fileSWI?values.fileSWI[0].name:"";
+                                                break;
+                                        }
+                                        case 'SVD':{
+                                                data._2DT2=values.file2DT2?values.file2DT2[0].name:"";
+                                                data._DWI=values.fileDWI?values.fileDWI[0].name:"";
+                                                data._SWI=values.fileSWI?values.fileSWI[0].name:"";
+                                                break;
+                                        }
+                                        case 'FD':{
+                                                break;
+                                        }
+                                        case 'MS':{
+                                                data._3DT2=values.file3DT2?values.file3DT2[0].name:"";
+                                                break;
+                                        }
+                                        case 'PK':{
+                                                break;
+                                        }
+                                        case 'PSBC':{
+                                                data._2DT2=values.file2DT2?values.file2DT2[0].name:"";
+                                                data._DWI=values.fileDWI?values.fileDWI[0].name:"";
+                                                data._SWI=values.fileSWI?values.fileSWI[0].name:"";
+                                                break;
+                                        }
+                                }
+
+
+
                                 const token=sessionStorage.getItem('StrawberryToken');
 
-                                fetch(`${config.server}/basicAuth/basicuploadform`,{
+                                fetch(`${config.server}/DiagnoseAuth/DiagnoseEvent`,{
                                         method: 'post',
                                         body:JSON.stringify(data),
                                         headers: {
@@ -56,8 +116,7 @@ class DiagnoseUploadForm extends React.Component{
                                         .then(handleResponse)
                                         .then((res)=>{
                                                 message.success('任务提交成功');
-                                            //this.props.history.push('/basicevent');
-                                                window.location.href='/basicevent';
+                                                window.location.href='/DiagnoseEvent';
                                         })
                                         .catch((err)=>{
                                                 console.error(err);
@@ -115,9 +174,9 @@ class DiagnoseUploadForm extends React.Component{
                         },
                 };
 
-                const T1Props = {
+                const propsT1W = {
                         onChange: this.handleChange,
-                        action: `${config.server}/basicAuth/basicuploadt1`,
+                        action: `${config.server}/DiagnoseAuth/T1W`,
                         accept: '.zip',
                         headers: {
                                 //authorization: 'authorization-text',
@@ -125,9 +184,36 @@ class DiagnoseUploadForm extends React.Component{
                         },
                 };
 
-                const T2Props = {
+                const props2DT2 = {
                         onChange: this.handleChange,
-                        action: `${config.server}/basicAuth/basicuploadt2`,
+                        action: `${config.server}/DiagnoseAuth/2DT2`,
+                        accept: '.zip',
+                        headers: {
+                                'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
+                        },
+                };
+
+                const props3DT2 = {
+                        onChange: this.handleChange,
+                        action: `${config.server}/DiagnoseAuth/3DT2`,
+                        accept: '.zip',
+                        headers: {
+                                'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
+                        },
+                };
+
+                const propsDWI = {
+                        onChange: this.handleChange,
+                        action: `${config.server}/DiagnoseAuth/DWI`,
+                        accept: '.zip',
+                        headers: {
+                                'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
+                        },
+                };
+
+                const propsSWI = {
+                        onChange: this.handleChange,
+                        action: `${config.server}/DiagnoseAuth/SWI`,
                         accept: '.zip',
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
@@ -146,12 +232,12 @@ class DiagnoseUploadForm extends React.Component{
 
                 const renderUploadButtons=[
                         <FormItem {...formItemLayout} label="上传3D T1W文件">
-                                {getFieldDecorator('fileT1', {
+                                {getFieldDecorator('fileT1W', {
                                         valuePropName: 'fileList',
                                         getValueFromEvent: this.normFile,
                                         rules: [{required: true, message:'请先上传文件'}]
                                 })(
-                                    <Upload {...T1Props}>
+                                    <Upload {...propsT1W}>
                                             <Button>
                                                     <Icon type="upload" />点击上传文件（.zip格式)
                                             </Button>
@@ -159,11 +245,11 @@ class DiagnoseUploadForm extends React.Component{
                                 )}
                         </FormItem>,
                         <FormItem {...formItemLayout} label="上传2D T2 FLAIR文件">
-                                {getFieldDecorator('fileT2', {
+                                {getFieldDecorator('file2DT2', {
                                         valuePropName: 'fileList',
                                         getValueFromEvent: this.normFile
                                 })(
-                                    <Upload {...T2Props}>
+                                    <Upload {...props2DT2}>
                                             <Button>
                                                     <Icon type="upload" />点击上传文件（.zip格式)
                                             </Button>
@@ -171,11 +257,11 @@ class DiagnoseUploadForm extends React.Component{
                                 )}
                         </FormItem>,
                         <FormItem {...formItemLayout} label="上传3D T2 FLAIR文件">
-                                {getFieldDecorator('fileT2', {
+                                {getFieldDecorator('file3DT2', {
                                         valuePropName: 'fileList',
                                         getValueFromEvent: this.normFile
                                 })(
-                                    <Upload {...T2Props}>
+                                    <Upload {...props3DT2}>
                                             <Button>
                                                     <Icon type="upload" />点击上传文件（.zip格式)
                                             </Button>
@@ -183,11 +269,11 @@ class DiagnoseUploadForm extends React.Component{
                                 )}
                         </FormItem>,
                         <FormItem {...formItemLayout} label="上传DWI文件">
-                                {getFieldDecorator('fileT2', {
+                                {getFieldDecorator('fileDWI', {
                                         valuePropName: 'fileList',
                                         getValueFromEvent: this.normFile
                                 })(
-                                    <Upload {...T2Props}>
+                                    <Upload {...propsDWI}>
                                             <Button>
                                                     <Icon type="upload" />点击上传文件（.zip格式)
                                             </Button>
@@ -195,11 +281,11 @@ class DiagnoseUploadForm extends React.Component{
                                 )}
                         </FormItem>,
                         <FormItem {...formItemLayout} label="上传SWI文件">
-                                {getFieldDecorator('fileT2', {
+                                {getFieldDecorator('fileSWI', {
                                         valuePropName: 'fileList',
                                         getValueFromEvent: this.normFile
                                 })(
-                                    <Upload {...T2Props}>
+                                    <Upload {...propsSWI}>
                                             <Button>
                                                     <Icon type="upload" />点击上传文件（.zip格式)
                                             </Button>
@@ -237,7 +323,7 @@ class DiagnoseUploadForm extends React.Component{
                                         {
                                                 getFieldDecorator('comment', {
                                                         rules: [{
-                                                                required: true, message: '请输入医师备注'
+                                                                // required: true, message: '请输入医师备注'
                                                         }]
                                                 })(
                                                         <TextArea style={{minHeight:'100px'}}/>
