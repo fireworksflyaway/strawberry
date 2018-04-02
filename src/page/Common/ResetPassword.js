@@ -4,11 +4,10 @@
 import React from 'react';
 import {Form, Input, Button, Modal, Card} from 'antd';
 import handleResponse from '../../function/handleResponse';
-import provideConfig from '../../function/provideConfig';
+import config from '../../config';
 import provideErrorInfo from '../../function/provideErrorInfo';
 import '../../style/Common.scss';
 import {sha256} from "js-sha256";
-const config=provideConfig();
 const errorInfo=provideErrorInfo();
 const lan='zh';
 class ResetPassword extends React.Component{

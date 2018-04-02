@@ -4,10 +4,9 @@
 import React from 'react';
 import {Form, Upload, Button} from 'antd';
 import {withRouter} from "react-router-dom";
-import provideConfig from "../../function/provideConfig";
+import config from '../../config';
 import {message} from "antd/lib/index";
 import handleResponse from "../../function/handleResponse";
-const config=provideConfig();
 const FormItem=Form.Item;
 
 class ResearchUploadBatchForm extends React.Component{

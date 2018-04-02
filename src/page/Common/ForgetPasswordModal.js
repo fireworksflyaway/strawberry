@@ -5,8 +5,7 @@ import React from 'react';
 import {Modal} from 'antd';
 import handleResponse from "../../function/handleResponse";
 import provideErrorInfo from "../../function/provideErrorInfo";
-import provideConfig from '../../function/provideConfig';
-const config=provideConfig();
+import config from '../../config';
 const errorInfo=provideErrorInfo();
 const lan='zh';
 export default class ForgetPasswordModal extends React.Component{

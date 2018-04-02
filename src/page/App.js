@@ -22,18 +22,13 @@ import AdminUserList from './Admin/AdminUserList';
 import AdminSignIn from './Admin/AdminSignIn';
 import AdminProfile from './Admin/AdminProfile';
 import ResetPassword from "./Common/ResetPassword";
-
-//import withLoginFunc from '../function/withLoginFunc';
-//import withLogoutFunc from '../function/withLogoutFunc';
-// import withLoginInfo from '../function/withLoginInfo';
+import config from '../../config';
 import withLoginType from '../function/withLoginType';
-import provideConfig from '../function/provideConfig';
 import handleResponse from '../function/handleResponse';
 
 
 
 
-const config=provideConfig();
 const {Header, Content,  Footer} = Layout;
 
 

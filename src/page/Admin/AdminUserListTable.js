@@ -5,10 +5,9 @@ import React from 'react';
 import {Table, Modal, Button} from 'antd';
 
 import handleResponse from "../../function/handleResponse";
-import provideConfig from "../../function/provideConfig";
+import config from '../../config';
 import provideErrorInfo from '../../function/provideErrorInfo';
 const errorInfo=provideErrorInfo();
-const config=provideConfig();
 const lan='zh';
 
 export default class AdminUserListTable extends React.Component{

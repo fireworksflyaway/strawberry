@@ -4,11 +4,10 @@
 import React from 'react';
 import {Form, Input, Button, message, Modal} from 'antd';
 import handleResponse from '../../function/handleResponse';
-import provideConfig from '../../function/provideConfig';
+import config from '../../config';
 import {sha256} from 'js-sha256';
 import provideErrorInfo from '../../function/provideErrorInfo';
 const errorInfo=provideErrorInfo();
-const config=provideConfig();
 const FormItem=Form.Item;
 
 const lan='zh';

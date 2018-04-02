@@ -6,11 +6,10 @@ import {Form, Input, Button, Icon, Modal} from 'antd';
 import {withRouter} from "react-router-dom";
 import {sha256} from 'js-sha256';
 import handleResponse from '../../function/handleResponse';
-import provideConfig from '../../function/provideConfig';
 import provideErrorInfo from '../../function/provideErrorInfo';
 import ForgetPasswordModal from './ForgetPasswordModal';
+import config from '../../config';
 
-const config=provideConfig();
 const errorInfo=provideErrorInfo();
 const FormItem=Form.Item;
 const lan='zh';

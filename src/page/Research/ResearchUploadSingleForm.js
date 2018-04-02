@@ -3,14 +3,13 @@
  */
 import React from 'react';
 import {Form,  Button, Icon, Input, message, Upload} from 'antd';
-import provideConfig from '../../function/provideConfig';
+import config from '../../config';
 import handleResponse from '../../function/handleResponse';
 import {withRouter} from "react-router-dom";
 const FormItem=Form.Item;
 
 const {TextArea}=Input;
 
-const config=provideConfig();
 class ResearchUploadSingleForm extends React.Component{
         constructor(props){
                 super(props);

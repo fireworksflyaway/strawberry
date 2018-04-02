@@ -4,10 +4,9 @@
 import React from 'react';
 import {Card, Table, Badge, Modal } from 'antd';
 import handleResponse from "../../function/handleResponse";
-import provideConfig from "../../function/provideConfig";
+import config from '../../config';
 import provideErrorInfo from '../../function/provideErrorInfo';
 const errorInfo=provideErrorInfo();
-const config=provideConfig();
 const lan='zh';
 const statusDict=[
         {"en": 'Waiting',"zh": '等待中'},

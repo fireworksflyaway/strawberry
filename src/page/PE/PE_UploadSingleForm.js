@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {Form,  Button, Icon, Input, message, Upload, InputNumber, DatePicker, Checkbox, Radio} from 'antd';
-import provideConfig from '../../function/provideConfig';
+import config from '../../config';
 import handleResponse from '../../function/handleResponse';
 import {withRouter} from "react-router-dom";
 import moment from 'moment';
@@ -11,8 +11,6 @@ const FormItem=Form.Item;
 const RadioButton=Radio.Button;
 const RadioGroup=Radio.Group;
 const {TextArea}=Input;
-const config=provideConfig();
-
 
 class PE_UploadSingleForm extends React.Component{
         constructor(props){
