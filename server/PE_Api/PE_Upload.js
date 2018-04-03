@@ -11,8 +11,8 @@ const {EventStatus, EventType}=require('../definition');
 const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
-class PE_UploadAPI{
-        emptyDir(fileUrl) {
+module.exports={
+        emptyDir: (fileUrl) =>{
                 if(!fs.existsSync(fileUrl))
                         return;
                 let files = fs.readdirSync(fileUrl);//读取该文件夹
@@ -25,9 +25,9 @@ class PE_UploadAPI{
                                 console.log("删除文件" + fileUrl + '/' + file + "成功");
                         }
                 });
-        }
+        },
 
-        uploadT1(req, res, upload){
+        uploadT1: (req, res, upload)=>{
                 const T1Folder=`${config.dataPath}/PE/${req.user.username}/T1`;
                 //clear T1 folder
 
@@ -41,9 +41,9 @@ class PE_UploadAPI{
                                 return `/Data/${req.user.username}/T1`;
                         }
                 })(req, res);
-        }
+        },
 
-        uploadT2(req, res, upload){
+        uploadT2: (req, res, upload)=>{
                 const T2Folder=`${config.dataPath}/PE/${req.user.username}/T2`;
                 //clear T2 folder
                 this.emptyDir(T2Folder);
@@ -55,9 +55,9 @@ class PE_UploadAPI{
                                 return `/Data/${req.user.username}/T2`;
                         }
                 })(req, res);
-        }
+        },
 
-        uploadBatch(req, res, upload){
+        uploadBatch: (req, res, upload)=>{
                 const BatchFolder=`${config.dataPath}/PE/${req.user.username}/Batch`;
                 this.emptyDir(BatchFolder);
                 upload.fileHandler({
@@ -68,9 +68,9 @@ class PE_UploadAPI{
                                 return `/Data/${req.user.username}/Batch`;
                         }
                 })(req, res);
-        }
+        },
 
-        uploadForm(req, res){
+        uploadForm: (req, res)=>{
                 const {username}=req.user;
                 const {p_name, p_age, p_gender, testTime, operator, device, diseases, t1,t2,comment}=req.body;
                 const isFlair=t2!=="";
@@ -81,7 +81,6 @@ class PE_UploadAPI{
                                 console.error(count._err);
                                 res.status(500);
                         }
-
 
                         const data={
                                 Number: `BN-PE-S${count+100001}`,
@@ -151,9 +150,9 @@ class PE_UploadAPI{
 
                 })
 
-        }
+        },
 
-        uploadBatchForm(req, res) {
+        uploadBatchForm: (req, res)=> {
                 const {username}=req.user;
                 const {filename}=req.body;
                 const cmd=`mono ${config.cmdPath}/BatchProc.exe ${username} ${filename} ${config.dataPath}/PE/${username} ${config.mongoConn} ${config.redisHost} ${config.redisPwd} ${EventType.PE}`;
@@ -164,10 +163,7 @@ class PE_UploadAPI{
                         else
                                 res.send({suc:true});
                 })
-
-
         }
 
 }
 
-module.exports=PE_UploadAPI;

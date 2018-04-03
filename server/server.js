@@ -10,27 +10,17 @@ const upload=require('jquery-file-upload-middleware');
 
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
-const PE_UserAPIClass=require('./PE_Api/PE_User');
-const PE_UploadAPIClass=require('./PE_Api/PE_Upload');
-const PE_EventAPIClass=require('./PE_Api/PE_Event');
-const ResearchUserAPIClass=require('./ResearchApi/ResearchUser');
-const ResearchUploadAPIClass=require('./ResearchApi/ResearchUpload');
-const ResearchEventAPIClass=require('./ResearchApi/ResearchEvent');
-const AdminAPIClass=require('./AdminApi/admin');
-const CommonAPIClass=require('./CommonApi');
-const PE_UserAPI=new PE_UserAPIClass();
-const PE_UploadAPI=new PE_UploadAPIClass();
-const PE_EventAPI=new PE_EventAPIClass();
-const ResearchUserAPI=new ResearchUserAPIClass();
-const ResearchUploadAPI=new ResearchUploadAPIClass();
-const ResearchEventAPI=new ResearchEventAPIClass();
-const AdminAPI=new AdminAPIClass();
-const CommonAPI=new CommonAPIClass();
-const DiagnoseUserAPIClass=require('./DiagnoseApi/DiagnoseUser');
-const DiagnoseUserAPI=new DiagnoseUserAPIClass();
-const DiagnoseUploadAPIClass=require('./DiagnoseApi/DiagnoseUpload');
-const DiagnoseUploadAPI=new DiagnoseUploadAPIClass();
+const PE_EventAPI=require('./PE_Api/PE_Event');
+const PE_UserAPI=require('./PE_Api/PE_User');
+const PE_UploadAPI=require('./PE_Api/PE_Upload');
+const ResearchUserAPI=require('./ResearchApi/ResearchUser');
+const ResearchUploadAPI=require('./ResearchApi/ResearchUpload');
+const ResearchEventAPI=require('./ResearchApi/ResearchEvent');
+const DiagnoseUserAPI=require('./DiagnoseApi/DiagnoseUser');
+const DiagnoseUploadAPI=require('./DiagnoseApi/DiagnoseUpload');
 const DiagnoseEventAPI=require('./DiagnoseApi/DiagnoseEvent');
+const AdminAPI=require('./AdminApi/admin');
+const CommonAPI=require('./CommonApi');
 
 let app=express();
 

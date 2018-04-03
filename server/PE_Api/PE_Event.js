@@ -8,8 +8,8 @@ const ObjectID = require('mongodb').ObjectID;
 const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
-class PE_EventAPI{
-    getEvent(req, res){
+module.exports={
+    getEvent: (req, res)=>{
         const {username}=req.user;
         db.select("PE_Event", {Username: username}, function (result) {
             //console.log(result);
@@ -31,9 +31,9 @@ class PE_EventAPI{
                 })
                 res.send({suc:true, eventList});
         })
-    }
+    },
 
-    getReport(req, res){
+    getReport: (req, res)=>{
         const {username}=req.user;
         db.select("PE_Report", {Username: username}, function (result) {
             //console.log(result);
@@ -50,4 +50,3 @@ class PE_EventAPI{
     }
 }
 
-module.exports=PE_EventAPI;

@@ -11,8 +11,8 @@ const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 const accessOption={expiresIn: '6h'};
 
-class AdminAPI{
-        signIn(req, res){
+module.exports={
+        signIn:(req, res) => {
                 let {Username, Password}= req.body;
                 Password=sha256(Password);
                 db.select('Admin', {Username, Password}, function (result) {
@@ -29,9 +29,9 @@ class AdminAPI{
                                 }
                         }
                 })
-        }
+        },
 
-        getUserList(req, res){
+        getUserList:(req, res) => {
                 const {type}=req.query;
                 db.select(`${type}User`,{}, function (result) {
                         db.aggregate(`${type}Report`, {$group:{_id:"$Username", event:{$sum:1}}}, function (err, list) {
@@ -53,9 +53,9 @@ class AdminAPI{
 
                         })
                 })
-        }
+        },
 
-        getProfile(req,res){
+        getProfile:(req,res)=>{
                 let {username}= req.user;
                 db.select('Admin',{Username:username},function (result) {
                         let code='0';
@@ -72,9 +72,9 @@ class AdminAPI{
                                 }
                         }
                 })
-        }
+        },
 
-        updateProfile(req, res){
+        updateProfile:(req, res) => {
                 const username=req.user.username;
                 const {email}=req.body;
                 db.updateOne('Admin', {Username: username}, {$set:{Email: email}}, function (result) {
@@ -85,9 +85,9 @@ class AdminAPI{
                                 res.send({suc:true});
                         }
                 })
-        }
+        },
 
-        updatePassword(req, res){
+        updatePassword:(req, res) => {
                 const {username}=req.user;
                 let {currentPassword, newPassword}= req.body;
                 currentPassword=sha256(currentPassword);
@@ -114,9 +114,9 @@ class AdminAPI{
                         }
                         }
                 )
-        }
+        },
 
-        certificate(req, res){
+        certificate:(req, res) => {
                 const {Username, Email, Type}=req.body;
                 db.updateOne(`${Type}User`, {Username}, {$set:{Certification:true}}, function (result) {
                         if(result._err){
@@ -146,5 +146,3 @@ class AdminAPI{
 
         }
 }
-
-module.exports=AdminAPI;

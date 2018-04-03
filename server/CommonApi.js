@@ -8,8 +8,8 @@ const sha256=require('js-sha256').sha256;
 const MailService=new MailApi();
 const db=new DAL();
 
-class CommonApi{
-        forgetPassword(req, res){
+module.exports={
+        forgetPassword:(req, res) => {
                 const {email, type}=req.body;
                 db.getCount(`${type}User`, {Email: email}, function (count) {
                         if(count==0){
@@ -50,9 +50,9 @@ class CommonApi{
                                 })
                         }
                 })
-        }
+        },
 
-        confirmResetAuth(req, res){
+        confirmResetAuth:(req, res) => {
                 const {email, type, resetAuth}=req.body;
                 db.select(`${type}User`, {Email: email, ResetAuth: resetAuth, ResetAuthExpireTime: {$gte: new Date()}}, function (result) {
                         if(result._err){
@@ -65,11 +65,9 @@ class CommonApi{
                                 res.send({username: result[0].Username});
                         }
                 })
-        }
+        },
 
-
-
-        resetPassword(req, res){
+        resetPassword:(req, res) => {
                 const {username, type, resetAuth, password}=req.body;
                 db.select(`${type}User`, {Username: username, ResetAuth: resetAuth, ResetAuthExpireTime: {$gte: new Date()}}, function (result) {
                         if(result._err){
@@ -92,4 +90,3 @@ class CommonApi{
                 })
         }
 }
-module.exports=CommonApi;

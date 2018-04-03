@@ -11,8 +11,8 @@ const {EventStatus, EventType}=require('../definition');
 const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
-class ResearchUploadAPI{
-        emptyDir(fileUrl) {
+module.exports={
+        emptyDir:(fileUrl)=>{
                 if(!fs.existsSync(fileUrl))
                         return;
                 let files = fs.readdirSync(fileUrl);    //读取该文件夹
@@ -25,9 +25,9 @@ class ResearchUploadAPI{
                                 console.log("删除文件" + fileUrl + '/' + file + "成功");
                         }
                 });
-        }
+        },
 
-        uploadT1(req, res, upload){
+        uploadT1:(req, res, upload)=>{
                 const T1Folder=`${config.dataPath}/Research/${req.user.username}/T1`;
                 //clear T1 folder
 
@@ -41,9 +41,9 @@ class ResearchUploadAPI{
                                 return `/Data/${req.user.username}/T1`;
                         }
                 })(req, res);
-        }
+        },
 
-        uploadT2(req, res, upload){
+        uploadT2:(req, res, upload)=>{
                 const T2Folder=`${config.dataPath}/Research/${req.user.username}/T2`;
                 //clear T2 folder
                 this.emptyDir(T2Folder);
@@ -55,9 +55,9 @@ class ResearchUploadAPI{
                                 return `/Data/${req.user.username}/T2`;
                         }
                 })(req, res);
-        }
+        },
 
-        uploadBatchFile(req, res, upload){
+        uploadBatchFile:(req, res, upload)=>{
                 const BatchFolder=`${config.dataPath}/Research/${req.user.username}/Batch`;
                 this.emptyDir(BatchFolder);
                 upload.fileHandler({
@@ -68,9 +68,9 @@ class ResearchUploadAPI{
                                 return `/Data/${req.user.username}/Batch`;
                         }
                 })(req, res);
-        }
+        },
 
-        uploadSingleEvent(req, res){
+        uploadSingleEvent:(req, res)=>{
                 const {username}=req.user;
                 const {t1,t2,comment}=req.body;
                 const isFlair=t2!=="";
@@ -144,9 +144,9 @@ class ResearchUploadAPI{
 
                 })
 
-        }
+        },
 
-        uploadBatchEvent(req, res) {
+        uploadBatchEvent:(req, res)=> {
                 const {username}=req.user;
                 const {filename}=req.body;
                 const cmd=`mono ${config.cmdPath}/BatchProc.exe ${username} ${filename} ${config.dataPath}/Research/${username} ${config.mongoConn} ${config.redisHost} ${config.redisPwd} ${EventType.RS}`;
@@ -157,8 +157,6 @@ class ResearchUploadAPI{
                         else
                                 res.send({suc:true});
                 })
-        }
+        },
 
 }
-
-module.exports=ResearchUploadAPI;

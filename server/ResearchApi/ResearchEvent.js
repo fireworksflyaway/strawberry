@@ -8,8 +8,8 @@ const ObjectID = require('mongodb').ObjectID;
 const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
-class ResearchEventAPI{
-        getEvent(req, res){
+module.exports={
+        getEvent:(req, res) => {
                 const {username}=req.user;
                 db.select("ResearchEvent", {Username: username}, function (result) {
                         //console.log(result);
@@ -30,9 +30,9 @@ class ResearchEventAPI{
                         })
                         res.send({suc:true, eventList});
                 })
-        }
+        },
 
-        getReport(req, res){
+        getReport:(req, res) => {
                 const {username}=req.user;
                 db.select("ResearchReport", {Username: username}, function (result) {
                         //console.log(result);
@@ -49,4 +49,3 @@ class ResearchEventAPI{
         }
 }
 
-module.exports=ResearchEventAPI;

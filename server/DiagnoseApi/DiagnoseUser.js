@@ -11,8 +11,8 @@ const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 const accessOption={expiresIn: '6h'};
 
-class UserAPI{
-        signIn(req, res){
+module.exports={
+        signIn:(req, res) => {
                 let {Username, Password}= req.body;
                 Password=sha256(Password);
                 db.select('DiagnoseUser', {Username, Password}, function (result) {
@@ -33,9 +33,9 @@ class UserAPI{
                                 }
                         }
                 })
-        }
+        },
 
-        signUp(req, res){
+        signUp:(req, res) => {
                 let {Username, Password, Email, Phone, Department} = req.body;
                 Password=sha256(Password);
                 const userData={Username, Password, Email, Phone, Department, Certification: false};
@@ -83,9 +83,9 @@ class UserAPI{
 
                         }
                 })
-        }
+        },
 
-        getProfile(req, res){
+        getProfile:(req, res) => {
                 const username=req.user.username;
                 db.select('DiagnoseUser',{Username: username},function (result) {
                         let code='0';
@@ -102,9 +102,9 @@ class UserAPI{
                                 }
                         }
                 })
-        }
+        },
 
-        updateProfile(req, res){
+        updateProfile:(req, res) => {
                 const username=req.user.username;
                 const {email, phone, department}=req.body;
                 db.updateOne('DiagnoseUser', {Username: username}, {$set:{Email:email, Phone: phone, Department: department}}, function (result) {
@@ -115,9 +115,9 @@ class UserAPI{
                                 res.send({suc:true});
                         }
                 })
-        }
+        },
 
-        updatePassword(req, res){
+        updatePassword:(req, res) => {
                 const {username}=req.user;
                 let {currentPassword, newPassword}= req.body;
                 currentPassword=sha256(currentPassword);
@@ -148,5 +148,3 @@ class UserAPI{
 
 
 }
-
-module.exports=UserAPI;

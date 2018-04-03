@@ -12,8 +12,8 @@ const {EventStatus, DiseaseType, EventType}=require('../definition');
 const db=new DAL();
 const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
-class DiagnoseUploadAPI{
-        emptyDir(fileUrl) {
+module.exports={
+        emptyDir:(fileUrl)=> {
                 if(!fs.existsSync(fileUrl))
                         return;
                 let files = fs.readdirSync(fileUrl);//读取该文件夹
@@ -26,9 +26,9 @@ class DiagnoseUploadAPI{
                                 console.log("删除文件" + fileUrl + '/' + file + "成功");
                         }
                 });
-        }
+        },
 
-        uploadT1W(req, res, upload){
+        uploadT1W:(req, res, upload)=>{
                 const T1WFolder=`${config.dataPath}/Diagnose/${req.user.username}/T1W`;
                 this.emptyDir(T1WFolder);
                 upload.fileHandler({
@@ -39,10 +39,10 @@ class DiagnoseUploadAPI{
                                 return `/Data/${req.user.username}/T1W`;
                         }
                 })(req, res);
-        }
+        },
 
 
-        upload2DT2(req, res, upload){
+        upload2DT2:(req, res, upload)=>{
                 const folder2DT2=`${config.dataPath}/Diagnose/${req.user.username}/2DT2`;
                 this.emptyDir(folder2DT2);
                 upload.fileHandler({
@@ -53,9 +53,9 @@ class DiagnoseUploadAPI{
                                 return `/Data/${req.user.username}/2DT2`;
                         }
                 })(req, res);
-        }
+        },
 
-        upload3DT2(req, res, upload){
+        upload3DT2:(req, res, upload)=>{
                 const folder3DT2=`${config.dataPath}/Diagnose/${req.user.username}/3DT2`;
                 this.emptyDir(folder3DT2);
                 upload.fileHandler({
@@ -66,9 +66,9 @@ class DiagnoseUploadAPI{
                                 return `/Data/${req.user.username}/3DT2`;
                         }
                 })(req, res);
-        }
+        },
 
-        uploadSWI(req, res, upload){
+        uploadSWI:(req, res, upload)=>{
                 const folderSWI=`${config.dataPath}/Diagnose/${req.user.username}/SWI`;
                 this.emptyDir(folderSWI);
                 upload.fileHandler({
@@ -79,9 +79,9 @@ class DiagnoseUploadAPI{
                                 return `/Data/${req.user.username}/SWI`;
                         }
                 })(req, res);
-        }
+        },
 
-        uploadDWI(req, res, upload){
+        uploadDWI:(req, res, upload)=>{
                 const folderDWI=`${config.dataPath}/Diagnose/${req.user.username}/DWI`;
                 this.emptyDir(folderDWI);
                 upload.fileHandler({
@@ -92,10 +92,10 @@ class DiagnoseUploadAPI{
                                 return `/Data/${req.user.username}/DWI`;
                         }
                 })(req, res);
-        }
+        },
         
 
-        uploadForm(req, res){
+        uploadForm:(req, res)=>{
                 const {username}=req.user;
                 const {disease, comment, T1W, _2DT2, _3DT2, DWI, SWI}=req.body;
 
@@ -181,8 +181,6 @@ class DiagnoseUploadAPI{
 
                 })
 
-        }
+        },
         
 }
-
-module.exports=DiagnoseUploadAPI;
