@@ -7,8 +7,7 @@ import moment from 'moment';
 import handleResponse from "../../function/handleResponse";
 import config from '../../config';
 import 'antd/es/divider/style/index.css'
-import provideErrorInfo from '../../function/provideErrorInfo';
-const errorInfo=provideErrorInfo();
+import errorList from '../../errorList';
 const lan='zh';
 const typeDict=[
         {"zh":"单文件任务"},
@@ -104,7 +103,7 @@ export default class PE_Report extends React.Component{
                 .catch((err)=>{
                         console.error(err);
                         Modal.error({
-                                content:errorInfo[err][lan],
+                                content:errorList[err][lan],
                                 onOk:()=>{
                                         if(err==='10000')
                                                 window.location.href='/signin';

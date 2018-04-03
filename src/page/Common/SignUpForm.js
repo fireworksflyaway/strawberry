@@ -8,8 +8,8 @@ import {sha256} from 'js-sha256';
 import {withRouter} from "react-router-dom";
 import handleResponse from '../../function/handleResponse';
 import config from '../../config';
-import provideErrorInfo from '../../function/provideErrorInfo';
-const errorInfo=provideErrorInfo();
+import errorList from '../../errorList';
+
 const FormItem=Form.Item;
 const lan='zh';
 
@@ -68,7 +68,7 @@ class SignUpForm extends React.Component{
                                     .catch((err)=>{
                                             console.error(err);
                                             Modal.error({
-                                                    content:errorInfo[err][lan],
+                                                    content:errorList[err][lan],
                                                     onOk:()=>{
                                                             this.setState({IsSubmiting: false});
                                                     }

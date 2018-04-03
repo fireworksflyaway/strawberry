@@ -5,9 +5,8 @@ import React from 'react';
 import {Form, Input, Button, message, Modal} from 'antd';
 import handleResponse from '../../function/handleResponse';
 import config from '../../config';
+import errorList from '../../errorList';
 
-import provideErrorInfo from '../../function/provideErrorInfo';
-const errorInfo=provideErrorInfo();
 const FormItem=Form.Item;
 
 const lan='zh';
@@ -39,7 +38,7 @@ class AdminProfileEmailForm extends React.Component{
                     .catch((err)=>{
                             console.error(err);
                             Modal.error({
-                                    content:errorInfo[err][lan]
+                                    content:errorList[err][lan]
                             })
                     });
         }
@@ -64,7 +63,7 @@ class AdminProfileEmailForm extends React.Component{
                                     })
                                     .catch((err)=>{
                                             Modal.error({
-                                                    content:errorInfo[err][lan]
+                                                    content:errorList[err][lan]
                                             })
                                     })
                         }

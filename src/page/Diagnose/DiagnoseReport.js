@@ -7,14 +7,10 @@ import moment from 'moment';
 import handleResponse from "../../function/handleResponse";
 import config from '../../config';
 import 'antd/es/divider/style/index.css'
-import provideErrorInfo from '../../function/provideErrorInfo';
-const errorInfo=provideErrorInfo();
+import errorList from '../../errorList';
+
 const lan='zh';
-// const typeDict=[
-//         {"zh":"单文件任务"},
-//         {"zh":"批处理任务组"},
-//         {"zh":"批处理任务"}
-// ];
+
 const DsType=[
         {"zh": "阿尔兹海默"},
         {"zh": "血管性痴呆"},
@@ -149,7 +145,7 @@ export default class DiagnoseReport extends React.Component{
                 .catch((err)=>{
                         console.error(err);
                         Modal.error({
-                                content:errorInfo[err][lan],
+                                content:errorList[err][lan],
                                 onOk:()=>{
                                         if(err==='10000')
                                                 window.location.href='/signin';

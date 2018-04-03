@@ -5,10 +5,10 @@ import React from 'react';
 import {Form, Input, Button, Modal, Card} from 'antd';
 import handleResponse from '../../function/handleResponse';
 import config from '../../config';
-import provideErrorInfo from '../../function/provideErrorInfo';
+import errorList from '../../errorList';
 import '../../style/Common.scss';
 import {sha256} from "js-sha256";
-const errorInfo=provideErrorInfo();
+
 const lan='zh';
 class ResetPassword extends React.Component{
         constructor(){
@@ -39,7 +39,7 @@ class ResetPassword extends React.Component{
                     .catch((err)=>{
                             console.error(err);
                             Modal.error({
-                                    content:errorInfo[err][lan],
+                                    content:errorList[err][lan],
                                     onOk:()=>{
                                             window.location.href='/';
                                     }
@@ -83,7 +83,7 @@ class ResetPassword extends React.Component{
                                     .catch((err)=>{
                                             console.error(err);
                                             Modal.error({
-                                                    content:errorInfo[err][lan]
+                                                    content:errorList[err][lan]
                                             })
                                     });
                         }

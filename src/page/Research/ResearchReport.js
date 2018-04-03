@@ -7,8 +7,7 @@ import {Card, Table, Modal} from 'antd';
 import moment from 'moment';
 import handleResponse from "../../function/handleResponse";
 import 'antd/es/divider/style/index.css'
-import provideErrorInfo from '../../function/provideErrorInfo';
-const errorInfo=provideErrorInfo();
+import errorList from '../../errorList';
 import config from '../../config';
 const lan='zh';
 const typeDict=[
@@ -110,7 +109,7 @@ export default class ResearchReport extends React.Component{
                     .catch((err)=>{
                             console.error(err);
                             Modal.error({
-                                    content:errorInfo[err][lan],
+                                    content:errorList[err][lan],
                                     onOk:()=>{
                                             if(err==='10000')
                                                     window.location.href='/signin';

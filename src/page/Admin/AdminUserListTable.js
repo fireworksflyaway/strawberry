@@ -6,8 +6,8 @@ import {Table, Modal, Button} from 'antd';
 
 import handleResponse from "../../function/handleResponse";
 import config from '../../config';
-import provideErrorInfo from '../../function/provideErrorInfo';
-const errorInfo=provideErrorInfo();
+import errorList from '../../errorList';
+
 const lan='zh';
 
 export default class AdminUserListTable extends React.Component{
@@ -35,7 +35,7 @@ export default class AdminUserListTable extends React.Component{
                     .catch((err)=>{
                             console.error(err);
                             Modal.error({
-                                    content:errorInfo[err][lan],
+                                    content:errorList[err][lan],
                                     onOk:()=>{
                                             if(err==='10000')
                                                     window.location.href='/adminsignin';
@@ -86,7 +86,7 @@ export default class AdminUserListTable extends React.Component{
                     .catch((err)=>{
                             console.error(err);
                             Modal.error({
-                                    content:errorInfo[err][lan],
+                                    content:errorList[err][lan],
                                     onOk:()=>{
                                             if(err==='10000')
                                                     window.location.href='/adminsignin';

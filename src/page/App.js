@@ -22,7 +22,7 @@ import AdminUserList from './Admin/AdminUserList';
 import AdminSignIn from './Admin/AdminSignIn';
 import AdminProfile from './Admin/AdminProfile';
 import ResetPassword from "./Common/ResetPassword";
-import config from '../../config';
+import config from '../config';
 import withLoginType from '../function/withLoginType';
 import handleResponse from '../function/handleResponse';
 
