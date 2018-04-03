@@ -20,10 +20,10 @@ const DsType=[
         {"zh": "帕金森综合症"},
         {"zh": "中风后脑改变"},
 ]
-const genderDict=[
-        {"zh": "男"},
-        {"zh": "女"},
-]
+// const genderDict=[
+//         {"zh": "男"},
+//         {"zh": "女"},
+// ]
 
 const columns=[
     {

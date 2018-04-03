@@ -27,9 +27,9 @@ export default class PE_Event extends React.Component{
                 super(props);
                 this.state={
                         data:[],
-                        filteredInfo: {
-                                columnKey: null
-                        },
+                        // filteredInfo: {
+                        //         columnKey: null
+                        // },
                         sortedInfo: {
                                 order: null
                         }
@@ -125,9 +125,9 @@ export default class PE_Event extends React.Component{
         }
 
         render(){
-                let { sortedInfo, filteredInfo } = this.state;
+                let { sortedInfo } = this.state;
                 sortedInfo = sortedInfo || {};
-                filteredInfo = filteredInfo || {};
+                //filteredInfo = filteredInfo || {};
 
                 const columns=[
                         {
@@ -148,7 +148,7 @@ export default class PE_Event extends React.Component{
                                         value: "1"
                                 }],
                                 // filteredValue: filteredInfo.IsBatch||null,
-                                onFilter: (value, record)=> record.IsBatch?"1":"0"===value,
+                                onFilter: (value, record)=>(record.IsBatch?"1":"0")===value,
                                 render:(value, record)=>typeDict[record.IsBatch?"1":"0"].zh
                         },{
                                 title: "任务状态",
@@ -190,19 +190,19 @@ export default class PE_Event extends React.Component{
                                 title: "任务生成时间",
                                 dataIndex: "CreationTime",
                                 key: "CreationTime",
-                                sorter: (a,b)=>a.creationTime>b.creationTime?1:-1,
+                                sorter: (a,b)=>a.CreationTime>b.CreationTime?1:-1,
                                 sortOrder: sortedInfo.columnKey==='CreationTime'&&sortedInfo.order
                         },{
                                 title: "任务开始时间",
                                 dataIndex: "StartTime",
                                 key: "StartTime",
-                                sorter: (a,b)=>a.startTime>b.startTime?1:-1,
+                                sorter: (a,b)=>a.StartTime>b.StartTime?1:-1,
                                 sortOrder: sortedInfo.columnKey==='StartTime'&&sortedInfo.order
                         },{
                                 title: "完成时间",
                                 dataIndex: "EndTime",
                                 key: "EndTime",
-                                sorter: (a,b)=>a.endTime>b.endTime?1:-1,
+                                sorter: (a,b)=>a.EndTime>b.EndTime?1:-1,
                                 sortOrder: sortedInfo.columnKey==='EndTime'&&sortedInfo.order
                         }];
 

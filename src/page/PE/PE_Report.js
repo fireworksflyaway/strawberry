@@ -48,7 +48,7 @@ const columns=[
 },{
         title: "检测时间",
         dataIndex: "TestTime",
-        sorter:(a,b)=>a.scanTime>b.scanTime?1:-1,
+        sorter:(a,b)=>a.TestTime>b.TestTime?1:-1,
         render:(value, record)=>moment(value).format("YYYY-MM-DD")
 },{
         title: "检测机构",

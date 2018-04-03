@@ -34,9 +34,9 @@ export default class DiagnoseEvent extends React.Component{
                 super(props);
                 this.state={
                         data:[],
-                        filteredInfo: {
-                                columnKey: null
-                        },
+                        // filteredInfo: {
+                        //         columnKey: null
+                        // },
                         sortedInfo: {
                                 order: null
                         }
@@ -106,14 +106,14 @@ export default class DiagnoseEvent extends React.Component{
         }
 
         render(){
-                let { sortedInfo, filteredInfo } = this.state;
+                let { sortedInfo } = this.state;
                 sortedInfo = sortedInfo || {};
-                filteredInfo = filteredInfo || {};
+                //filteredInfo = filteredInfo || {};
                 const dsTypeFilter=[];
                 for(let i=0;i<7;i++){
                         dsTypeFilter.push({
                                 text: DsType[i].zh,
-                                value: i,
+                                value: i+'',
                         })
                 }
                 const columns=[
@@ -128,7 +128,7 @@ export default class DiagnoseEvent extends React.Component{
                                 dataIndex: "DsType",
                                 key:"DsType",
                                 filters:dsTypeFilter,
-                                filteredValue: filteredInfo.type||null,
+                                //filteredValue: filteredInfo.type||null,
                                 onFilter: (value, record)=> record.DsType.toString()===value,
                                 render:(value, record)=>DsType[value].zh
                         },{
