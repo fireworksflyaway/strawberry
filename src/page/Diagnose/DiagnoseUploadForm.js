@@ -3,14 +3,13 @@
  */
 import React from 'react';
 import {Form,  Button, Icon, Input, message, Upload, Select} from 'antd';
-import provideConfig from '../../function/provideConfig';
+import config from '../../config';
 import handleResponse from '../../function/handleResponse';
 import {withRouter} from "react-router-dom";
 const FormItem=Form.Item;
 const Option=Select.Option;
 const {TextArea}=Input;
 
-const config=provideConfig();
 class DiagnoseUploadForm extends React.Component{
         constructor(props){
                 super(props);

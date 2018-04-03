@@ -4,11 +4,10 @@
 import React from 'react';
 import {Form, Input, Button, message, Modal} from 'antd';
 import handleResponse from '../../function/handleResponse';
-import provideConfig from '../../function/provideConfig';
+import config from '../../config';
 import {sha256} from 'js-sha256';
-import provideErrorInfo from '../../function/provideErrorInfo';
-const errorInfo=provideErrorInfo();
-const config=provideConfig();
+import errorList from '../../errorList';
+
 const FormItem=Form.Item;
 
 const lan='zh';
@@ -46,7 +45,7 @@ class ChangePasswordForm extends React.Component{
                                     .catch((err)=>{
                                             console.error(err);
                                             Modal.error({
-                                                    content:errorInfo[err][lan]
+                                                    content:errorList[err][lan]
                                             })
                                     })
                         }

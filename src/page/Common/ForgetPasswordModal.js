@@ -4,10 +4,9 @@
 import React from 'react';
 import {Modal} from 'antd';
 import handleResponse from "../../function/handleResponse";
-import provideErrorInfo from "../../function/provideErrorInfo";
-import provideConfig from '../../function/provideConfig';
-const config=provideConfig();
-const errorInfo=provideErrorInfo();
+import errorList from '../../errorList';
+import config from '../../config';
+
 const lan='zh';
 export default class ForgetPasswordModal extends React.Component{
         constructor(){
@@ -35,7 +34,7 @@ export default class ForgetPasswordModal extends React.Component{
                     .catch((err)=>{
                             console.error(err);
                             Modal.error({
-                                    content: errorInfo[err][lan],
+                                    content: errorList[err][lan],
                                     onOk:()=>{
                                             this.setState({email:''});
                                     }

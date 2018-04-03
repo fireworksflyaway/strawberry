@@ -7,10 +7,9 @@ import { Form, Input,  Icon,   Checkbox, Button, Modal} from 'antd';
 import {sha256} from 'js-sha256';
 import {withRouter} from "react-router-dom";
 import handleResponse from '../../function/handleResponse';
-import provideConfig from '../../function/provideConfig';
-import provideErrorInfo from '../../function/provideErrorInfo';
-const config=provideConfig();
-const errorInfo=provideErrorInfo();
+import config from '../../config';
+import errorList from '../../errorList';
+
 const FormItem=Form.Item;
 const lan='zh';
 
@@ -69,7 +68,7 @@ class SignUpForm extends React.Component{
                                     .catch((err)=>{
                                             console.error(err);
                                             Modal.error({
-                                                    content:errorInfo[err][lan],
+                                                    content:errorList[err][lan],
                                                     onOk:()=>{
                                                             this.setState({IsSubmiting: false});
                                                     }
