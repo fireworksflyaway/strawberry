@@ -136,7 +136,7 @@ class App extends Component {
                                                                 <Route component={HomeContent} />
                                                         </Switch>
                                                 </Content>
-                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} Version 0.1.3 dev 2. All rights reserved.</Footer>
+                                                <Footer className='appFooter'>Copyright © Brainnow {new Date().getFullYear()} Version 0.1.3 dev 3. All rights reserved.</Footer>
                                         </Layout>
                                 </BrowserRouter>
                         </div>
