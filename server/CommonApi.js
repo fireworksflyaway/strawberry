@@ -5,8 +5,10 @@ const DAL=require('./db');
 const MailApi=require('./MailApi');
 const uuidV1 = require('uuid/v1');
 const sha256=require('js-sha256').sha256;
+const fs=require('fs');
 const MailService=new MailApi();
 const db=new DAL();
+const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
 module.exports={
         forgetPassword:(req, res) => {
@@ -27,8 +29,7 @@ module.exports={
                                         else{
                                                 //send an email
                                                 const query=encodeURI(`type=${type}&email=${email}&resetAuth=${resetAuth}`);
-                                                console.log(query);
-                                                const resetUrl=`http://localhost:3000/ResetPassword?${query}`;
+                                                const resetUrl=`${config.referer}/ResetPassword?${query}`;
                                                 const mailOptions = {
                                                         to: email, // 收件地址
                                                         subject: '博脑会员密码重置', // 标题
