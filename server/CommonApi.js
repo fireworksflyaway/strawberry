@@ -1,17 +1,14 @@
 /**
  * Created by Mason Jackson in Office on 3/5/18.
  */
-const DAL=require('./db');
+const db=require('./db');
 const MailApi=require('./MailApi');
 const uuidV1 = require('uuid/v1');
 const sha256=require('js-sha256').sha256;
-const fs=require('fs');
-const MailService=new MailApi();
-const db=new DAL();
-const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
+const {SITE_DOMAIN}=require('./configuration');
 
 module.exports={
-        forgetPassword:(req, res) => {
+        forgetPassword(req, res)  {
                 const {email, type}=req.body;
                 db.getCount(`${type}User`, {Email: email}, function (count) {
                         if(count==0){
@@ -29,13 +26,13 @@ module.exports={
                                         else{
                                                 //send an email
                                                 const query=encodeURI(`type=${type}&email=${email}&resetAuth=${resetAuth}`);
-                                                const resetUrl=`${config.referer}/ResetPassword?${query}`;
+                                                const resetUrl=`${SITE_DOMAIN}/ResetPassword?${query}`;
                                                 const mailOptions = {
                                                         to: email, // 收件地址
                                                         subject: '博脑会员密码重置', // 标题
                                                         html: `请通过以下链接重置密码(链接有效期为一小时)<br />${resetUrl}` // html 内容
                                                 };
-                                                MailService.sendEmail(mailOptions, function (error, info) {
+                                                MailApi.sendEmail(mailOptions, function (error, info) {
                                                         if(error)
                                                         {
                                                                 console.error(error);
@@ -53,7 +50,7 @@ module.exports={
                 })
         },
 
-        confirmResetAuth:(req, res) => {
+        confirmResetAuth(req, res)  {
                 const {email, type, resetAuth}=req.body;
                 db.select(`${type}User`, {Email: email, ResetAuth: resetAuth, ResetAuthExpireTime: {$gte: new Date()}}, function (result) {
                         if(result._err){
@@ -68,7 +65,7 @@ module.exports={
                 })
         },
 
-        resetPassword:(req, res) => {
+        resetPassword(req, res)  {
                 const {username, type, resetAuth, password}=req.body;
                 db.select(`${type}User`, {Username: username, ResetAuth: resetAuth, ResetAuthExpireTime: {$gte: new Date()}}, function (result) {
                         if(result._err){

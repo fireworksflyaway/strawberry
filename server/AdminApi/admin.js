@@ -2,13 +2,10 @@
  * Created by Mason Jackson in Office on 1/17/18.
  */
 const jsonwebtoken=require('jsonwebtoken');
-const fs=require('fs');
 const sha256=require('js-sha256').sha256;
 const MailApi=require('../MailApi');
-const MailService=new MailApi();
-const DAL=require('../db');
-const db=new DAL();
-const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
+const db=require('../db');
+const {ADMIN_ACCESS_KEY} = require( '../configuration');
 const accessOption={expiresIn: '6h'};
 
 module.exports={
@@ -24,7 +21,7 @@ module.exports={
                                         code='10001'  //用户名不存在或密码错误;
                                         res.status(500).send(code);
                                 } else {
-                                        const token=jsonwebtoken.sign({username: Username}, config.adminAccessKey, accessOption);
+                                        const token=jsonwebtoken.sign({username: Username}, ADMIN_ACCESS_KEY, accessOption);
                                         res.send({token});
                                 }
                         }
@@ -128,7 +125,7 @@ module.exports={
                                         subject: '博脑会员注册', // 标题
                                         html: `<b>您的会员注册请求已通过,现在可访问<a href=\"www.brainnow.cn\">我们的主页</a>登录并使用我们的服务</b><br />`
                                 };
-                                MailService.sendEmail(mailOptions, function (error, info) {
+                                MailApi.sendEmail(mailOptions, function (error, info) {
                                         if(error)
                                         {
                                                 console.error(error);
@@ -137,8 +134,6 @@ module.exports={
                                         else
                                         {
                                                 res.send({suc: true})
-                                                // const token=jsonwebtoken.sign({username}, config.accessKey, accessOption);
-                                                // res.send({token});
                                         }
                                 });
                         }

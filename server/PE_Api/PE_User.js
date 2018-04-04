@@ -1,18 +1,16 @@
 /**
  * Created by Mason Jackson in Office on 2017/12/3.
  */
+const CONFIG = require( '../configuration');
 const jsonwebtoken=require('jsonwebtoken');
-const fs=require('fs');
 const sha256=require('js-sha256').sha256;
-const DAL=require('../db');
+const db=require('../db');
 const MailApi=require('../MailApi');
-const MailService=new MailApi();
-const db=new DAL();
-const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
+
 const accessOption={expiresIn: '6h'};
 
 module.exports={
-        signIn:(req, res)=>{
+        signIn(req, res){
                 let {Username, Password}= req.body;
                 Password=sha256(Password);
                 db.select('PE_User', {Username, Password}, function (result) {
@@ -27,7 +25,7 @@ module.exports={
                                         if(result[0].Certification===false)
                                                 res.status(500).send('10005');  //用户尚未获得授权
                                         else {
-                                                const token=jsonwebtoken.sign({username: Username}, config.accessKey, accessOption);
+                                                const token=jsonwebtoken.sign({username: Username}, CONFIG.PE_ACCESS_KEY, accessOption);
                                                 res.send({token});
                                         }
                                 }
@@ -35,7 +33,7 @@ module.exports={
                 })
         },
 
-        signUp:(req, res)=>{
+        signUp(req, res){
                 let {Username, Password, Email, Phone, Department} = req.body;
                 Password=sha256(Password);
                 const userData={Username, Password, Email, Phone, Department, Certification: false};
@@ -63,7 +61,7 @@ module.exports={
                                                         subject: '博脑会员注册', // 标题
                                                         html: `<b>新的博脑用户注册请求</b><br /><b>用户名: </b>${Username}<br />请及时处理` // html 内容
                                                 };
-                                                MailService.sendEmail(mailOptions, function (error, info) {
+                                                MailApi.sendEmail(mailOptions, function (error, info) {
                                                         if(error)
                                                         {
                                                                 console.error(error);
@@ -72,8 +70,6 @@ module.exports={
                                                         else
                                                         {
                                                                 res.send({suc: true})
-                                                                // const token=jsonwebtoken.sign({username}, config.accessKey, accessOption);
-                                                                // res.send({token});
                                                         }
                                                 });
 
@@ -85,7 +81,7 @@ module.exports={
                 })
         },
         
-        getProfile:(req, res)=>{
+        getProfile(req, res){
                 const username=req.user.username;
                 db.select('PE_User',{Username: username},function (result) {
                         let code='0';
@@ -104,7 +100,7 @@ module.exports={
                 })
         },
 
-        updateProfile:(req, res)=>{
+        updateProfile(req, res){
                 const username=req.user.username;
                 const {email, phone, department}=req.body;
                 db.updateOne('PE_User', {Username: username}, {$set:{Email:email, Phone: phone, Department: department}}, function (result) {

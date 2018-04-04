@@ -4,11 +4,9 @@
 const express=require('express');
 const bodyParser=require('body-parser');
 const jwt=require('express-jwt');
-const jsonwebtoken=require('jsonwebtoken');
-const fs=require('fs');
 const upload=require('jquery-file-upload-middleware');
 
-const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
+const CONFIG=require('./configuration');
 
 const PE_EventAPI=require('./PE_Api/PE_Event');
 const PE_UserAPI=require('./PE_Api/PE_User');
@@ -53,7 +51,7 @@ app.get('/', function (req, res) {
         res.send('Hello Brainnow');
 })
 
-app.use('/PE_Auth', jwt({secret:config.accessKey}));   //6 hours
+app.use('/PE_Auth', jwt({secret:CONFIG.PE_ACCESS_KEY}));   //6 hours
 
 
 app.get('/PE_Auth/username', function (req, res) {
@@ -92,7 +90,7 @@ app.get('/PE_Auth/PE_getEvent', PE_EventAPI.getEvent);
 app.get('/PE_Auth/PE_getReport', PE_EventAPI.getReport);
 
 //diagnose
-app.use('/DiagnoseAuth', jwt({secret: config.diagnoseAccessKey}));
+app.use('/DiagnoseAuth', jwt({secret: CONFIG.DIAGNOSE_ACCESS_KEY}));
 
 app.get('/DiagnoseAuth/username', function (req, res) {
         res.send({username: req.user.username});
@@ -135,7 +133,7 @@ app.get('/DiagnoseAuth/DiagnoseEvents', DiagnoseEventAPI.getEvent);
 app.get('/DiagnoseAuth/DiagnoseReport', DiagnoseEventAPI.getReport);
 
 //research
-app.use('/ResearchAuth', jwt({secret:config.researchAccessKey}));   //6 hours
+app.use('/ResearchAuth', jwt({secret:CONFIG.RESEARCH_ACCESS_KEY}));   //6 hours
 
 app.get('/ResearchAuth/username', function (req, res) {
         res.send({username: req.user.username});
@@ -172,7 +170,7 @@ app.get('/ResearchAuth/ResearchEvents', ResearchEventAPI.getEvent);
 app.get('/ResearchAuth/ResearchReport', ResearchEventAPI.getReport);
 
 //admin
-app.use('/AdminAuth', jwt({secret:config.adminAccessKey}));   //6 hours
+app.use('/AdminAuth', jwt({secret:CONFIG.ADMIN_ACCESS_KEY}));   //6 hours
 app.post('/AdminSignIn', AdminAPI.signIn);
 
 app.get('/AdminAuth/username', function (req, res) {

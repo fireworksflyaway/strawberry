@@ -1,18 +1,14 @@
 /**
  * Created by Mason Jackson in Office on 12/25/17.
  */
-const fs=require('fs');
-const DAL=require('../db');
+const db=require('../db');
 const moment=require('moment');
 const ObjectID = require('mongodb').ObjectID;
-const db=new DAL();
-const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
 module.exports={
-    getEvent: (req, res)=>{
+    getEvent(req, res){
         const {username}=req.user;
         db.select("PE_Event", {Username: username}, function (result) {
-            //console.log(result);
                 if(result._err){
                     res.status(500).send('0');
                     return;
@@ -33,7 +29,7 @@ module.exports={
         })
     },
 
-    getReport: (req, res)=>{
+    getReport(req, res){
         const {username}=req.user;
         db.select("PE_Report", {Username: username}, function (result) {
             //console.log(result);

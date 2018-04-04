@@ -2,37 +2,20 @@
  * Created by Mason Jackson in Office on 3/1/18.
  */
 const fs=require('fs');
-const DAL=require('../db');
-const moment=require('moment');
-const ObjectID = require('mongodb').ObjectID;
+const db=require('../db');
 const redis=require('redis');
 const process=require('child_process');
 const {EventStatus, EventType}=require('../definition');
-const db=new DAL();
-const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
+const CONFIG = require( '../configuration');
+const {emptyDir} = require('../func');
 
 module.exports={
-        emptyDir:(fileUrl)=>{
-                if(!fs.existsSync(fileUrl))
-                        return;
-                let files = fs.readdirSync(fileUrl);    //读取该文件夹
-                files.forEach(function (file) {
-                        let stats = fs.statSync(fileUrl + '/' + file);
-                        if (stats.isDirectory()) {
-                                this.emptyDir(fileUrl + '/' + file);
-                        } else {
-                                fs.unlinkSync(fileUrl + '/' + file);
-                                console.log("删除文件" + fileUrl + '/' + file + "成功");
-                        }
-                });
-        },
-
-        uploadT1:(req, res, upload)=>{
-                const T1Folder=`${config.dataPath}/Research/${req.user.username}/T1`;
+        uploadT1(req, res, upload){
+                const T1Folder=`${CONFIG.DATA_PATH}/Research/${req.user.username}/T1`;
                 //clear T1 folder
 
 
-                this.emptyDir(T1Folder);
+                emptyDir(T1Folder);
                 upload.fileHandler({
                         uploadDir: function () {
                                 return T1Folder;
@@ -43,10 +26,10 @@ module.exports={
                 })(req, res);
         },
 
-        uploadT2:(req, res, upload)=>{
-                const T2Folder=`${config.dataPath}/Research/${req.user.username}/T2`;
+        uploadT2(req, res, upload){
+                const T2Folder=`${CONFIG.DATA_PATH}/Research/${req.user.username}/T2`;
                 //clear T2 folder
-                this.emptyDir(T2Folder);
+                emptyDir(T2Folder);
                 upload.fileHandler({
                         uploadDir: function () {
                                 return T2Folder;
@@ -57,9 +40,9 @@ module.exports={
                 })(req, res);
         },
 
-        uploadBatchFile:(req, res, upload)=>{
-                const BatchFolder=`${config.dataPath}/Research/${req.user.username}/Batch`;
-                this.emptyDir(BatchFolder);
+        uploadBatchFile(req, res, upload){
+                const BatchFolder=`${CONFIG.DATA_PATH}/Research/${req.user.username}/Batch`;
+                emptyDir(BatchFolder);
                 upload.fileHandler({
                         uploadDir: function () {
                                 return BatchFolder;
@@ -70,7 +53,7 @@ module.exports={
                 })(req, res);
         },
 
-        uploadSingleEvent:(req, res)=>{
+        uploadSingleEvent(req, res){
                 const {username}=req.user;
                 const {t1,t2,comment}=req.body;
                 const isFlair=t2!=="";
@@ -98,13 +81,13 @@ module.exports={
                                 //const objectId=new ObjectID(result.insertedId);
                                 //console.log(moment(objectId.getTimestamp()).format('YYMMDD-HHmmss'));
                                 const objectId=result.insertedId.toString();
-                                const targetPath=`${config.dataPath}/Research/${username}/${data.Number}`;
+                                const targetPath=`${CONFIG.DATA_PATH}/Research/${username}/${data.Number}`;
 
                                 fs.mkdirSync(targetPath);
 
-                                fs.renameSync(`${config.dataPath}/Research/${username}/T1/${t1}`, `${targetPath}/dataF1.zip`);
+                                fs.renameSync(`${CONFIG.DATA_PATH}/Research/${username}/T1/${t1}`, `${targetPath}/dataF1.zip`);
                                 if(isFlair)
-                                        fs.renameSync(`${config.dataPath}/Research/${username}/T2/${t2}`, `${targetPath}/dataF2.zip`);
+                                        fs.renameSync(`${CONFIG.DATA_PATH}/Research/${username}/T2/${t2}`, `${targetPath}/dataF2.zip`);
 
 
                                 const reportJson=JSON.stringify(
@@ -123,14 +106,13 @@ module.exports={
                                         }
                                         else
                                         {
-                                                let redisClient=redis.createClient(6379,config.redisHost);
-                                                redisClient.auth(config.redisPwd);
+                                                let redisClient=redis.createClient(6379,CONFIG.REDIS_HOST);
+                                                redisClient.auth(CONFIG.REDIS_PWD);
                                                 redisClient.on("error", function(error) {
                                                         console.log(error);
                                                         res.status(500).send('30001');  //Redis连接失败
                                                 });
 
-                                                //console.log(config.redisPwd);
                                                 const redisData=JSON.stringify({Type: EventType.RS, Data:[objectId]});
                                                 console.log(redisData);
                                                 redisClient.LPUSH('EventQueue', redisData);
@@ -146,10 +128,10 @@ module.exports={
 
         },
 
-        uploadBatchEvent:(req, res)=> {
+        uploadBatchEvent(req, res) {
                 const {username}=req.user;
                 const {filename}=req.body;
-                const cmd=`mono ${config.cmdPath}/BatchProc.exe ${username} ${filename} ${config.dataPath}/Research/${username} ${config.mongoConn} ${config.redisHost} ${config.redisPwd} ${EventType.RS}`;
+                const cmd=`mono ${CONFIG.CMD_PATH}/BatchProc.exe ${username} ${filename} ${CONFIG.DATA_PATH}/Research/${username} ${CONFIG.MONGO_CONN} ${CONFIG.REDIS_HOST} ${CONFIG.REDIS_PWD} ${EventType.RS}`;
                 //console.log(cmd);
                 process.exec(cmd, function (err, stdout, stderr) {
                         if(err)

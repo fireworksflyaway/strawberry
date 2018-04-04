@@ -1,12 +1,10 @@
 /**
  * Created by Mason Jackson in Office on 3/1/18.
  */
-const fs=require('fs');
-const DAL=require('../db');
+
+const db=require('../db');
 const moment=require('moment');
 const ObjectID = require('mongodb').ObjectID;
-const db=new DAL();
-const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
 
 module.exports={
         getEvent:(req, res) => {

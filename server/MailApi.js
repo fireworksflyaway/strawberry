@@ -1,9 +1,9 @@
 /**
  * Created by Mason Jackson in Office on 1/19/18.
  */
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
-class MailService{
+module.exports={
         constructor(){
                 this.transporter=nodemailer.createTransport({
                         host: 'smtp.ym.163.com',
@@ -15,7 +15,7 @@ class MailService{
                         }
                 });
                 this.sender='admin@brainnow.cn';
-        }
+        },
 
         // var mailOptions = {
         //         to: '572050291@qq.com', // 发件地址
@@ -36,9 +36,5 @@ class MailService{
                         // console.log('Message sent: ' + info.response);
 
                 });
-        }
-
-
+        },
 }
-
-module.exports=MailService;

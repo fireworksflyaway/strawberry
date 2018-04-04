@@ -2,13 +2,10 @@
  * Created by Mason Jackson in Office on 2/26/18.
  */
 const jsonwebtoken=require('jsonwebtoken');
-const fs=require('fs');
 const sha256=require('js-sha256').sha256;
-const DAL=require('../db');
+const db=require('../db');
 const MailApi=require('../MailApi');
-const MailService=new MailApi();
-const db=new DAL();
-const config=JSON.parse(fs.readFileSync('./server/config.json', 'utf-8'));
+const {RESEARCH_ACCESS_KEY} = require( '../configuration');
 const accessOption={expiresIn: '6h'};
 
 module.exports={
@@ -27,7 +24,7 @@ module.exports={
                                         if(result[0].Certification===false)
                                                 res.status(500).send('10005');  //用户尚未获得授权
                                         else {
-                                                const token=jsonwebtoken.sign({username: Username}, config.researchAccessKey, accessOption);
+                                                const token=jsonwebtoken.sign({username: Username}, RESEARCH_ACCESS_KEY, accessOption);
                                                 res.send({token});
                                         }
                                 }
@@ -63,7 +60,7 @@ module.exports={
                                                         subject: '博脑会员注册', // 标题
                                                         html: `<b>新的博脑用户注册请求</b><br /><b>用户名: </b>${Username}<br />请及时处理` // html 内容
                                                 };
-                                                MailService.sendEmail(mailOptions, function (error, info) {
+                                                MailApi.sendEmail(mailOptions, function (error, info) {
                                                         if(error)
                                                         {
                                                                 console.error(error);
@@ -72,8 +69,6 @@ module.exports={
                                                         else
                                                         {
                                                                 res.send({suc: true})
-                                                                // const token=jsonwebtoken.sign({username}, config.accessKey, accessOption);
-                                                                // res.send({token});
                                                         }
                                                 });
 
