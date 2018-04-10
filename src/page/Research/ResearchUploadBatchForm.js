@@ -17,6 +17,14 @@ class ResearchUploadBatchForm extends React.Component{
                 }
         }
 
+        checkZipFormat=(file, fileList)=>{
+                if(file.type!==`application/zip`){
+                        message.error(`请上传zip格式文件`);
+                        fileList.splice(0,fileList.length);
+                        return false;
+                }
+                return true;
+        }
 
         handleSubmit=(e)=>{
                 e.preventDefault();
@@ -100,6 +108,7 @@ class ResearchUploadBatchForm extends React.Component{
                         onChange: this.handleChange,
                         action: `${config.server}/ResearchAuth/ResearchBatchFile`,
                         accept: '.zip',
+                        beforeUpload: this.checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },

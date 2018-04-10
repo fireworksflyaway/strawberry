@@ -19,6 +19,14 @@ class DiagnoseUploadForm extends React.Component{
                 }
         }
 
+        checkZipFormat=(file, fileList)=>{
+                if(file.type!==`application/zip`){
+                        message.error(`请上传zip格式文件`);
+                        fileList.splice(0,fileList.length);
+                        return false;
+                }
+                return true;
+        }
 
         handleSubmit=(e)=>{
                 e.preventDefault();
@@ -177,6 +185,7 @@ class DiagnoseUploadForm extends React.Component{
                         onChange: this.handleChange,
                         action: `${config.server}/DiagnoseAuth/T1W`,
                         accept: '.zip',
+                        beforeUpload: this.checkZipFormat,
                         headers: {
                                 //authorization: 'authorization-text',
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
@@ -187,6 +196,7 @@ class DiagnoseUploadForm extends React.Component{
                         onChange: this.handleChange,
                         action: `${config.server}/DiagnoseAuth/2DT2`,
                         accept: '.zip',
+                        beforeUpload: this.checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
@@ -196,6 +206,7 @@ class DiagnoseUploadForm extends React.Component{
                         onChange: this.handleChange,
                         action: `${config.server}/DiagnoseAuth/3DT2`,
                         accept: '.zip',
+                        beforeUpload: this.checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
@@ -205,6 +216,7 @@ class DiagnoseUploadForm extends React.Component{
                         onChange: this.handleChange,
                         action: `${config.server}/DiagnoseAuth/DWI`,
                         accept: '.zip',
+                        beforeUpload: this.checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
@@ -214,6 +226,7 @@ class DiagnoseUploadForm extends React.Component{
                         onChange: this.handleChange,
                         action: `${config.server}/DiagnoseAuth/SWI`,
                         accept: '.zip',
+                        beforeUpload: this.checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },

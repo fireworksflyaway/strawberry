@@ -103,6 +103,15 @@ class PE_UploadSingleForm extends React.Component{
                 return e && e.fileList;
         }
 
+        checkZipFormat=(file, fileList)=>{
+                if(file.type!==`application/zip`){
+                        message.error(`请上传zip格式文件`);
+                        fileList.splice(0,fileList.length);
+                        return false;
+                }
+                return true;
+        }
+
         handleChange=(info)=>{
                 if(info.fileList.length>1)
                         info.fileList=info.fileList.slice(-1);
@@ -140,6 +149,7 @@ class PE_UploadSingleForm extends React.Component{
                         onChange: this.handleChange,
                         action: `${config.server}/PE_Auth/PE_uploadt1`,
                         accept: '.zip',
+                        beforeUpload: this.checkZipFormat,
                         headers: {
                                 //authorization: 'authorization-text',
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
@@ -150,6 +160,7 @@ class PE_UploadSingleForm extends React.Component{
                         onChange: this.handleChange,
                         action: `${config.server}/PE_Auth/PE_uploadt2`,
                         accept: '.zip',
+                        beforeUpload: this.checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },

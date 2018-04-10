@@ -74,6 +74,15 @@ class ResearchUploadSingleForm extends React.Component{
                 return e && e.fileList;
         }
 
+        checkZipFormat=(file, fileList)=>{
+                if(file.type!==`application/zip`){
+                        message.error(`请上传zip格式文件`);
+                        fileList.splice(0,fileList.length);
+                        return false;
+                }
+                return true;
+        }
+
         handleChange=(info)=>{
                 if(info.fileList.length>1)
                         info.fileList=info.fileList.slice(-1);
@@ -111,6 +120,7 @@ class ResearchUploadSingleForm extends React.Component{
                         onChange: this.handleChange,
                         action: `${config.server}/ResearchAuth/ResearchT1`,
                         accept: '.zip',
+                        beforeUpload: this.checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
@@ -120,6 +130,7 @@ class ResearchUploadSingleForm extends React.Component{
                         onChange: this.handleChange,
                         action: `${config.server}/ResearchAuth/ResearchT2`,
                         accept: '.zip',
+                        beforeUpload: this.checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
