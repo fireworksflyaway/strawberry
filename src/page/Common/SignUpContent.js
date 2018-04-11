@@ -11,24 +11,24 @@ import SignUpForm from '../Common/SignUpForm';
 const TabPane = Tabs.TabPane;
 class SignUpContent extends React.Component {
 
-        showConfirm(){
-                Modal.confirm({
-                        title: `博脑医疗用户注册协议和隐私政策`,
-                        content: <p>something...<br />something...</p>,
-                        okText: `同意并继续`,
-                        cancelText: `取消`,
-                        width: 800,
-                        iconType: 'tags',
-                        onCancel(){
-                                window.location.href='/';
-                        }
-
-                })
-        }
+        // showConfirm(){
+        //         Modal.confirm({
+        //                 title: `博脑医疗用户注册协议和隐私政策`,
+        //                 content: <p>敬请期待</p>,
+        //                 okText: `同意并继续`,
+        //                 cancelText: `取消`,
+        //                 width: 800,
+        //                 iconType: 'tags',
+        //                 onCancel(){
+        //                         window.location.href='/';
+        //                 }
+        //
+        //         })
+        // }
 
 
         render(){
-                this.showConfirm();
+                //this.showConfirm();
                 return(
                         <article>
                                 <Card title="注册新用户" className='signUpCard'>
