@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07f9186f-7c72-4f3e-bc6d-8faa5c42383a" name="Default" comment="Web 0.1.1&#10;科研版基本功能完成">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" afterPath="$PROJECT_DIR$/src/config.js" />
+    <list default="true" id="97fdd116-a445-4c15-a472-64fcf58fde9d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ImageDBUser.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/mongoSettings.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/reactTemplatesPlugin.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/strawberry.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/page/Common/SignUpContent.js" afterPath="$PROJECT_DIR$/src/page/Common/SignUpContent.js" />
+      <change beforePath="$PROJECT_DIR$/src/page/Common/SignUpForm.js" afterPath="$PROJECT_DIR$/src/page/Common/SignUpForm.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,152 +27,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ResearchReport.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchReport.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="SCSS File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>style={{ fontSize: 13 }}</find>
-      <find>localhost</find>
-      <find>exclude</find>
-      <find>startsWith</find>
-      <find>auth</find>
-      <find>/auth/</find>
-      <find>&quot;</find>
-      <find>state</find>
-      <find>basicUser</find>
-      <find>basicAuth</find>
-      <find>basic</find>
-      <find>adminAuth</find>
-      <find>PE_</find>
-      <find>T1</find>
-      <find>data['SWI']</find>
-      <find>2DT2</find>
-      <find>T1W</find>
-      <find>report.json</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>Batch</replace>
-      <replace>basicAuth</replace>
-      <replace>/basicAuth/</replace>
-      <replace>`</replace>
-      <replace>{`</replace>
-      <replace>props</replace>
-      <replace>PE_User</replace>
-      <replace>PE_Auth</replace>
-      <replace>PE_</replace>
-      <replace>AdminAuth</replace>
-      <replace>Research</replace>
-      <replace>Diagnose</replace>
-      <replace>T1W</replace>
-      <replace>DWI</replace>
-      <replace>data._SWI</replace>
-      <replace>SWI</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="Content" />
-      </map>
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/page/Admin/AdminSignIn.js" />
-        <option value="$PROJECT_DIR$/src/page/Admin/AdminProfileEmailForm.js" />
-        <option value="$PROJECT_DIR$/src/page/PE/PE_Report.js" />
-        <option value="$PROJECT_DIR$/src/page/PE/PE_SignUpForm.js" />
-        <option value="$PROJECT_DIR$/src/page/Admin/AdminUserList.js" />
-        <option value="$PROJECT_DIR$/server/AdminApi/admin.js" />
-        <option value="$PROJECT_DIR$/src/page/Admin/AdminUserListTable.js" />
-        <option value="$PROJECT_DIR$/src/page/Common/SignUpContent.js" />
-        <option value="$PROJECT_DIR$/src/page/Common/SignInContent.js" />
-        <option value="$PROJECT_DIR$/src/page/Common/SignUpForm.js" />
-        <option value="$PROJECT_DIR$/src/page/Common/HeaderInfo.js" />
-        <option value="$PROJECT_DIR$/src/page/Research/ResearchUpload.js" />
-        <option value="$PROJECT_DIR$/src/page/PE/PE_Upload.js" />
-        <option value="$PROJECT_DIR$/src/page/PE/PE_Event.js" />
-        <option value="$PROJECT_DIR$/src/page/PE/PE_Profile.js" />
-        <option value="$PROJECT_DIR$/src/page/Common/LoginHeader.js" />
-        <option value="$PROJECT_DIR$/src/function/withLoginType.js" />
-        <option value="$PROJECT_DIR$/src/page/Common/ProfileInfoForm.js" />
-        <option value="$PROJECT_DIR$/server/ResearchApi/ResearchUser.js" />
-        <option value="$PROJECT_DIR$/src/page/Common/Profile.js" />
-        <option value="$PROJECT_DIR$/src/page/Research/ResearchUploadSingleForm.js" />
-        <option value="$PROJECT_DIR$/src/page/Research/ResearchEvent.js" />
-        <option value="$PROJECT_DIR$/server/MailApi.js" />
-        <option value="$PROJECT_DIR$/server/PE_Api/PE_User.js" />
-        <option value="$PROJECT_DIR$/src/page/Common/ForgetPasswordModal.js" />
-        <option value="$PROJECT_DIR$/src/page/Common/SignInForm.js" />
-        <option value="$PROJECT_DIR$/src/function/provideErrorInfo.js" />
-        <option value="$PROJECT_DIR$/src/style/Common.scss" />
-        <option value="$PROJECT_DIR$/server/CommonApi.js" />
-        <option value="$PROJECT_DIR$/src/page/Research/ResearchUploadBatchForm.js" />
-        <option value="$PROJECT_DIR$/src/page/Common/ResetPassword.js" />
-        <option value="$PROJECT_DIR$/src/style/App.scss" />
-        <option value="$PROJECT_DIR$/src/page/PE/PE_UploadBatchForm.js" />
-        <option value="$PROJECT_DIR$/server/config.json" />
-        <option value="$PROJECT_DIR$/server/DiagnoseApi/DiagnoseUser.js" />
-        <option value="$PROJECT_DIR$/src/page/Research/ResearchReport.js" />
-        <option value="$PROJECT_DIR$/server/definition.js" />
-        <option value="$PROJECT_DIR$/server/ResearchApi/ResearchUpload.js" />
-        <option value="$PROJECT_DIR$/server/PE_Api/PE_Upload.js" />
-        <option value="$PROJECT_DIR$/server/DiagnoseApi/DiagnoseUpload.js" />
-        <option value="$PROJECT_DIR$/server/PE_Api/PE_Event.js" />
-        <option value="$PROJECT_DIR$/server/ResearchApi/ResearchEvent.js" />
-        <option value="$PROJECT_DIR$/server/DiagnoseApi/DiagnoseEvent.js" />
-        <option value="$PROJECT_DIR$/src/page/Diagnose/DiagnoseEvent.js" />
-        <option value="$PROJECT_DIR$/src/page/Diagnose/DiagnoseReport.js" />
-        <option value="$PROJECT_DIR$/src/page/Diagnose/DiagnoseUploadForm.js" />
-        <option value="$PROJECT_DIR$/src/page/App.js" />
-        <option value="$PROJECT_DIR$/src/function/provideConfig.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/config.js" />
-      </list>
-    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
     <package-json value="$PROJECT_DIR$/package.json" />
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
@@ -171,33 +41,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="PackageJsonUpdateNotifier">
-    <dismissed value="$PROJECT_DIR$/package.json" />
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="193" />
     <option name="y" value="51" />
     <option name="width" value="1325" />
     <option name="height" value="1199" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>AngularJS</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -214,8 +62,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,44 +69,16 @@
               <item name="strawberry" type="b2602c69:ProjectViewProjectNode" />
               <item name="strawberry" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="strawberry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strawberry" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/node-v6.9.5-win-x64/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_interpreter_path" value="node" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="settings.editor.splitter.proportion" value="0.24561404" />
-    <property name="list.type.of.created.stylesheet" value="SCSS" />
-    <property name="ToolWindowTypeScript.ShowToolbar" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="6.9.5" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/build/static/js/main.9b249225.js" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/page/Diagnose" />
-      <recent name="$PROJECT_DIR$/src/page/Basic" />
-      <recent name="$PROJECT_DIR$/FrontData/Basic" />
-      <recent name="E:\strawberry\src\image" />
-      <recent name="E:\strawberry\public\image" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/page/Common" />
-      <recent name="$PROJECT_DIR$/src/page" />
-      <recent name="E:\strawberry\src\page" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -274,19 +92,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.PE_Event.js">
-    <configuration name="PE_Event.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="PE_Event.js" working-dir="$PROJECT_DIR$/src/page/PE" />
-    <configuration name="Unnamed" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$" />
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.Unnamed" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.PE_Event.js" />
-    </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.PE_Event.js" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
@@ -295,959 +100,50 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="07f9186f-7c72-4f3e-bc6d-8faa5c42383a" name="Default" comment="" />
-      <created>1511329503749</created>
+      <changelist id="97fdd116-a445-4c15-a472-64fcf58fde9d" name="Default" comment="" />
+      <created>1523415627841</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1511329503749</updated>
-      <workItem from="1511329505441" duration="76000" />
-      <workItem from="1511329643810" duration="2442000" />
-      <workItem from="1511332129652" duration="69000" />
-      <workItem from="1511332210841" duration="3000" />
-      <workItem from="1511332426033" duration="760000" />
-      <workItem from="1511333199604" duration="441000" />
-      <workItem from="1511333652509" duration="372000" />
-      <workItem from="1511334050583" duration="8053000" />
-      <workItem from="1511398638573" duration="18793000" />
-      <workItem from="1511489996581" duration="8680000" />
-      <workItem from="1511508202127" duration="5240000" />
-      <workItem from="1511573526936" duration="6747000" />
-      <workItem from="1511832278451" duration="2627000" />
-      <workItem from="1511841417038" duration="3000" />
-      <workItem from="1511848331043" duration="3814000" />
-      <workItem from="1511852183264" duration="455000" />
-      <workItem from="1511853027320" duration="3000" />
-      <workItem from="1511853159480" duration="1893000" />
-      <workItem from="1511856158198" duration="1617000" />
-      <workItem from="1511920824565" duration="16000" />
-      <workItem from="1511920858356" duration="2481000" />
-      <workItem from="1511941479198" duration="615000" />
-      <workItem from="1511944979651" duration="3689000" />
-      <workItem from="1512006429193" duration="894000" />
-      <workItem from="1512091861340" duration="3295000" />
-      <workItem from="1512114905888" duration="1378000" />
-      <workItem from="1512121077040" duration="2464000" />
-      <workItem from="1512195529809" duration="4677000" />
-      <workItem from="1512264711327" duration="16341000" />
-      <workItem from="1512350446877" duration="19052000" />
-      <workItem from="1512437267704" duration="22911000" />
-      <workItem from="1512524774065" duration="6263000" />
-      <workItem from="1512538835812" duration="12371000" />
-      <workItem from="1512553791619" duration="602000" />
-      <workItem from="1512610964985" duration="6091000" />
-      <workItem from="1512630542885" duration="3702000" />
-      <workItem from="1512697121125" duration="11384000" />
-      <workItem from="1512955453954" duration="14423000" />
-      <workItem from="1513041077522" duration="3024000" />
-      <workItem from="1513215219744" duration="17000" />
-      <workItem from="1513215256095" duration="7981000" />
-      <workItem from="1513301540064" duration="5636000" />
-      <workItem from="1513387806835" duration="7972000" />
-      <workItem from="1513653082870" duration="637000" />
-      <workItem from="1513668255179" duration="920000" />
-      <workItem from="1513669185001" duration="170000" />
-      <workItem from="1513669390224" duration="22000" />
-      <workItem from="1513669420255" duration="106000" />
-      <workItem from="1513669538023" duration="1370000" />
-      <workItem from="1513672201726" duration="34000" />
-      <workItem from="1513672244827" duration="12000" />
-      <workItem from="1513672325203" duration="38000" />
-      <workItem from="1513672370185" duration="4197000" />
-      <workItem from="1513738937158" duration="37000" />
-      <workItem from="1513840828155" duration="3534000" />
-      <workItem from="1514010266211" duration="52000" />
-      <workItem from="1514167215614" duration="12000" />
-      <workItem from="1514171902340" duration="5257000" />
-      <workItem from="1514185325411" duration="655000" />
-      <workItem from="1514185990130" duration="3012000" />
-      <workItem from="1514252032966" duration="16480000" />
-      <workItem from="1514339020921" duration="11061000" />
-      <workItem from="1514861951740" duration="16000" />
-      <workItem from="1514861978594" duration="13346000" />
-      <workItem from="1514943229436" duration="12643000" />
-      <workItem from="1514967361456" duration="2165000" />
-      <workItem from="1514969545859" duration="1984000" />
-      <workItem from="1515029040606" duration="12423000" />
-      <workItem from="1515116098637" duration="10913000" />
-      <workItem from="1515204442523" duration="857000" />
-      <workItem from="1515225350776" duration="321000" />
-      <workItem from="1515226381646" duration="191000" />
-      <workItem from="1515227377524" duration="1933000" />
-      <workItem from="1515229772233" duration="1425000" />
-      <workItem from="1515375796915" duration="2403000" />
-      <workItem from="1515550022299" duration="5507000" />
-      <workItem from="1515574404176" duration="2592000" />
-      <workItem from="1515656552460" duration="5285000" />
-      <workItem from="1515720042018" duration="7277000" />
-      <workItem from="1515807092068" duration="13253000" />
-      <workItem from="1515979561325" duration="48000" />
-      <workItem from="1515979617704" duration="8138000" />
-      <workItem from="1516064909483" duration="17947000" />
-      <workItem from="1516152582589" duration="22000" />
-      <workItem from="1516152621950" duration="9654000" />
-      <workItem from="1516238880974" duration="1388000" />
-      <workItem from="1516325234880" duration="22400000" />
-      <workItem from="1516411193282" duration="10424000" />
-      <workItem from="1516586030522" duration="6560000" />
-      <workItem from="1516848898578" duration="12107000" />
-      <workItem from="1517407176771" duration="2877000" />
-      <workItem from="1517464222910" duration="64000" />
-      <workItem from="1517464306048" duration="1695000" />
-      <workItem from="1517466147980" duration="9234000" />
-      <workItem from="1517533441519" duration="3528000" />
-      <workItem from="1517641692565" duration="4399000" />
-      <workItem from="1517793740788" duration="15100000" />
-      <workItem from="1517881205138" duration="9628000" />
-      <workItem from="1517982737255" duration="3507000" />
-      <workItem from="1518053974766" duration="7629000" />
-      <workItem from="1518140428817" duration="7318000" />
-      <workItem from="1519612562637" duration="8949000" />
-      <workItem from="1519631237408" duration="23000" />
-      <workItem from="1519631316075" duration="6786000" />
-      <workItem from="1519694115651" duration="10504000" />
-      <workItem from="1519786563755" duration="9598000" />
-      <workItem from="1519867241065" duration="9098000" />
-      <workItem from="1519955199708" duration="3827000" />
-      <workItem from="1520041544912" duration="5045000" />
-      <workItem from="1520216568574" duration="13522000" />
-      <workItem from="1520299337443" duration="8274000" />
-      <workItem from="1520321670064" duration="7397000" />
-      <workItem from="1520389701362" duration="367000" />
-      <workItem from="1520390083583" duration="12032000" />
-      <workItem from="1520474869913" duration="2558000" />
-      <workItem from="1520562481229" duration="6498000" />
-      <workItem from="1520646693407" duration="7339000" />
-      <workItem from="1520818773374" duration="10390000" />
-      <workItem from="1520922643258" duration="378000" />
-      <workItem from="1520997503946" duration="677000" />
-      <workItem from="1521078115384" duration="7907000" />
-      <workItem from="1521107708989" duration="1956000" />
-      <workItem from="1521165103687" duration="4894000" />
-      <workItem from="1521423208516" duration="2960000" />
-      <workItem from="1521524897088" duration="4790000" />
-      <workItem from="1521596031995" duration="15042000" />
-      <workItem from="1521683768121" duration="15306000" />
-      <workItem from="1521767902722" duration="3797000" />
-      <workItem from="1521854867825" duration="3816000" />
-      <workItem from="1522029612987" duration="3194000" />
-      <workItem from="1522113929743" duration="2756000" />
-      <workItem from="1522200224269" duration="5963000" />
-      <workItem from="1522287661506" duration="8597000" />
-      <workItem from="1522372464228" duration="2092000" />
-      <workItem from="1522633315599" duration="17000" />
-      <workItem from="1523408803723" duration="2191000" />
+      <updated>1523415627841</updated>
+      <workItem from="1523415628917" duration="17000" />
     </task>
-    <task id="LOCAL-00001" summary="install ant design">
-      <created>1511330449063</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1511330449063</updated>
-    </task>
-    <task id="LOCAL-00002" summary="install sass">
-      <created>1511330797398</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1511330797398</updated>
-    </task>
-    <task id="LOCAL-00003" summary="install react-router">
-      <created>1511331147015</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1511331147015</updated>
-    </task>
-    <task id="LOCAL-00004" summary="clear other files">
-      <created>1511331573614</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1511331573614</updated>
-    </task>
-    <task id="LOCAL-00005" summary="layout and logo">
-      <created>1511338821761</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1511338821761</updated>
-    </task>
-    <task id="LOCAL-00006" summary="HeaderInfo page setup">
-      <created>1511339818952</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1511339818952</updated>
-    </task>
-    <task id="LOCAL-00007" summary="HeaderInfo basic style">
-      <created>1511405691649</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1511405691649</updated>
-    </task>
-    <task id="LOCAL-00008" summary="HeaderInfo basic style modified">
-      <created>1511408153151</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1511408153151</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Footer setup">
-      <created>1511415504830</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1511415504830</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Content Carousel Setup">
-      <created>1511425137126</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1511425137126</updated>
-    </task>
-    <task id="LOCAL-00011" summary="fix header width bug">
-      <created>1511426035853</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1511426035853</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Chinese carousel caption">
-      <created>1511426322470</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1511426322470</updated>
-    </task>
-    <task id="LOCAL-00013" summary="router">
-      <created>1511502722767</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1511502722767</updated>
-    </task>
-    <task id="LOCAL-00014" summary="signup form setup">
-      <created>1511513548941</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1511513548941</updated>
-    </task>
-    <task id="LOCAL-00015" summary="import tabs">
-      <created>1511580543784</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1511580543784</updated>
-    </task>
-    <task id="LOCAL-00016" summary="setup basic sign in form">
-      <created>1511855341873</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1511855341873</updated>
-    </task>
-    <task id="LOCAL-00017" summary="setup MongoDB, API and server">
-      <created>1512293191389</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1512293191389</updated>
-    </task>
-    <task id="LOCAL-00018" summary="mongodb ensure unique">
-      <created>1512359671010</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1512359671010</updated>
-    </task>
-    <task id="LOCAL-00019" summary="basic sign in and sign up">
-      <created>1512377104038</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1512377104038</updated>
-    </task>
-    <task id="LOCAL-00020" summary="import sha256">
-      <created>1512378692777</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1512378692777</updated>
-    </task>
-    <task id="LOCAL-00021" summary="import isLogin state">
-      <created>1512445801415</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1512445801415</updated>
-    </task>
-    <task id="LOCAL-00022" summary="update refresh login state function">
-      <created>1512456701614</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1512456701614</updated>
-    </task>
-    <task id="LOCAL-00023" summary="import logout link">
-      <created>1512457172418</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1512457172418</updated>
-    </task>
-    <task id="LOCAL-00024" summary="import basic info and password form">
-      <created>1512553733524</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1512553733524</updated>
-    </task>
-    <task id="LOCAL-00025" summary="modify mongodb updateOne">
-      <created>1512614199270</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1512614199270</updated>
-    </task>
-    <task id="LOCAL-00026" summary="import upload pages">
-      <created>1512632882538</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1512632882538</updated>
-    </task>
-    <task id="LOCAL-00027" summary="import basic event page">
-      <created>1512702939141</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1512702939141</updated>
-    </task>
-    <task id="LOCAL-00028" summary="import basic report page">
-      <created>1512717280268</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1512717280268</updated>
-    </task>
-    <task id="LOCAL-00029" summary="upload functions">
-      <created>1513301585572</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1513301585572</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Linux start&#10;Get event table">
-      <created>1514187377725</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1514187377725</updated>
-    </task>
-    <task id="LOCAL-00031" summary="备份改造header之前">
-      <created>1515117238312</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1515117238312</updated>
-    </task>
-    <task id="LOCAL-00032" summary="V0.0.3">
-      <created>1515999395868</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1515999395868</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Web 0.0.3&#10;1. 更新了错误提示列表&#10;2. 增加了登录超时退出">
-      <created>1516073882263</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1516073882263</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Web 0.0.4&#10;1. 增加了管理员功能之登录, 修改邮箱和密码,查看用户列表,授权&#10;2. 增加了邮件模块">
-      <created>1516437302089</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1516437302089</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Web 0.1.0&#10;体检版基本功能完成">
-      <created>1518226331929</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1518226331929</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Web 0.1.1&#10;科研版基本功能完成">
-      <created>1521078156155</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1521078156155</updated>
-    </task>
-    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="726975000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="17000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="193" y="51" width="2323" height="1221" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11857708" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947463" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2085354" sideWeight="0.50342935" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32382706" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24989021" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934684" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13443072" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2401104" sideWeight="0.49657065" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925718" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.3297587" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24945392" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875538" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23862661" sideWeight="0.5058967" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18365473" sideWeight="0.49491665" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13443072" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23783287" sideWeight="0.49410328" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.3297587" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14672305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24904862" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875538" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925718" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Chinese carousel caption" />
-    <MESSAGE value="router" />
-    <MESSAGE value="signup form setup" />
-    <MESSAGE value="import tabs" />
-    <MESSAGE value="setup basic sign in form" />
-    <MESSAGE value="setup MongoDB, API and server" />
-    <MESSAGE value="mongodb ensure unique" />
-    <MESSAGE value="basic sign in and sign up" />
-    <MESSAGE value="import sha256" />
-    <MESSAGE value="import isLogin state" />
-    <MESSAGE value="update refresh login state function" />
-    <MESSAGE value="import logout link" />
-    <MESSAGE value="import basic info and password form" />
-    <MESSAGE value="modify mongodb updateOne" />
-    <MESSAGE value="import upload pages" />
-    <MESSAGE value="import basic event page" />
-    <MESSAGE value="import basic report page" />
-    <MESSAGE value="upload functions" />
-    <MESSAGE value="Linux start&#10;Get event table" />
-    <MESSAGE value="备份改造header之前" />
-    <MESSAGE value="V0.0.3" />
-    <MESSAGE value="Web 0.0.3&#10;1. 更新了错误提示列表&#10;2. 增加了登录超时退出" />
-    <MESSAGE value="Web 0.0.4&#10;1. 增加了管理员功能之登录, 修改邮箱和密码,查看用户列表,授权&#10;2. 增加了邮件模块" />
-    <MESSAGE value="Web 0.1.0&#10;体检版基本功能完成" />
-    <MESSAGE value="Web 0.1.1&#10;科研版基本功能完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="Web 0.1.1&#10;科研版基本功能完成" />
-  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="12" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="breakpointLogExpression">
-      <expression>
-        <expression-string>return;
-                }
-                result.forEach(rr=&gt;{
-                    rr.CreationTime=moment((new ObjectID(rr._id)).getTimestamp()).format('YYYY/MM/DD HH:mm:ss');
-                })
-
-                res.send({suc:true, result});
-        })
-    }</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>for(let i=0;i&lt;res.eventList.length;i++){
-                                        if(res.eventList[i].type===2)
-                                        {
-                                                let fatherNum=res.eventList[i].number.split('_')[0];
-                                                //console.log(eventList[mapper[fatherNum]]);
-                                                if(eventList[mapper[fatherNum]][&quot;children&quot;]===undefined)
-                                                        eventList[mapper[fatherNum]][&quot;children&quot;]=[];
-                                                eventList[mapper[fatherNum]][&quot;children&quot;].push(res.eventList[i]);
-
-                                        }
-                                }
-
-                                eventList.reverse();
-                                //console.log(eventList);
-
-                                this.setState({
-                                        data: eventList
-                                });
-                        }
-                    )
-                    .catch((err)=&gt;console.error(err));</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/page/Common/SignUpForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/function/provideErrorInfo.js" />
-    <entry file="file://$PROJECT_DIR$/server/CommonApi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="58" column="50" lean-forward="false" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/ResetPassword.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <marker date="1522722106151" expanded="true" signature="3732:3788" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchUploadBatchForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="37" column="90" lean-forward="false" selection-start-line="37" selection-start-column="90" selection-end-line="37" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/App.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config-overrides.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pm2-start.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PE/PE_Upload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PE/PE_UploadBatchForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="52" column="67" lean-forward="false" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/SignInForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/DiagnoseApi/DiagnoseUser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/Profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/ProfileInfoForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="56" column="95" lean-forward="false" selection-start-line="56" selection-start-column="95" selection-end-line="56" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/config.json" />
-    <entry file="file://$PROJECT_DIR$/src/function/handleResponse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="55" lean-forward="false" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/PE_Api/PE_User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3322">
-          <caret line="151" column="23" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="151" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="60" lean-forward="false" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/LoginHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="15" column="53" lean-forward="false" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/HeaderInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PE/PE_Report.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="33" column="64" lean-forward="true" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PE/PE_Event.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="92" column="92" lean-forward="false" selection-start-line="92" selection-start-column="92" selection-end-line="92" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/PE_Api/PE_Upload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3366">
-          <caret line="153" column="9" lean-forward="true" selection-start-line="153" selection-start-column="9" selection-end-line="153" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/ResearchApi/ResearchUpload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="154" column="31" lean-forward="true" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/definition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/PE_Api/PE_Event.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/DiagnoseApi/DiagnoseUpload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3212">
-          <caret line="146" column="48" lean-forward="false" selection-start-line="146" selection-start-column="48" selection-end-line="146" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/DiagnoseApi/DiagnoseEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="26" column="59" lean-forward="false" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/ResearchApi/ResearchEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2706">
-          <caret line="129" column="45" lean-forward="false" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseReport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2112">
-          <caret line="104" column="22" lean-forward="false" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#60#86#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseUpload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Diagnose/DiagnoseUploadForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6974">
-          <caret line="323" column="78" lean-forward="false" selection-start-line="323" selection-start-column="78" selection-end-line="323" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/function/provideConfig.js" />
-    <entry file="file://$PROJECT_DIR$/src/page/Common/ChangePasswordForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="34" column="50" lean-forward="true" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/errorList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/AdminApi/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="76" lean-forward="false" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="49" column="17" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/ForgetPasswordModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="35" column="41" lean-forward="false" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-          <folding>
-            <element signature="e#57#83#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="154" column="0" lean-forward="true" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Common/SignUpContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="116" lean-forward="false" selection-start-line="19" selection-start-column="116" selection-end-line="19" selection-end-column="116" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#61#87#0" expanded="false" />
-            <marker date="1523345926497" expanded="true" signature="412:1025" ph="..." />
-            <marker date="1523345926497" expanded="true" signature="488:990" ph="..." />
-            <marker date="1523345926497" expanded="true" signature="556:950" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Research/ResearchReport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/configuration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

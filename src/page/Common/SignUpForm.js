@@ -23,6 +23,7 @@ class SignUpForm extends React.Component{
                 }
         }
 
+
         checkPassword = (rule, value, callback) => {
                 const form = this.props.form;
                 if (value && value !== form.getFieldValue('Password')) {
