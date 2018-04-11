@@ -196,8 +196,9 @@ app.post('/ConfirmResetAuth', CommonAPI.confirmResetAuth);
 
 app.post('/ResetPassword', CommonAPI.resetPassword);
 
-const server=app.listen(8090, function () {
+const server=app.listen(8090, 'localhost', function () {
         let host = server.address().address;
         let port = server.address().port;
         console.log("应用实例，访问地址为 http://%s:%s", host, port)
 })
+
