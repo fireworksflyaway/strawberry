@@ -10,7 +10,7 @@ const CONFIG = require( '../configuration');
 const {emptyDir} = require('../func');
 
 module.exports={
-        uploadT1(req, res, upload){
+        uploadDicom(req, res, upload){
                 const T1Folder=`${CONFIG.DATA_PATH}/Research/${req.user.username}/T1`;
                 //clear T1 folder
                 emptyDir(T1Folder);

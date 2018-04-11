@@ -23,3 +23,4 @@ yarn-error.log*
 #webstorm
 /.idea
 /public/frontData/
+server/logs/

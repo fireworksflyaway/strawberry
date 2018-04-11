@@ -9,32 +9,15 @@ const process=require('child_process');
 const {EventStatus, EventType}=require('../definition');
 const {emptyDir} = require('../func');
 module.exports={
-        uploadT1(req, res, upload){
-                const T1Folder=`${CONFIG.DATA_PATH}/PE/${req.user.username}/T1`;
-                //clear T1 folder
-
-
-                emptyDir(T1Folder);
+        uploadDicom(req, res, upload){
+                const dicomFolder=`${CONFIG.DATA_PATH}/PE/${req.user.username}/DICOM`;
+                emptyDir(dicomFolder);
                 upload.fileHandler({
                         uploadDir: function () {
-                                return T1Folder;
+                                return dicomFolder;
                         },
                         uploadUrl: function () {
-                                return `/Data/${req.user.username}/T1`;
-                        }
-                })(req, res);
-        },
-
-        uploadT2(req, res, upload){
-                const T2Folder=`${CONFIG.DATA_PATH}/PE/${req.user.username}/T2`;
-                //clear T2 folder
-                emptyDir(T2Folder);
-                upload.fileHandler({
-                        uploadDir: function () {
-                                return T2Folder;
-                        },
-                        uploadUrl: function () {
-                                return `/Data/${req.user.username}/T2`;
+                                return `/Data/${req.user.username}/DICOM`;
                         }
                 })(req, res);
         },
@@ -54,8 +37,7 @@ module.exports={
 
         uploadForm(req, res){
                 const {username}=req.user;
-                const {p_name, p_age, p_gender, testTime, operator, device, diseases, t1,t2,comment}=req.body;
-                const isFlair=t2!=="";
+                const {p_name, p_age, p_gender, testTime, operator, device, diseases, dicom, comment}=req.body;
                 //get event count
                 db.getCount('PE_Event',{Username: username, IsBatch: false}, function (count) {
                         //console.log(count);
@@ -68,7 +50,6 @@ module.exports={
                                 Number: `BN-PE-S${count+100001}`,
                                 Username: username,
                                 Status: EventStatus.Waiting,
-                                IsFlair : isFlair,
                                 IsBatch: false
                         }
                         db.insert('PE_Event',data,function (result) {
@@ -82,10 +63,7 @@ module.exports={
                                 const targetPath=`${CONFIG.DATA_PATH}/PE/${username}/${data.Number}`;
 
                                 fs.mkdirSync(targetPath);
-                                fs.renameSync(`${CONFIG.DATA_PATH}/PE/${username}/T1/${t1}`, `${targetPath}/dataF1.zip`);
-                                if(isFlair)
-                                        fs.renameSync(`${CONFIG.DATA_PATH}/PE/${username}/T2/${t2}`, `${targetPath}/dataF2.zip`);
-
+                                fs.renameSync(`${CONFIG.DATA_PATH}/PE/${username}/DICOM/${dicom}`, `${targetPath}/dicom.zip`);
 
                                 const trimOperator=operator?operator:"-";
                                 const trimDevice=device?device:"-";

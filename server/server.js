@@ -69,13 +69,11 @@ app.post('/PE_SignIn', PE_UserAPI.signIn);
 
 app.post('/PE_SignUp', PE_UserAPI.signUp);
 
-app.post('/PE_Auth/PE_uploadt1', function (req, res) {
-        PE_UploadAPI.uploadT1(req, res, upload);
+app.post('/PE_Auth/PE_Dicom', function (req, res) {
+        PE_UploadAPI.uploadDicom(req, res, upload);
 })
 
-app.post('/PE_Auth/PE_uploadt2', function (req, res) {
-        PE_UploadAPI.uploadT2(req, res, upload);
-})
+
 
 app.post('/PE_Auth/PE_uploadForm', PE_UploadAPI.uploadForm);
 
@@ -150,7 +148,7 @@ app.post('/ResearchSignIn', ResearchUserAPI.signIn);
 app.post('/ResearchSignUp', ResearchUserAPI.signUp);
 
 app.post('/ResearchAuth/ResearchT1', function (req, res) {
-        ResearchUploadAPI.uploadT1(req, res, upload);
+        ResearchUploadAPI.uploadDicom(req, res, upload);
 })
 
 app.post('/ResearchAuth/ResearchT2', function (req, res) {

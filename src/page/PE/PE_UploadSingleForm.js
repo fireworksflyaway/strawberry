@@ -27,19 +27,13 @@ class PE_UploadSingleForm extends React.Component{
                 this.props.form.validateFieldsAndScroll((err, values) => {
                         if (!err) {
                                 console.log(values);
+                                if(values.dicom[0].status!=="done")
+                                {
+                                        message.error("请重新上传DICOM文件");
+                                        this.setState({isUpdating: false});
+                                        return;
+                                }
 
-                                if(values.fileT1[0].status!=="done")
-                                {
-                                        message.error("请重新上传T1文件");
-                                        this.setState({isUpdating: false});
-                                        return;
-                                }
-                                if(values.fileT2!==undefined&&values.fileT2[0].status!=="done")
-                                {
-                                        message.error("请重新上传T2文件");
-                                        this.setState({isUpdating: false});
-                                        return;
-                                }
                                 let diseases='00';
                                 if(values.diseases!==undefined)
                                 {
@@ -63,9 +57,8 @@ class PE_UploadSingleForm extends React.Component{
                                         operator: values.operator,
                                         device: values.device,
                                         diseases,
-                                        t1: values.fileT1[0].name,
-                                        t2: values.fileT2?values.fileT2[0].name:"",
-                                        comment: values.comment
+                                        dicom: values.dicom[0].name,
+                                        comment: values.comment,
                                 }
                                 const token=sessionStorage.getItem('StrawberryToken');
                                 console.log(data);
@@ -81,7 +74,6 @@ class PE_UploadSingleForm extends React.Component{
                                         .then(handleResponse)
                                         .then((res)=>{
                                                 message.success('任务提交成功');
-                                            //this.props.history.push('/basicevent');
                                                 window.location.href='/PE_Event';
                                         })
                                         .catch((err)=>{
@@ -145,29 +137,15 @@ class PE_UploadSingleForm extends React.Component{
                         },
                 };
 
-                const T1Props = {
+                const DicomProps = {
                         onChange: this.handleChange,
-                        action: `${config.server}/PE_Auth/PE_uploadt1`,
-                        accept: '.zip',
-                        beforeUpload: this.checkZipFormat,
-                        headers: {
-                                //authorization: 'authorization-text',
-                                'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
-                        },
-                };
-
-                const T2Props = {
-                        onChange: this.handleChange,
-                        action: `${config.server}/PE_Auth/PE_uploadt2`,
+                        action: `${config.server}/PE_Auth/PE_Dicom`,
                         accept: '.zip',
                         beforeUpload: this.checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
                 };
-
-
-
 
                 return (
                         <Form onSubmit={this.handleSubmit}>
@@ -235,25 +213,13 @@ class PE_UploadSingleForm extends React.Component{
                                             <Checkbox.Group options={['高血压','糖尿病']} />
                                         )}
                                 </FormItem>
-                                <FormItem {...formItemLayout} label="上传T1W文件">
-                                        {getFieldDecorator('fileT1', {
+                                <FormItem {...formItemLayout} label="上传DICOM文件">
+                                        {getFieldDecorator('dicom', {
                                                 valuePropName: 'fileList',
                                                 getValueFromEvent: this.normFile,
                                                 rules: [{required: true, message:'请先上传文件'}]
                                         })(
-                                                <Upload {...T1Props}>
-                                                        <Button>
-                                                                <Icon type="upload" />点击上传文件（.zip格式)
-                                                        </Button>
-                                                </Upload>
-                                        )}
-                                </FormItem>
-                                <FormItem {...formItemLayout} label="上传FLAIR/T2W文件">
-                                        {getFieldDecorator('fileT2', {
-                                                valuePropName: 'fileList',
-                                                getValueFromEvent: this.normFile
-                                        })(
-                                                <Upload {...T2Props}>
+                                                <Upload {...DicomProps}>
                                                         <Button>
                                                                 <Icon type="upload" />点击上传文件（.zip格式)
                                                         </Button>
