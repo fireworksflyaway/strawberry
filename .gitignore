@@ -22,5 +22,9 @@ yarn-error.log*
 
 #webstorm
 /.idea
+
+#strawberry
 /public/frontData/
-server/logs/
+/server/logs/
+/bgData
+/bgProc
