@@ -168,7 +168,7 @@ class PE_UploadSingleForm extends React.Component{
                                             <InputNumber min={0} max={120} />
                                         )}
                                 </FormItem>
-                                <FormItem {...formItemLayout} label="性别" hasFeedback>
+                                <FormItem {...formItemLayout} label="性别" >
                                         {getFieldDecorator('p_gender', {
                                                 initialValue:"男"
                                         })(
@@ -206,7 +206,7 @@ class PE_UploadSingleForm extends React.Component{
                                             <Input />
                                         )}
                                 </FormItem>
-                                <FormItem {...formItemLayout} label="疾病史" hasFeedback>
+                                <FormItem {...formItemLayout} label="疾病史" >
                                         {getFieldDecorator('diseases', {
 
                                         })(
