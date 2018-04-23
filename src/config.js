@@ -3,9 +3,9 @@
  */
 
 export default {
-        //ubuntu
-        server: "http://localhost:8090",
-        fileServer:"http://localhost:3000/frontData"
+        // //ubuntu
+        // server: "http://localhost:8090",
+        // fileServer:"http://localhost:3000/frontData"
 
         // //Real Server
         // server: "http://192.168.0.104:8090",
