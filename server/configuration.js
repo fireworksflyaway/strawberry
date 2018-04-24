@@ -9,7 +9,7 @@ module.exports = {
         DATA_PATH : "/thinker/net/strawberry/bgData",
         CMD_PATH : "/thinker/net/strawberry/bgProc/CS",
         REDIS_HOST : "192.168.0.148",
-        REDIS_PWD : "1415926",
+        REDIS_PWD : "pw1415926",
         SITE_DOMAIN : "http://127.0.0.1:3000",
         MONGO_CONN : "mongodb://192.168.0.148:27017/strawberry",
 }
