@@ -5,6 +5,7 @@ import React from 'react';
 import {Form,  Button, Icon, Input, message, Upload, Select} from 'antd';
 import config from '../../config';
 import handleResponse from '../../function/handleResponse';
+import {checkZipFormat, normFile, handleChange} from '../../function/fileFunctions';
 import {withRouter} from "react-router-dom";
 const FormItem=Form.Item;
 const Option=Select.Option;
@@ -19,14 +20,6 @@ class DiagnoseUploadForm extends React.Component{
                 }
         }
 
-        checkZipFormat=(file, fileList)=>{
-                if(file.type!==`application/zip`){
-                        message.error(`请上传zip格式文件`);
-                        fileList.splice(0,fileList.length);
-                        return false;
-                }
-                return true;
-        }
 
         handleSubmit=(e)=>{
                 e.preventDefault();
@@ -140,27 +133,6 @@ class DiagnoseUploadForm extends React.Component{
                 this.setState({disease: value})
         }
 
-        normFile = (e) => {
-                //console.log('Upload event:', e);
-                if (Array.isArray(e)) {
-                        return e;
-                }
-                return e && e.fileList;
-        }
-
-        handleChange=(info)=>{
-                if(info.fileList.length>1)
-                        info.fileList=info.fileList.slice(-1);
-                if (info.file.status !== 'uploading') {
-                        console.log(info.file, info.fileList);
-                }
-                if (info.file.status === 'done') {
-                        message.success(`${info.file.name} 上传成功`);
-                } else if (info.file.status === 'error') {
-                        message.error(`${info.file.name} 上传失败`);
-                }
-        }
-
         render(){
                 const {getFieldDecorator} = this.props.form;
                 const formItemLayout = {
@@ -182,10 +154,10 @@ class DiagnoseUploadForm extends React.Component{
                 };
 
                 const propsT1W = {
-                        onChange: this.handleChange,
+                        onChange: handleChange,
                         action: `${config.server}/DiagnoseAuth/T1W`,
                         accept: '.zip',
-                        beforeUpload: this.checkZipFormat,
+                        beforeUpload: checkZipFormat,
                         headers: {
                                 //authorization: 'authorization-text',
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
@@ -193,40 +165,40 @@ class DiagnoseUploadForm extends React.Component{
                 };
 
                 const props2DT2 = {
-                        onChange: this.handleChange,
+                        onChange: handleChange,
                         action: `${config.server}/DiagnoseAuth/2DT2`,
                         accept: '.zip',
-                        beforeUpload: this.checkZipFormat,
+                        beforeUpload: checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
                 };
 
                 const props3DT2 = {
-                        onChange: this.handleChange,
+                        onChange: handleChange,
                         action: `${config.server}/DiagnoseAuth/3DT2`,
                         accept: '.zip',
-                        beforeUpload: this.checkZipFormat,
+                        beforeUpload: checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
                 };
 
                 const propsDWI = {
-                        onChange: this.handleChange,
+                        onChange: handleChange,
                         action: `${config.server}/DiagnoseAuth/DWI`,
                         accept: '.zip',
-                        beforeUpload: this.checkZipFormat,
+                        beforeUpload: checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
                 };
 
                 const propsSWI = {
-                        onChange: this.handleChange,
+                        onChange: handleChange,
                         action: `${config.server}/DiagnoseAuth/SWI`,
                         accept: '.zip',
-                        beforeUpload: this.checkZipFormat,
+                        beforeUpload: checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
@@ -246,7 +218,7 @@ class DiagnoseUploadForm extends React.Component{
                         <FormItem {...formItemLayout} label="上传3D T1W文件">
                                 {getFieldDecorator('fileT1W', {
                                         valuePropName: 'fileList',
-                                        getValueFromEvent: this.normFile,
+                                        getValueFromEvent: normFile,
                                         rules: [{required: true, message:'请先上传文件'}]
                                 })(
                                     <Upload {...propsT1W}>
@@ -259,7 +231,7 @@ class DiagnoseUploadForm extends React.Component{
                         <FormItem {...formItemLayout} label="上传2D T2 FLAIR文件">
                                 {getFieldDecorator('file2DT2', {
                                         valuePropName: 'fileList',
-                                        getValueFromEvent: this.normFile
+                                        getValueFromEvent: normFile
                                 })(
                                     <Upload {...props2DT2}>
                                             <Button>
@@ -271,7 +243,7 @@ class DiagnoseUploadForm extends React.Component{
                         <FormItem {...formItemLayout} label="上传3D T2 FLAIR文件">
                                 {getFieldDecorator('file3DT2', {
                                         valuePropName: 'fileList',
-                                        getValueFromEvent: this.normFile
+                                        getValueFromEvent: normFile
                                 })(
                                     <Upload {...props3DT2}>
                                             <Button>
@@ -283,7 +255,7 @@ class DiagnoseUploadForm extends React.Component{
                         <FormItem {...formItemLayout} label="上传DWI文件">
                                 {getFieldDecorator('fileDWI', {
                                         valuePropName: 'fileList',
-                                        getValueFromEvent: this.normFile
+                                        getValueFromEvent: normFile
                                 })(
                                     <Upload {...propsDWI}>
                                             <Button>
@@ -295,7 +267,7 @@ class DiagnoseUploadForm extends React.Component{
                         <FormItem {...formItemLayout} label="上传SWI文件">
                                 {getFieldDecorator('fileSWI', {
                                         valuePropName: 'fileList',
-                                        getValueFromEvent: this.normFile
+                                        getValueFromEvent: normFile
                                 })(
                                     <Upload {...propsSWI}>
                                             <Button>

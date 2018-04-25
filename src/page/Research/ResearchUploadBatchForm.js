@@ -7,6 +7,7 @@ import {withRouter} from "react-router-dom";
 import config from '../../config';
 import {message} from "antd/lib/index";
 import handleResponse from "../../function/handleResponse";
+import {checkZipFormat, normFile, handleChange} from '../../function/fileFunctions';
 const FormItem=Form.Item;
 
 class ResearchUploadBatchForm extends React.Component{
@@ -17,14 +18,6 @@ class ResearchUploadBatchForm extends React.Component{
                 }
         }
 
-        checkZipFormat=(file, fileList)=>{
-                if(file.type!==`application/zip`){
-                        message.error(`请上传zip格式文件`);
-                        fileList.splice(0,fileList.length);
-                        return false;
-                }
-                return true;
-        }
 
         handleSubmit=(e)=>{
                 e.preventDefault();
@@ -64,26 +57,6 @@ class ResearchUploadBatchForm extends React.Component{
                 })
         }
 
-        normFile = (e) => {
-                //console.log('Upload event:', e);
-                if (Array.isArray(e)) {
-                        return e;
-                }
-                return e && e.fileList;
-        }
-
-        handleChange=(info)=>{
-                if(info.fileList.length>1)
-                        info.fileList=info.fileList.slice(-1);
-                if (info.file.status !== 'uploading') {
-                        console.log(info.file, info.fileList);
-                }
-                if (info.file.status === 'done') {
-                        message.success(`${info.file.name} 上传成功`);
-                } else if (info.file.status === 'error') {
-                        message.error(`${info.file.name} 上传失败`);
-                }
-        }
 
         render(){
                 const {getFieldDecorator} = this.props.form;
@@ -105,10 +78,10 @@ class ResearchUploadBatchForm extends React.Component{
                 };
 
                 const batchProps={
-                        onChange: this.handleChange,
+                        onChange: handleChange,
                         action: `${config.server}/ResearchAuth/ResearchBatchFile`,
                         accept: '.zip',
-                        beforeUpload: this.checkZipFormat,
+                        beforeUpload: checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
@@ -120,7 +93,7 @@ class ResearchUploadBatchForm extends React.Component{
                             <FormItem {...formItemLayout} label="上传批处理文件（.zip格式)">
                                     {getFieldDecorator('batchFile', {
                                             valuePropName: 'fileList',
-                                            getValueFromEvent: this.normFile,
+                                            getValueFromEvent: normFile,
                                             rules: [{required: true, message:'请先上传文件'}]
                                     })(
                                         <Upload {...batchProps}>

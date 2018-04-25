@@ -137,7 +137,7 @@ class App extends Component {
                                                         </Switch>
                                                 </Content>
                                                 <Footer className='appFooter'>
-                                                        <span>Copyright © Brainnow {new Date().getFullYear()} Version 0.1.4. All rights reserved.</span>
+                                                        <span>Copyright © Brainnow {new Date().getFullYear()} Version 0.1.4 dev 1. All rights reserved.</span>
                                                         <br />
                                                         <span>粤ICP备18031322号</span>
                                                 </Footer>

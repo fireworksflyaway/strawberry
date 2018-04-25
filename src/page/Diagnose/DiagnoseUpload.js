@@ -5,6 +5,8 @@ import React from 'react';
 import {Card} from 'antd';
 
 import DiagnoseUploadSingleForm from './DiagnoseUploadForm';
+
+
 export default class DiagnoseUpload extends React.Component{
         componentWillMount(){
                 const token=sessionStorage.getItem('StrawberryToken');

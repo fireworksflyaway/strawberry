@@ -5,6 +5,7 @@ import React from 'react';
 import {Form,  Button, Icon, Input, message, Upload} from 'antd';
 import config from '../../config';
 import handleResponse from '../../function/handleResponse';
+import {checkZipFormat, normFile, handleChange} from '../../function/fileFunctions';
 import {withRouter} from "react-router-dom";
 const FormItem=Form.Item;
 
@@ -66,35 +67,6 @@ class ResearchUploadSingleForm extends React.Component{
                 })
         }
 
-        normFile = (e) => {
-                //console.log('Upload event:', e);
-                if (Array.isArray(e)) {
-                        return e;
-                }
-                return e && e.fileList;
-        }
-
-        checkZipFormat=(file, fileList)=>{
-                if(file.type!==`application/zip`){
-                        message.error(`请上传zip格式文件`);
-                        fileList.splice(0,fileList.length);
-                        return false;
-                }
-                return true;
-        }
-
-        handleChange=(info)=>{
-                if(info.fileList.length>1)
-                        info.fileList=info.fileList.slice(-1);
-                if (info.file.status !== 'uploading') {
-                        console.log(info.file, info.fileList);
-                }
-                if (info.file.status === 'done') {
-                        message.success(`${info.file.name} 上传成功`);
-                } else if (info.file.status === 'error') {
-                        message.error(`${info.file.name} 上传失败`);
-                }
-        }
 
         render(){
                 const {getFieldDecorator} = this.props.form;
@@ -117,20 +89,20 @@ class ResearchUploadSingleForm extends React.Component{
                 };
 
                 const T1Props = {
-                        onChange: this.handleChange,
+                        onChange: handleChange,
                         action: `${config.server}/ResearchAuth/ResearchT1`,
                         accept: '.zip',
-                        beforeUpload: this.checkZipFormat,
+                        beforeUpload: checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
                 };
 
                 const T2Props = {
-                        onChange: this.handleChange,
+                        onChange: handleChange,
                         action: `${config.server}/ResearchAuth/ResearchT2`,
                         accept: '.zip',
-                        beforeUpload: this.checkZipFormat,
+                        beforeUpload: checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
@@ -145,7 +117,7 @@ class ResearchUploadSingleForm extends React.Component{
                             <FormItem {...formItemLayout} label="上传T1W文件">
                                     {getFieldDecorator('fileT1', {
                                             valuePropName: 'fileList',
-                                            getValueFromEvent: this.normFile,
+                                            getValueFromEvent: normFile,
                                             rules: [{required: true, message:'请先上传文件'}]
                                     })(
                                         <Upload {...T1Props}>
@@ -158,7 +130,7 @@ class ResearchUploadSingleForm extends React.Component{
                             <FormItem {...formItemLayout} label="上传FLAIR/T2W文件">
                                     {getFieldDecorator('fileT2', {
                                             valuePropName: 'fileList',
-                                            getValueFromEvent: this.normFile
+                                            getValueFromEvent: normFile
                                     })(
                                         <Upload {...T2Props}>
                                                 <Button>

@@ -5,6 +5,7 @@ import React from 'react';
 import {Form,  Button, Icon, Input, message, Upload, InputNumber, DatePicker, Checkbox, Radio} from 'antd';
 import config from '../../config';
 import handleResponse from '../../function/handleResponse';
+import {checkZipFormat, normFile, handleChange} from '../../function/fileFunctions';
 import {withRouter} from "react-router-dom";
 import moment from 'moment';
 const FormItem=Form.Item;
@@ -87,22 +88,6 @@ class PE_UploadSingleForm extends React.Component{
                 })
         }
 
-        normFile = (e) => {
-                //console.log('Upload event:', e);
-                if (Array.isArray(e)) {
-                        return e;
-                }
-                return e && e.fileList;
-        }
-
-        checkZipFormat=(file, fileList)=>{
-                if(file.type!==`application/zip`){
-                        message.error(`请上传zip格式文件`);
-                        fileList.splice(0,fileList.length);
-                        return false;
-                }
-                return true;
-        }
 
         handleChange=(info)=>{
                 if(info.fileList.length>1)
@@ -138,10 +123,10 @@ class PE_UploadSingleForm extends React.Component{
                 };
 
                 const DicomProps = {
-                        onChange: this.handleChange,
+                        onChange: handleChange,
                         action: `${config.server}/PE_Auth/PE_Dicom`,
                         accept: '.zip',
-                        beforeUpload: this.checkZipFormat,
+                        beforeUpload: checkZipFormat,
                         headers: {
                                 'Authorization': 'Bearer ' + sessionStorage.getItem('StrawberryToken')
                         },
@@ -216,7 +201,7 @@ class PE_UploadSingleForm extends React.Component{
                                 <FormItem {...formItemLayout} label="上传DICOM文件">
                                         {getFieldDecorator('dicom', {
                                                 valuePropName: 'fileList',
-                                                getValueFromEvent: this.normFile,
+                                                getValueFromEvent: normFile,
                                                 rules: [{required: true, message:'请先上传文件'}]
                                         })(
                                                 <Upload {...DicomProps}>
