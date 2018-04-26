@@ -5,6 +5,7 @@ const jsonwebtoken=require('jsonwebtoken');
 const sha256=require('js-sha256').sha256;
 const db=require('../db');
 const MailApi=require('../MailApi');
+const mailSender=new MailApi();
 const {DIAGNOSE_ACCESS_KEY} = require( '../configuration');
 const accessOption={expiresIn: '6h'};
 
@@ -60,7 +61,7 @@ module.exports={
                                                         subject: '博脑会员注册', // 标题
                                                         html: `<b>新的博脑用户注册请求</b><br /><b>用户名: </b>${Username}<br />请及时处理` // html 内容
                                                 };
-                                                MailApi.sendEmail(mailOptions, function (error, info) {
+                                                mailSender.sendEmail(mailOptions, function (error, info) {
                                                         if(error)
                                                         {
                                                                 console.error(error);

@@ -4,6 +4,7 @@
 const jsonwebtoken=require('jsonwebtoken');
 const sha256=require('js-sha256').sha256;
 const MailApi=require('../MailApi');
+const mailSender=new MailApi();
 const db=require('../db');
 const {ADMIN_ACCESS_KEY} = require( '../configuration');
 const accessOption={expiresIn: '6h'};
@@ -125,7 +126,7 @@ module.exports={
                                         subject: '博脑会员注册', // 标题
                                         html: `<b>您的会员注册请求已通过,现在可访问<a href=\"www.brainnow.cn\">我们的主页</a>登录并使用我们的服务</b><br />`
                                 };
-                                MailApi.sendEmail(mailOptions, function (error, info) {
+                                mailSender.sendEmail(mailOptions, function (error, info) {
                                         if(error)
                                         {
                                                 console.error(error);

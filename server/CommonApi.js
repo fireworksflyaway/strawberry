@@ -3,6 +3,7 @@
  */
 const db=require('./db');
 const MailApi=require('./MailApi');
+const mailSender=new MailApi();
 const uuidV1 = require('uuid/v1');
 const sha256=require('js-sha256').sha256;
 const {SITE_DOMAIN}=require('./configuration');
@@ -32,7 +33,7 @@ module.exports={
                                                         subject: '博脑会员密码重置', // 标题
                                                         html: `请通过以下链接重置密码(链接有效期为一小时)<br />${resetUrl}` // html 内容
                                                 };
-                                                MailApi.sendEmail(mailOptions, function (error, info) {
+                                                mailSender.sendEmail(mailOptions, function (error, info) {
                                                         if(error)
                                                         {
                                                                 console.error(error);
