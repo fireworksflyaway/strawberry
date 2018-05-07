@@ -25,8 +25,8 @@ import ResetPassword from "./Common/ResetPassword";
 import config from '../config';
 import withLoginType from '../function/withLoginType';
 import handleResponse from '../function/handleResponse';
-
-
+import police from '../image/police.png';
+import copyRight from '../image/copy_right.png';
 
 
 const {Header, Content,  Footer} = Layout;
@@ -137,9 +137,14 @@ class App extends Component {
                                                         </Switch>
                                                 </Content>
                                                 <Footer className='appFooter'>
-                                                        <span>Copyright © Brainnow {new Date().getFullYear()} Version 0.1.4 dev 1. All rights reserved.</span>
+                                                        <span>Copyright © Brainnow {new Date().getFullYear()} Version 0.1.4 dev 2. All rights reserved. 粤ICP备18031322号 <img src={copyRight} /></span>
                                                         <br />
-                                                        <span>粤ICP备18031322号</span>
+                                                        <span>
+                                                                <a target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030402001516" className='policeLink'>
+                                                                        <img src={police} />
+                                                                        <span className='policeSpan'>粤公网安备 44030402001516号</span>
+                                                                </a>
+                                                        </span>
                                                 </Footer>
                                         </Layout>
                                 </BrowserRouter>
